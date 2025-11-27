@@ -1,0 +1,3 @@
+# 忽略预训练模型和检查点
+pretrained/
+checkpoints/
