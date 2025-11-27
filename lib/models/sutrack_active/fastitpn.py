@@ -352,9 +352,11 @@ class Block(nn.Module):
 
     def forward(self, x, rel_pos_bias=None, attn_mask=None, dynamic_activation=False):
         if dynamic_activation:
-            # 计算激活概率
-            prob_active = self.active_score_module(x[:, :, 0].clone()).sigmoid()
+            # 计算激活概率（修复：应该取第0个token的所有特征，而不是所有token的第0个特征）
+            # x shape: (B, N, D)，取第0个token: x[:, 0, :] shape: (B, D)
+            prob_active = self.active_score_module(x[:, 0, :].clone()).sigmoid()  # (B, 1)
             idx, _ = torch.where(prob_active > 0.5)  # 激活概率大于0.5的索引
+            
             if len(idx) > 0:
                 x[idx] = self._forward_block(x[idx], rel_pos_bias, attn_mask)
             return x, prob_active
@@ -1078,14 +1080,15 @@ class Fast_iTPN(nn.Module):
         xz = self.prepare_tokens_with_masks(template_list, search_list, template_anno_list, text_src, task_index)
         xz = self.pos_drop(xz)
         
-
         rel_pos_bias = self.rel_pos_bias() if self.rel_pos_bias is not None else None
-        probs_active = []  # 用于记录激活的层
+        # probs_active = []  # 用于记录激活的层 - 暂时禁用以避免内存泄漏
 
         for i, blk in enumerate(self.blocks[-self.num_main_blocks:]):
-            xz, prob_active = blk(xz, rel_pos_bias)  # 解包元组
-            if i > 1 and prob_active is not None:  # 仅从第2层开始记录激活概率
-                probs_active.append(prob_active)
+            # 启用动态激活：从第2层开始（前2层总是执行以保证基础特征）
+            use_dynamic = (i >= 2)  
+            xz, prob_active = blk(xz, rel_pos_bias, dynamic_activation=use_dynamic)  # ✅ 传入参数
+            # if prob_active is not None:  # 记录激活概率
+            #     probs_active.append(prob_active.detach())  # 如需记录，必须 detach()
 
         xz = self.norm(xz)
 
