@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "SUTrack: train_b224_single",
+            "type": "debugpy",
+            "request": "launch",
+            // 入口脚本（注意路径要和你的项目结构一致）
+            "program": "lib/train/run_training.py",
+            // 在项目根目录下运行，相当于在终端里 cd 到仓库根目录后再执行
+            "cwd": "${workspaceFolder}",
+            // 对应你那条命令后面的参数
+            "args": [
+                "--script",
+                "sutrack",
+                "--config",
+                "sutrack_b224",
+                "--save_dir",
+                ".",
+                "--use_lmdb",
+                "0"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        }
+    ]
+}
