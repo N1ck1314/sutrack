@@ -13,6 +13,8 @@ from .base_functions import *
 from lib.models.sutrack import build_sutrack
 from lib.models.sutrack_active import build_sutrack_active
 from lib.models.sutrack_rewight import build_sutrack_rewight
+from lib.models.sutrack_patch import build_sutrack_patch
+from lib.models.sutrack_scale import build_sutrack_scale
 from lib.train.actors import SUTrack_Actor
 from lib.utils.focal_loss import FocalLoss
 # for import modules
@@ -59,6 +61,10 @@ def run(settings):
         net = build_sutrack_active(cfg)
     elif settings.script_name == "sutrack_rewight":
         net = build_sutrack_rewight(cfg)
+    elif settings.script_name == "sutrack_patch":
+        net = build_sutrack_patch(cfg)
+    elif settings.script_name == "sutrack_scale":
+        net = build_sutrack_scale(cfg)
     else:
         raise ValueError("illegal script name")
 
@@ -70,7 +76,7 @@ def run(settings):
     else:
         settings.device = torch.device("cuda:0")
     # Loss functions and Actors
-    if settings.script_name == "sutrack" or settings.script_name == "sutrack_active" or settings.script_name == "sutrack_rewight":
+    if settings.script_name == "sutrack" or settings.script_name == "sutrack_active" or settings.script_name == "sutrack_rewight" or settings.script_name == "sutrack_patch" or settings.script_name == "sutrack_scale":
         focal_loss = FocalLoss()
         objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
                      'task_cls': CrossEntropyLoss()}
