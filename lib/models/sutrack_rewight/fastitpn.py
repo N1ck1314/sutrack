@@ -724,6 +724,14 @@ class Fast_iTPN(nn.Module):
 
         self.pos_drop = nn.Dropout(p=drop_rate)
 
+        # === 新增：模板条件的token重加权模块（针对无人机场景优化） ===
+        self.use_target_token_weighting = kwargs.get('use_target_token_weighting', True)
+        self.token_weight_alpha = float(kwargs.get('token_weight_alpha', 0.5))
+        if self.use_target_token_weighting:
+            self.target_query_proj = nn.Linear(self.embed_dim, self.embed_dim)
+            self.search_key_proj = nn.Linear(self.embed_dim, self.embed_dim)
+        # ===============================================
+
         if use_shared_rel_pos_bias:
             self.rel_pos_bias = RelativePositionBias(window_size=self.patch_embed.patch_shape, num_heads=num_heads)
         else:
@@ -1013,9 +1021,25 @@ class Fast_iTPN(nn.Module):
 
 
         z = z.view(-1, num_template, z.size(-2), z.size(-1))  # b,n,l,c
-        z = z.reshape(z.size(0), -1, z.size(-1))  # b,l,c
+        z = z.reshape(z.size(0), -1, z.size(-1))  # b,Lz,c
         x = x.view(-1, num_search, x.size(-2), x.size(-1))
-        x = x.reshape(x.size(0), -1, x.size(-1))
+        x = x.reshape(x.size(0), -1, x.size(-1))  # b,Lx,c
+
+        # === 新增：模板条件的token重加权（在Stage3前进行） ===
+        if self.use_target_token_weighting:
+            # 从模板tokens聚合目标查询向量（均值池化）
+            # 若启用了token_type_indicate，z中前景区域权重已被增强
+            q_t = z.mean(dim=1)  # (b, c) 聚合模板特征作为目标查询
+            q = self.target_query_proj(q_t)  # (b, c) 投影查询向量
+            k = self.search_key_proj(x)  # (b, Lx, c) 投影搜索区域键向量
+            
+            # 计算搜索tokens与目标的相似度
+            scores = (k * q.unsqueeze(1)).sum(dim=-1) / math.sqrt(k.size(-1))  # (b, Lx)
+            weights = torch.softmax(scores, dim=1)  # (b, Lx) 归一化为注意力权重
+            
+            # 对更可能是目标的搜索tokens进行特征放大
+            x = x * (1.0 + self.token_weight_alpha * weights.unsqueeze(-1))  # (b, Lx, c)
+        # ===============================================
 
         if text_src is not None:
             xz = torch.cat([x, z, text_src], dim=1)

@@ -59,9 +59,9 @@ class SUTRACK(nn.Module):
         return text_src
 
     def forward_encoder(self, template_list, search_list, template_anno_list, text_src, task_index):
-        # Forward the encoder, 返回特征和激活概率
-        xz, probs_active = self.encoder(template_list, search_list, template_anno_list, text_src, task_index)
-        return xz, probs_active
+        # Forward the encoder
+        xz = self.encoder(template_list, search_list, template_anno_list, text_src, task_index)
+        return xz
 
     def forward_decoder(self, feature, gt_score_map=None):
 
@@ -120,7 +120,7 @@ class SUTRACK(nn.Module):
         feature = self.task_decoder(feature)
         return feature
 
-def build_sutrack(cfg):
+def build_sutrack_rewight(cfg):
     encoder = build_encoder(cfg)
     if cfg.DATA.MULTI_MODAL_LANGUAGE:
         text_encoder = build_textencoder(cfg, encoder)
@@ -140,30 +140,3 @@ def build_sutrack(cfg):
     )
 
     return model
-
-def build_sutrack_active(cfg):
-    """
-    Build function for the active (modified) version of SUTrack.
-    This is a separate model that can be modified independently from the original.
-    """
-    encoder = build_encoder(cfg)
-    if cfg.DATA.MULTI_MODAL_LANGUAGE:
-        text_encoder = build_textencoder(cfg, encoder)
-    else:
-        text_encoder = None
-    decoder = build_decoder(cfg, encoder)
-    task_decoder = build_task_decoder(cfg, encoder)
-    model = SUTRACK(
-        text_encoder,
-        encoder,
-        decoder,
-        task_decoder,
-        num_frames = cfg.DATA.SEARCH.NUMBER,
-        num_template = cfg.DATA.TEMPLATE.NUMBER,
-        decoder_type=cfg.MODEL.DECODER.TYPE,
-        task_feature_type=cfg.MODEL.TASK_DECODER.FEATURE_TYPE
-    )
-
-    return model
-
-

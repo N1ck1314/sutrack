@@ -4,8 +4,9 @@ Encoder modules: we use ITPN for the encoder.
 
 from torch import nn
 from lib.utils.misc import is_main_process
-from lib.models.sutrack_active import fastitpn as fastitpn_module
-from lib.models.sutrack_active import itpn as oriitpn_module
+
+from lib.models.sutrack_rewight import fastitpn as fastitpn_module
+from lib.models.sutrack_rewight import itpn as oriitpn_module
 
 
 
@@ -31,8 +32,8 @@ class EncoderBase(nn.Module):
         self.num_channels = num_channels
 
     def forward(self, template_list, search_list, template_anno_list, text_src, task_index):
-        xs, probs_active = self.body(template_list, search_list, template_anno_list, text_src, task_index)
-        return xs, probs_active
+        xs = self.body(template_list, search_list, template_anno_list, text_src, task_index)
+        return xs
 
 
 class Encoder(EncoderBase):

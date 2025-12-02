@@ -354,12 +354,23 @@ class Block(nn.Module):
         if dynamic_activation:
             # 计算激活概率（修复：应该取第0个token的所有特征，而不是所有token的第0个特征）
             # x shape: (B, N, D)，取第0个token: x[:, 0, :] shape: (B, D)
-            prob_active = self.active_score_module(x[:, 0, :].clone()).sigmoid()  # (B, 1)
-            idx, _ = torch.where(prob_active > 0.5)  # 激活概率大于0.5的索引
+            prob_active = self.active_score_module(x[:, 0, :]).sigmoid()  # (B, 1)
+            prob_active = prob_active.squeeze(-1)  # (B,) 确保形状正确
             
-            if len(idx) > 0:
-                x[idx] = self._forward_block(x[idx], rel_pos_bias, attn_mask)
-            return x, prob_active
+            # 🔒 安全的索引方式：使用 boolean mask 而不是 in-place 修改
+            mask_active = prob_active > 0.5  # (B,) boolean tensor
+            
+            if mask_active.any():
+                # 🔒 创建新的张量而不是 in-place 修改，避免 coredump
+                x_active = x[mask_active]  # 取出需要处理的样本
+                x_processed = self._forward_block(x_active, rel_pos_bias, attn_mask)
+                
+                # 🔒 使用安全的复制方式更新结果
+                x_out = x.clone()  # 先克隆整个张量
+                x_out[mask_active] = x_processed  # 更新激活的部分
+                return x_out, prob_active.unsqueeze(-1)
+            else:
+                return x, prob_active.unsqueeze(-1)
         else:
             x = self._forward_block(x, rel_pos_bias, attn_mask)
             return x, None
@@ -1081,27 +1092,30 @@ class Fast_iTPN(nn.Module):
         xz = self.pos_drop(xz)
         
         rel_pos_bias = self.rel_pos_bias() if self.rel_pos_bias is not None else None
-        # probs_active = []  # 用于记录激活的层 - 暂时禁用以避免内存泄漏
+        probs_active = []  # 用于记录激活概率
 
         for i, blk in enumerate(self.blocks[-self.num_main_blocks:]):
             # 启用动态激活：从第2层开始（前2层总是执行以保证基础特征）
             use_dynamic = (i >= 2)  
             xz, prob_active = blk(xz, rel_pos_bias, dynamic_activation=use_dynamic)  # ✅ 传入参数
-            # if prob_active is not None:  # 记录激活概率
-            #     probs_active.append(prob_active.detach())  # 如需记录，必须 detach()
+            if prob_active is not None:  # 记录激活概率用于损失计算
+                probs_active.append(prob_active.detach())  # detach() 避免重复梯度
 
         xz = self.norm(xz)
 
         if self.fc_norm is not None:
-            return self.fc_norm(xz)  # 只返回张量，不返回激活概率
+            feature = self.fc_norm(xz)
         else:
-            return xz
+            feature = xz
+        
+        # 返回特征和激活概率（用于损失计算）
+        return feature, probs_active if len(probs_active) > 0 else None
 
     def forward(self, template_list, search_list, template_anno_list, text_src, task_index):
-        xz = self.forward_features(template_list, search_list, template_anno_list, text_src, task_index)
-        # x = self.head(x)
+        xz, probs_active = self.forward_features(template_list, search_list, template_anno_list, text_src, task_index)
+        # 返回特征和激活概率
         out = [xz]
-        return out
+        return out, probs_active
 
 def load_pretrained(model, checkpoint, pos_type, patchembed_init):
     if "module" in checkpoint.keys():
