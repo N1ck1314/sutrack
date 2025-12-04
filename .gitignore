@@ -4,4 +4,4 @@ checkpoints/
 checkpoints_backup/
 lib/train/admin/
 lib/test/evaluation/
-
+logs/
