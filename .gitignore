@@ -1,4 +1,7 @@
 # 忽略预训练模型和检查点
 pretrained/
 checkpoints/
-checkpoints_backup
+checkpoints_backup/
+lib/train/admin/
+lib/test/evaluation/
+
