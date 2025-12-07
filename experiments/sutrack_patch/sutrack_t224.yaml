@@ -24,10 +24,10 @@ DATA:
     NUMBER: 1
   TRAIN:
     DATASETS_NAME:
-    - LASOT
+    # - LASOT
     - GOT10K_vottrain
     # - COCO17
-    - TRACKINGNET
+    # - TRACKINGNET
     # - VASTTRACK
     # - TNL2K_train
     - DepthTrack_train
@@ -35,8 +35,8 @@ DATA:
     # - LasHeR_train
     DATASETS_RATIO:
     - 1
-    - 1
-    - 1
+    # - 1
+    # - 1
     - 1
     # - 4
     # - 4

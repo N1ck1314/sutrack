@@ -2,6 +2,9 @@
 pretrained/*
 checkpoints/*
 checkpoints_backup/*
-lib/train/admin/*
-lib/test/evaluation/*
 logs/*
+tensorboard/*
+
+# 忽略包含本地路径的配置文件
+lib/train/admin/local.py
+lib/test/evaluation/local.py
