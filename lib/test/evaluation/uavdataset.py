@@ -37,6 +37,8 @@ class UAVDataset(BaseDataset):
         anno_path = '{}/{}'.format(self.base_path, sequence_info['anno_path'])
 
         ground_truth_rect = load_text(str(anno_path), delimiter=',', dtype=np.float64, backend='numpy')
+        # 确保 ground_truth_rect 为 numpy 数组，避免切片操作报错
+        ground_truth_rect = np.asarray(ground_truth_rect)
 
         return Sequence(sequence_info['name'], frames, 'uav', ground_truth_rect[init_omit:,:],
                         object_class=sequence_info['object_class'])

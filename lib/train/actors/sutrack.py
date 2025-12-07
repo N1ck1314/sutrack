@@ -54,22 +54,12 @@ class SUTrack_Actor(BaseActor):
                            text_src=text_src,
                            task_index=task_index_batch,
                            mode='encoder') # forward the encoder
-        
-        # 处理返回值：可能是 (xz, probs_active) 或者只是 xz
-        if isinstance(enc_opt, tuple):
-            enc_opt, probs_active = enc_opt  # sutrack_active 返回元组
-        else:
-            probs_active = None  # sutrack/sutrack_rewight 返回单个值
-        
         outputs, task_class_output = self.net(feature=enc_opt, mode="decoder")
         # outputs = self.net(feature=enc_opt, mode="decoder")
         # task_class_output = self.net(feature=enc_opt, mode="task_decoder")
         task_class_output = task_class_output.view(-1, task_class_output.size(-1))
         outputs['task_class'] = task_class_output
         outputs['task_class_label'] = task_index_batch
-        
-        # 将激活概率传递给损失函数
-        outputs['probs_active'] = probs_active
 
         return outputs
 
@@ -102,39 +92,11 @@ class SUTrack_Actor(BaseActor):
             location_loss = self.objective['focal'](pred_dict['score_map'], gt_gaussian_maps)
         else:
             location_loss = torch.tensor(0.0, device=l1_loss.device)
-        
-        # === 新增：动态激活效率损失 ===
-        # 目标：鼓励模型在保证精度的前提下，合理地跳过一些层
-        if self.settings.local_rank in [-1, 0]:  # 只在主进程计算（避免重复）
-            if pred_dict.get('probs_active') is not None and pred_dict['probs_active'] is not None:
-                probs_active = pred_dict['probs_active']  # list of (B, 1) tensors
-                if len(probs_active) > 0:
-                    # 拼接所有层的激活概率：list of (B,1) -> (B, num_layers)
-                    prob_active_m = torch.cat(probs_active, dim=1).mean(dim=1)  # (B,) 每个样本的平均激活率
-                    # 计算期望激活率（目标是 50%）
-                    expected_active_ratio = 0.5 * torch.ones(prob_active_m.shape).cuda()
-                    # L1 损失：鼓励激活率接近目标值
-                    activeness_loss = torch.nn.functional.l1_loss(prob_active_m, expected_active_ratio)
-                    
-                    # 记录实际激活率统计（用于调试FPS波动）
-                    actual_activation_rate = prob_active_m.mean().item()
-                else:
-                    activeness_loss = 0
-                    actual_activation_rate = 0.0
-            else:
-                activeness_loss = 0
-                actual_activation_rate = 0.0
-        else:
-            activeness_loss = 0
-            actual_activation_rate = 0.0
-        # =======================================
-        
         # weighted sum
         loss = (self.loss_weight['giou'] * giou_loss +
                 self.loss_weight['l1'] * l1_loss +
                 self.loss_weight['focal'] * location_loss +
-                self.loss_weight['task_cls'] * task_cls_loss +
-                0.01 * activeness_loss)  # 激活效率损失权重设为 0.01（可调）
+                self.loss_weight['task_cls'] * task_cls_loss)
 
         if return_status:
             # status for log
@@ -144,8 +106,6 @@ class SUTrack_Actor(BaseActor):
                       "Loss/l1": l1_loss.item(),
                       "Loss/location": location_loss.item(),
                       "Loss/task_class": task_cls_loss.item(),
-                      "Loss/activeness": activeness_loss if isinstance(activeness_loss, int) else activeness_loss.item(),
-                      "ActRate": actual_activation_rate,  # 新增：实际激活率
                       "IoU": mean_iou.item()}
             return loss, status
         else:

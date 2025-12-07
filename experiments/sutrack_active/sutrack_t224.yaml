@@ -24,26 +24,26 @@ DATA:
     NUMBER: 1
   TRAIN:
     DATASETS_NAME:
-    # - LASOT
+    - LASOT
     - GOT10K_vottrain
     # - COCO17
-    # - TRACKINGNET
+    - TRACKINGNET
     # - VASTTRACK
     # - TNL2K_train
     - DepthTrack_train
     # - VisEvent
     # - LasHeR_train
     DATASETS_RATIO:
-    # - 4
-    # - 4
-    # - 4
-    # - 4
+    - 1
+    - 1
+    - 1
+    - 1
     # - 4
     # - 4
     # - 2
-    - 2
-    - 2
-    SAMPLE_PER_EPOCH: 100000
+    # - 2
+    # - 2
+    SAMPLE_PER_EPOCH: 60000
   USE_NLP:
     TNL2K: True
 MODEL:

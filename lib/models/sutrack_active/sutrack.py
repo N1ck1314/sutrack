@@ -66,6 +66,9 @@ class SUTRACK(nn.Module):
     def forward_decoder(self, feature, gt_score_map=None):
 
         feature = feature[0]
+        # 如果 feature 是 list，转换为 tensor
+        if isinstance(feature, list):
+            feature = feature[0]
         if self.class_token:
             feature = feature[:,1:self.num_patch_x * self.num_frames+1]
         else:
@@ -109,6 +112,9 @@ class SUTRACK(nn.Module):
 
     def forward_task_decoder(self, feature):
         feature = feature[0]
+        # 如果 feature 是 list，转换为 tensor
+        if isinstance(feature, list):
+            feature = feature[0]
         if self.task_feature_type == 'class':
             feature = feature[:, 0:1]
         elif self.task_feature_type == 'text':

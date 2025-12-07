@@ -16,6 +16,7 @@ from lib.models.sutrack_rewight import build_sutrack_rewight
 from lib.models.sutrack_patch import build_sutrack_patch
 from lib.models.sutrack_scale import build_sutrack_scale
 from lib.train.actors import SUTrack_Actor
+from lib.train.actors import SUTrack_active_Actor
 from lib.utils.focal_loss import FocalLoss
 # for import modules
 import importlib
@@ -76,13 +77,21 @@ def run(settings):
     else:
         settings.device = torch.device("cuda:0")
     # Loss functions and Actors
-    if settings.script_name == "sutrack" or settings.script_name == "sutrack_active" or settings.script_name == "sutrack_rewight" or settings.script_name == "sutrack_patch" or settings.script_name == "sutrack_scale":
+    if settings.script_name == "sutrack"  or settings.script_name == "sutrack_rewight" or settings.script_name == "sutrack_patch" or settings.script_name == "sutrack_scale":
         focal_loss = FocalLoss()
         objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
                      'task_cls': CrossEntropyLoss()}
         loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
                        'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
         actor = SUTrack_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
+    elif settings.script_name == "sutrack_active" :
+        focal_loss = FocalLoss()
+        objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
+                     'task_cls': CrossEntropyLoss()}
+        loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
+                       'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
+        actor = SUTrack_active_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
+
     else:
         raise ValueError("illegal script name")
 

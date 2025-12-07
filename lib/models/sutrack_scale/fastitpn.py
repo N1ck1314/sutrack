@@ -726,6 +726,7 @@ class Fast_iTPN(nn.Module):
 
         # === 新增：方向2 - 显式尺度选择模块（Scale Selector Head） ===
         self.use_scale_selector = kwargs.get('use_scale_selector', True)
+        # self.use_scale_selector = False
         mlvl_dims = {'4': embed_dim // 4, '8': embed_dim // 2, '16': embed_dim}
         
         if self.use_scale_selector:
@@ -748,7 +749,8 @@ class Fast_iTPN(nn.Module):
             self.scale_proj_l = nn.Linear(mlvl_dims['16'], embed_dim)
         
         # === 新增：方向3 - 深度条件Token & 3D位置编码 ===
-        self.use_depth_conditioning = kwargs.get('use_depth_conditioning', True)
+        # self.use_depth_conditioning = kwargs.get('use_depth_conditioning', True)
+        self.use_depth_conditioning = False  # 临时禁用深度条件
         
         if self.use_depth_conditioning:
             # 3D位置编码生成网络

@@ -135,7 +135,9 @@ def run_sequence(seq: Sequence, tracker: Tracker, debug=False, num_gpu=8):
         try:
             output = tracker.run_sequence(seq, debug=debug)
         except Exception as e:
+            import traceback
             print(e)
+            traceback.print_exc()
             return
 
     sys.stdout.flush()

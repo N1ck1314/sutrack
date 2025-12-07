@@ -26,7 +26,11 @@ class Sequence:
         self.name = name
         self.frames = frames
         self.dataset = dataset
-        self.ground_truth_rect = ground_truth_rect
+        # 确保 ground_truth_rect 为 numpy 数组（非多目标 dict 时），避免后续切片操作报错
+        if ground_truth_rect is not None and not isinstance(ground_truth_rect, (dict, OrderedDict)):
+            self.ground_truth_rect = np.asarray(ground_truth_rect)
+        else:
+            self.ground_truth_rect = ground_truth_rect
         self.ground_truth_seg = ground_truth_seg
         self.object_class = object_class
         self.target_visible = target_visible
