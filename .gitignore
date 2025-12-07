@@ -8,3 +8,10 @@ tensorboard/*
 # 忽略包含本地路径的配置文件
 lib/train/admin/local.py
 lib/test/evaluation/local.py
+
+# Python缓存文件
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
