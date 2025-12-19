@@ -64,8 +64,8 @@ trackers = []
 dataset_name = 'uav'
 # choosen from 'uav', 'nfs', 'lasot_extension_subset', 'lasot', 'otb99_lang', 'tnl2k', 'got10k_test'
 
-trackers.extend(trackerlist(name='sutrack_active', parameter_name='sutrack_t224', dataset_name=dataset_name,
-                            run_ids=None, display_name='sutrack_active_t224'))
+trackers.extend(trackerlist(name='sutrack', parameter_name='sutrack_t224', dataset_name=dataset_name,
+                            run_ids=None, display_name='sutrack_t224'))
 
 dataset = get_dataset(dataset_name)
 

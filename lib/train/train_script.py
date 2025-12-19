@@ -18,6 +18,8 @@ from lib.models.sutrack_scale import build_sutrack_scale
 from lib.models.sutrack_STAtten import build_sutrack_statten
 from lib.models.sutrack_S4F import build_sutrack_s4f
 from lib.models.sutrack_CMA import build_sutrack_cma
+from lib.models.sutrack_RMT import build_sutrack_rmt
+
 from lib.train.actors import SUTrack_Actor
 from lib.train.actors import SUTrack_active_Actor
 from lib.utils.focal_loss import FocalLoss
@@ -75,6 +77,8 @@ def run(settings):
         net = build_sutrack_s4f(cfg)
     elif settings.script_name == "sutrack_CMA":
         net = build_sutrack_cma(cfg)
+    elif settings.script_name == "sutrack_RMT":
+        net = build_sutrack_rmt(cfg)
     else:
         raise ValueError("illegal script name")
     
@@ -123,6 +127,22 @@ def run(settings):
                 print("✓ 适用场景: 多模态融合、语义引导的视觉注意力")
             else:
                 print("⚠️  警告: CMA未启用，将使用简单的特征拼接")
+            print("="*60 + "\n")
+        elif settings.script_name == "sutrack_RMT":
+            print("\n" + "="*60)
+            print("🔍 RMT模块配置确认")
+            print("="*60)
+            use_rmt = cfg.MODEL.ENCODER.get('USE_RMT', False)
+            rmt_layers = cfg.MODEL.ENCODER.get('RMT_LAYERS', [])
+            rmt_num_heads = cfg.MODEL.ENCODER.get('RMT_NUM_HEADS', 8)
+            print(f"✓ RMT启用状态: {'🟢 已启用' if use_rmt else '🔴 未启用'}")
+            if use_rmt:
+                print(f"✓ RMT层索引: {rmt_layers}")
+                print(f"✓ 注意力头数: {rmt_num_heads}")
+                print("✓ 注意力机制: Retentive Multi-scale Attention (替代标准自注意力)")
+                print("✓ 优势: 更长的记忆保持、线性复杂度、全局上下文建模")
+            else:
+                print("⚠️  警告: RMT未启用，将使用标准的Transformer注意力")
             print("="*60 + "\n")
 
     # wrap networks to distributed one
@@ -176,6 +196,17 @@ def run(settings):
             else:
                 print("⚠️  CMA模块未初始化（可能配置中USE_CMA=False）")
             print()
+        elif settings.script_name == "sutrack_RMT":
+            print("\n🔍 验证RMT模块实际初始化状态...")
+            # 获取encoder
+            encoder = net.module.encoder.body if hasattr(net, 'module') else net.encoder.body
+            if hasattr(encoder, 'rmt_rel_pos_encoder') and encoder.rmt_rel_pos_encoder is not None:
+                print("✅ RMT模块已成功初始化！")
+                print(f"   - rmt_rel_pos_encoder: {type(encoder.rmt_rel_pos_encoder).__name__}")
+                print(f"   - RMT层数: {len(encoder.rmt_layers) if hasattr(encoder, 'rmt_layers') else 0}")
+            else:
+                print("⚠️  RMT模块未初始化（可能配置中USE_RMT=False）")
+            print()
     # Loss functions and Actors
     if settings.script_name == "sutrack":
         focal_loss = FocalLoss()
@@ -220,6 +251,13 @@ def run(settings):
                        'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
         actor = SUTrack_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
     elif settings.script_name == "sutrack_CMA":
+        focal_loss = FocalLoss()
+        objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
+                     'task_cls': CrossEntropyLoss()}
+        loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
+                       'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
+        actor = SUTrack_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
+    elif settings.script_name == "sutrack_RMT":
         focal_loss = FocalLoss()
         objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
                      'task_cls': CrossEntropyLoss()}

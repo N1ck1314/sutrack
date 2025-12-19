@@ -4,6 +4,7 @@ checkpoints/*
 checkpoints_backup/*
 logs/*
 tensorboard/*
+test/*
 
 # 忽略包含本地路径的配置文件
 lib/train/admin/local.py
@@ -15,3 +16,4 @@ __pycache__/
 *.pyo
 *.pyd
 .Python
+

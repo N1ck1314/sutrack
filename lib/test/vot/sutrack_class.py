@@ -81,6 +81,29 @@ def run_vot_exp(tracker_name, para_name, vis=False, out_conf=False, channel_type
         image = cv2.cvtColor(cv2.imread(imagefile), cv2.COLOR_BGR2RGB) # Right
 
     tracker.initialize(image, selection)
+    
+    # FPS计算变量
+    frame_count = 0
+    total_time = 0
+    fps_list = []
+    
+    # 创建FPS日志文件 - 保存到results目录下对应的tracker文件夹
+    results_dir = os.path.join(os.getcwd(), 'results')
+    if not os.path.exists(results_dir):
+        os.makedirs(results_dir)
+    
+    # 获取tracker标识符（从.ini文件中的label）
+    tracker_id = f"{tracker_name}_{para_name}" if tracker_name != para_name else tracker_name
+    tracker_result_dir = os.path.join(results_dir, tracker_id)
+    if not os.path.exists(tracker_result_dir):
+        os.makedirs(tracker_result_dir)
+    
+    fps_log_path = os.path.join(tracker_result_dir, f'fps_log.txt')
+    fps_file = open(fps_log_path, 'w')
+    fps_file.write(f"Tracker: {tracker_name}, Config: {para_name}\n")
+    fps_file.write(f"Results Directory: {tracker_result_dir}\n")
+    fps_file.write("="*60 + "\n")
+    fps_file.flush()
 
     while True:
         imagefile = handle.frame()
@@ -93,7 +116,26 @@ def run_vot_exp(tracker_name, para_name, vis=False, out_conf=False, channel_type
         else:
             image = cv2.cvtColor(cv2.imread(imagefile), cv2.COLOR_BGR2RGB)  # Right
 
+        # 计时开始
+        start_time = time.time()
         b1, max_score = tracker.track(image)
+        # 计时结束
+        end_time = time.time()
+        
+        # 计算FPS
+        frame_time = end_time - start_time
+        total_time += frame_time
+        frame_count += 1
+        current_fps = 1.0 / frame_time if frame_time > 0 else 0
+        fps_list.append(current_fps)
+        avg_fps = frame_count / total_time if total_time > 0 else 0
+        
+        # 写入FPS信息到文件和stderr（stderr不会被VOT捕获）
+        fps_info = f"Frame {frame_count}: FPS={current_fps:.2f}, Avg FPS={avg_fps:.2f}, Time={frame_time*1000:.2f}ms\n"
+        fps_file.write(fps_info)
+        fps_file.flush()
+        sys.stderr.write(fps_info)
+        sys.stderr.flush()
 
         if out_conf:
             handle.report(vot.Rectangle(*b1), max_score)
@@ -111,4 +153,35 @@ def run_vot_exp(tracker_name, para_name, vis=False, out_conf=False, channel_type
             image_b_name = image_name.replace('.jpg','_bbox.jpg')
             save_path = os.path.join(save_dir, image_b_name)
             cv2.imwrite(save_path, image_b)
+    
+    # 写入最终统计信息
+    if frame_count > 0:
+        summary = "\n" + "="*60 + "\n"
+        summary += f"FPS 统计信息:\n"
+        summary += f"  总帧数: {frame_count}\n"
+        summary += f"  总时间: {total_time:.2f}s\n"
+        summary += f"  平均FPS: {avg_fps:.2f}\n"
+        summary += f"  最大FPS: {max(fps_list):.2f}\n"
+        summary += f"  最小FPS: {min(fps_list):.2f}\n"
+        summary += "="*60 + "\n"
+        
+        fps_file.write(summary)
+        fps_file.close()
+        
+        sys.stderr.write(summary)
+        sys.stderr.flush()
+        
+        # 同时创建一个简单的FPS摘要文件，便于快速查看
+        fps_summary_path = os.path.join(tracker_result_dir, 'fps_summary.txt')
+        with open(fps_summary_path, 'w') as f:
+            f.write(f"Average FPS: {avg_fps:.2f}\n")
+            f.write(f"Max FPS: {max(fps_list):.2f}\n")
+            f.write(f"Min FPS: {min(fps_list):.2f}\n")
+            f.write(f"Total Frames: {frame_count}\n")
+            f.write(f"Total Time: {total_time:.2f}s\n")
+        
+        # 打印日志文件位置
+        sys.stderr.write(f"\nFPS日志已保存到: {fps_log_path}\n")
+        sys.stderr.write(f"FPS摘要已保存到: {fps_summary_path}\n")
+        sys.stderr.flush()
 

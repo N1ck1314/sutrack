@@ -1,0 +1,5 @@
+registry:
+- ./sutrack_t224.ini
+- ./sutrack_S4F_t224.ini
+- ./sutrack_rmt_t224.ini
+stack: votrgbd2019

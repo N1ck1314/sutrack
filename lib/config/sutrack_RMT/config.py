@@ -1,0 +1,155 @@
+from easydict import EasyDict as edict
+import yaml
+
+"""
+Add default config for SUTRACK-RMT.
+"""
+cfg = edict()
+
+# MODEL
+cfg.MODEL = edict()
+cfg.MODEL.ENCODER = edict()
+cfg.MODEL.ENCODER.TYPE = "fastitpnt"
+cfg.MODEL.ENCODER.STRIDE = 16
+cfg.MODEL.ENCODER.PRETRAIN_TYPE = ""
+cfg.MODEL.ENCODER.PATCHEMBED_INIT = "halfcopy"
+cfg.MODEL.ENCODER.DROP_PATH = 0.1
+cfg.MODEL.ENCODER.TOKEN_TYPE_INDICATE = True
+cfg.MODEL.ENCODER.POS_TYPE = "interpolate"
+cfg.MODEL.ENCODER.CLASS_TOKEN = False
+# RMT相关配置
+cfg.MODEL.ENCODER.USE_RMT = True
+cfg.MODEL.ENCODER.RMT_LAYERS = [8, 9, 10, 11]
+cfg.MODEL.ENCODER.RMT_NUM_HEADS = 6
+
+cfg.MODEL.TEXT_ENCODER = edict()
+cfg.MODEL.TEXT_ENCODER.TYPE = "ViT-L/14"
+
+cfg.MODEL.DECODER = edict()
+cfg.MODEL.DECODER.TYPE = "CENTER"
+cfg.MODEL.DECODER.NUM_CHANNELS = 256
+cfg.MODEL.DECODER.CONV_TYPE = "normal"
+cfg.MODEL.DECODER.XAVIER_INIT = True
+
+cfg.MODEL.TASK_DECODER = edict()
+cfg.MODEL.TASK_DECODER.NUM_CHANNELS = 256
+cfg.MODEL.TASK_DECODER.FEATURE_TYPE = "average"
+
+cfg.MODEL.TASK_NUM = 5
+
+cfg.MODEL.TASK_INDEX = edict()
+cfg.MODEL.TASK_INDEX.VASTTRACK = 0
+cfg.MODEL.TASK_INDEX.LASOT = 0
+cfg.MODEL.TASK_INDEX.TRACKINGNET = 0
+cfg.MODEL.TASK_INDEX.GOT10K = 0
+cfg.MODEL.TASK_INDEX.COCO = 0
+cfg.MODEL.TASK_INDEX.TNL2K = 1
+cfg.MODEL.TASK_INDEX.DEPTHTRACK = 2
+cfg.MODEL.TASK_INDEX.LASHER = 3
+cfg.MODEL.TASK_INDEX.VISEVENT = 4
+
+# TRAIN
+cfg.TRAIN = edict()
+cfg.TRAIN.TYPE = "text_frozen"
+cfg.TRAIN.LR = 0.0001
+cfg.TRAIN.WEIGHT_DECAY = 0.0001
+cfg.TRAIN.EPOCH = 180
+cfg.TRAIN.LR_DROP_EPOCH = 144
+cfg.TRAIN.BATCH_SIZE = 32
+cfg.TRAIN.NUM_WORKER = 10
+cfg.TRAIN.OPTIMIZER = "ADAMW"
+cfg.TRAIN.ENCODER_MULTIPLIER = 0.1
+cfg.TRAIN.FREEZE_ENCODER = False
+cfg.TRAIN.ENCODER_OPEN = []
+cfg.TRAIN.PRINT_INTERVAL = 50
+cfg.TRAIN.GRAD_CLIP_NORM = 0.1
+cfg.TRAIN.CE_WEIGHT = 1.0 # weight for cross-entropy loss
+cfg.TRAIN.GIOU_WEIGHT = 2.0
+cfg.TRAIN.L1_WEIGHT = 5.0
+cfg.TRAIN.TASK_CE_WEIGHT = 1.0
+cfg.TRAIN.SCHEDULER = edict()
+cfg.TRAIN.SCHEDULER.TYPE = "step"
+cfg.TRAIN.SCHEDULER.DECAY_RATE = 0.1
+
+# DATA
+cfg.DATA = edict()
+cfg.DATA.MEAN = [0.485, 0.456, 0.406]
+cfg.DATA.STD = [0.229, 0.224, 0.225]
+cfg.DATA.MAX_SAMPLE_INTERVAL = 400
+cfg.DATA.SAMPLER_MODE = "order"
+cfg.DATA.LOADER = "tracking"
+cfg.DATA.MULTI_MODAL_VISION = True
+cfg.DATA.MULTI_MODAL_LANGUAGE = True
+
+cfg.DATA.USE_NLP = edict()
+cfg.DATA.USE_NLP.LASOT = False
+cfg.DATA.USE_NLP.GOT10K = False
+cfg.DATA.USE_NLP.COCO = False
+cfg.DATA.USE_NLP.TRACKINGNET = False
+cfg.DATA.USE_NLP.VASTTRACK = False
+cfg.DATA.USE_NLP.REFCOCOG = False
+cfg.DATA.USE_NLP.TNL2K = True
+cfg.DATA.USE_NLP.OTB99 = False
+cfg.DATA.USE_NLP.DEPTHTRACK = False
+cfg.DATA.USE_NLP.LASHER = False
+cfg.DATA.USE_NLP.VISEVENT = False
+
+cfg.DATA.TRAIN = edict()
+cfg.DATA.TRAIN.DATASETS_NAME = ["GOT10K_vottrain", "DepthTrack_train"]
+cfg.DATA.TRAIN.DATASETS_RATIO = [1, 1]
+cfg.DATA.TRAIN.SAMPLE_PER_EPOCH = 60000
+
+cfg.DATA.SEARCH = edict()
+cfg.DATA.SEARCH.NUMBER = 1
+cfg.DATA.SEARCH.SIZE = 224
+cfg.DATA.SEARCH.FACTOR = 4.0
+cfg.DATA.SEARCH.CENTER_JITTER = 3.5
+cfg.DATA.SEARCH.SCALE_JITTER = 0.5
+
+cfg.DATA.TEMPLATE = edict()
+cfg.DATA.TEMPLATE.NUMBER = 1
+cfg.DATA.TEMPLATE.SIZE = 112
+cfg.DATA.TEMPLATE.FACTOR = 2.0
+cfg.DATA.TEMPLATE.CENTER_JITTER = 0
+cfg.DATA.TEMPLATE.SCALE_JITTER = 0
+
+# TEST
+cfg.TEST = edict()
+cfg.TEST.TEMPLATE_FACTOR = 2.0
+cfg.TEST.TEMPLATE_SIZE = 112
+cfg.TEST.SEARCH_FACTOR = 4.0
+cfg.TEST.SEARCH_SIZE = 224
+cfg.TEST.EPOCH = 180
+cfg.TEST.WINDOW = True
+cfg.TEST.NUM_TEMPLATES = 1
+
+cfg.TEST.UPDATE_INTERVALS = edict()
+cfg.TEST.UPDATE_INTERVALS.DEFAULT = 999999
+
+cfg.TEST.UPDATE_THRESHOLD = edict()
+cfg.TEST.UPDATE_THRESHOLD.DEFAULT = 1.0
+
+cfg.TEST.MULTI_MODAL_VISION = edict()
+cfg.TEST.MULTI_MODAL_VISION.DEFAULT = True
+
+cfg.TEST.MULTI_MODAL_LANGUAGE = edict()
+cfg.TEST.MULTI_MODAL_LANGUAGE.DEFAULT = True
+
+cfg.TEST.USE_NLP = edict()
+cfg.TEST.USE_NLP.DEFAULT = False
+cfg.TEST.USE_NLP.TNL2K = True
+
+
+def update_config_from_file(yaml_file):
+    with open(yaml_file, 'r') as f:
+        config = yaml.safe_load(f)
+    recursive_update(cfg, config)
+
+
+def recursive_update(d, u):
+    for k, v in u.items():
+        if isinstance(v, dict):
+            d[k] = recursive_update(d.get(k, {}), v)
+        else:
+            d[k] = v
+    return d
