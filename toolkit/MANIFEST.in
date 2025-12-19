@@ -1,0 +1,8 @@
+include requirements.txt
+include README.md
+recursive-include vot/stack/ *.yaml
+include vot/dataset/*.png
+include vot/dataset/*.jpg
+include vot/report/*.css
+include vot/report/*.js
+include vot/report/*.tex
