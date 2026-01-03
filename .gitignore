@@ -5,6 +5,8 @@ checkpoints_backup/*
 logs/*
 tensorboard/*
 test/*
+vot-workspace-rgbd2019/*
+experiments/*
 
 # 忽略包含本地路径的配置文件
 lib/train/admin/local.py

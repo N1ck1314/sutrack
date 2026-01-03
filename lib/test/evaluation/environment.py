@@ -20,10 +20,13 @@ class EnvSettings:
         self.trackingnet_path = ''
         self.davis_dir = ''
         self.youtubevos_dir = ''
+        self.uavdt_path = ''
 
         self.got_packed_results_path = ''
         self.got_reports_path = ''
         self.tn_packed_results_path = ''
+        self.visdrone2018_path = ''
+        
 
 
 def create_default_local_file():
@@ -81,6 +84,9 @@ class EnvSettings_ITP:
         self.got_packed_results_path = ''
         self.got_reports_path = ''
         self.tn_packed_results_path = ''
+
+        self.visdrone2018_path = os.path.join(data_dir, 'visdrone2018_path')
+        self.uavdt_path = os.path.join(data_dir, 'uavdt_path')
 
 
 def create_default_local_file_ITP_test(workspace_dir, data_dir, save_dir):
