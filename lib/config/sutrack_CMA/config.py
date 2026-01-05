@@ -2,7 +2,8 @@ from easydict import EasyDict as edict
 import yaml
 
 '''
-SUTrack
+SUTrack with CMA (Cross-Modal Attention)
+跨模态注意力增强的SUTrack配置文件
 '''
 
 cfg = edict()
@@ -23,6 +24,10 @@ cfg.MODEL.TASK_INDEX.DEPTHTRACK = 2
 cfg.MODEL.TASK_INDEX.LASHER = 3
 cfg.MODEL.TASK_INDEX.VISEVENT = 4
 
+# CMA配置
+cfg.MODEL.USE_CMA = True  # 是否使用CMA模块
+cfg.MODEL.CMA = edict()
+cfg.MODEL.CMA.HIDDEN_RATIO = 0.5  # hidden_channel = in_channel * ratio
 
 # MODEL.LANGUAGE
 cfg.MODEL.TEXT_ENCODER = edict()
@@ -39,9 +44,6 @@ cfg.MODEL.ENCODER.STRIDE = 14
 cfg.MODEL.ENCODER.POS_TYPE = 'index' # type of loading the positional encoding. "interpolate" or "index".
 cfg.MODEL.ENCODER.TOKEN_TYPE_INDICATE = True # add a token_type_embedding to indicate the search, template_foreground, template_background
 cfg.MODEL.ENCODER.CLASS_TOKEN = True # class token
-# CMA相关配置（跨模态注意力融合）
-cfg.MODEL.ENCODER.USE_CMA = True  # 是否启用CMA模块（默认启用）
-cfg.MODEL.ENCODER.CMA_MODE = 'cma'  # CMA融合模式: 'cma' 或 'simple'
 
 # MODEL.DECODER
 cfg.MODEL.DECODER = edict()

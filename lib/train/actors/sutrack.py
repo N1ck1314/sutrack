@@ -54,6 +54,24 @@ class SUTrack_Actor(BaseActor):
                            text_src=text_src,
                            task_index=task_index_batch,
                            mode='encoder') # forward the encoder
+        
+        # 检查 encoder 输出是否有 NaN
+        # encoder输出可能是tuple或list
+        if isinstance(enc_opt, (list, tuple)):
+            enc_tensor = enc_opt[0] if len(enc_opt) > 0 else None
+        else:
+            enc_tensor = enc_opt
+        
+        if enc_tensor is not None and torch.is_tensor(enc_tensor) and torch.isnan(enc_tensor).any():
+            print("\n" + "="*60)
+            print("⚠️  Encoder 输出检测到 NaN!")
+            print(f"enc_opt NaN count: {torch.isnan(enc_tensor).sum().item()}")
+            print(f"enc_opt shape: {enc_tensor.shape}")
+            if not torch.isnan(enc_tensor).all():
+                print(f"enc_opt min/max: {torch.nanmin(enc_tensor).item():.6f} / {torch.nanmax(enc_tensor).item():.6f}")
+            print("="*60 + "\n")
+            raise ValueError("Encoder outputs is NAN! Stop Training")
+        
         outputs, task_class_output = self.net(feature=enc_opt, mode="decoder")
         # outputs = self.net(feature=enc_opt, mode="decoder")
         # task_class_output = self.net(feature=enc_opt, mode="task_decoder")
@@ -74,7 +92,22 @@ class SUTrack_Actor(BaseActor):
 
         # Get boxes
         pred_boxes = pred_dict['pred_boxes'] # torch.Size([b, 1, 4])
+        
+        # 详细的 NaN 检测和调试信息
         if torch.isnan(pred_boxes).any():
+            print("\n" + "="*60)
+            print("NaN 检测详情:")
+            print(f"pred_boxes NaN count: {torch.isnan(pred_boxes).sum().item()}")
+            print(f"pred_boxes shape: {pred_boxes.shape}")
+            print(f"pred_boxes min/max: {pred_boxes.min().item():.6f} / {pred_boxes.max().item():.6f}")
+            
+            # 检查其他输出
+            if 'score_map' in pred_dict:
+                score_map = pred_dict['score_map']
+                print(f"score_map NaN: {torch.isnan(score_map).any()}")
+                print(f"score_map min/max: {score_map.min().item():.6f} / {score_map.max().item():.6f}")
+            
+            print("="*60 + "\n")
             raise ValueError("Network outputs is NAN! Stop Training")
         num_queries = pred_boxes.size(1)
         pred_boxes_vec = box_cxcywh_to_xyxy(pred_boxes).view(-1, 4)  # (B,N,4) --> (BN,4) (x1,y1,x2,y2)

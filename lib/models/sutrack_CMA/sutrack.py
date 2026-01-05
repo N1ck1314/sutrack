@@ -1,5 +1,6 @@
 """
-SUTrack Model
+SUTrack Model with CMA (Cross-Modal Attention)
+集成了跨模态注意力机制的SUTrack模型
 """
 import torch
 import math
@@ -7,14 +8,14 @@ from torch import nn
 import torch.nn.functional as F
 from .encoder import build_encoder
 from .clip import build_textencoder
-from .decoder import build_decoder
+from lib.models.sutrack.decoder import build_decoder
 from .task_decoder import build_task_decoder
 from lib.utils.box_ops import box_xyxy_to_cxcywh
 from lib.utils.pos_embed import get_sinusoid_encoding_table, get_2d_sincos_pos_embed
 
 
-class SUTRACK(nn.Module):
-    """ This is the base class for SUTrack """
+class SUTRACK_CMA(nn.Module):
+    """ This is the SUTrack model with Cross-Modal Attention """
     def __init__(self, text_encoder, encoder, decoder, task_decoder,
                  num_frames=1, num_template=1,
                  decoder_type="CENTER", task_feature_type="average"):
@@ -38,6 +39,12 @@ class SUTRACK(nn.Module):
 
         self.num_frames = num_frames
         self.num_template = num_template
+        
+        # 打印CMA模块信息
+        if hasattr(self.encoder, 'use_cma') and self.encoder.use_cma:
+            print("[SUTrack-CMA] Model initialized with Cross-Modal Attention")
+        else:
+            print("[SUTrack-CMA] Model initialized WITHOUT Cross-Modal Attention")
 
 
     def forward(self, text_data=None,
@@ -59,7 +66,7 @@ class SUTRACK(nn.Module):
         return text_src
 
     def forward_encoder(self, template_list, search_list, template_anno_list, text_src, task_index):
-        # Forward the encoder
+        # Forward the encoder (with CMA enhancement inside encoder)
         xz = self.encoder(template_list, search_list, template_anno_list, text_src, task_index)
         return xz
 
@@ -128,7 +135,7 @@ def build_sutrack_cma(cfg):
         text_encoder = None
     decoder = build_decoder(cfg, encoder)
     task_decoder = build_task_decoder(cfg, encoder)
-    model = SUTRACK(
+    model = SUTRACK_CMA(
         text_encoder,
         encoder,
         decoder,
