@@ -6,7 +6,7 @@ logs/*
 tensorboard/*
 test/*
 vot-workspace-rgbd2019/*
-experiments/*
+
 arms_cache/*
 
 sutrack_tiny_rgbd.onnx
