@@ -180,7 +180,7 @@ class LTRLoader(torch.utils.data.dataloader.DataLoader):
 
     def __init__(self, name, dataset, training=True, batch_size=1, shuffle=False, sampler=None, batch_sampler=None,
                  num_workers=0, epoch_interval=1, collate_fn=None, stack_dim=0, pin_memory=False, drop_last=False,
-                 timeout=0, worker_init_fn=None):
+                 timeout=0, worker_init_fn=None, persistent_workers=False):
         if collate_fn is None:
             if stack_dim == 0:
                 collate_fn = ltr_collate
@@ -189,9 +189,13 @@ class LTRLoader(torch.utils.data.dataloader.DataLoader):
             else:
                 raise ValueError('Stack dim no supported. Must be 0 or 1.')
 
+        # persistent_workers requires num_workers > 0
+        if persistent_workers and num_workers == 0:
+            persistent_workers = False
+
         super(LTRLoader, self).__init__(dataset, batch_size, shuffle, sampler, batch_sampler,
                  num_workers, collate_fn, pin_memory, drop_last,
-                 timeout, worker_init_fn)
+                 timeout, worker_init_fn, persistent_workers=persistent_workers)
 
         self.name = name
         self.training = training

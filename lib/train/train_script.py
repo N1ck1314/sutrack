@@ -26,10 +26,15 @@ from lib.models.sutrack_CPAM import build_sutrack as build_sutrack_cpam
 from lib.models.sutrack_DynRes import build_sutrack as build_sutrack_dynres
 from lib.models.sutrack_SparseViT import build_sutrack as build_sutrack_sparsevit
 from lib.models.sutrack_Mamba import build_sutrack as build_sutrack_mamba
+from lib.models.sutrack_SCSA import build_sutrack as build_sutrack_scsa
+from lib.models.sutrack_SMFA import build_sutrack as build_sutrack_smfa
+from lib.models.sutrack_OR import build_sutrack as build_sutrack_or
+from lib.models.sutrack_SGLA import build_sutrack as build_sutrack_sgla
 
 
 from lib.train.actors import SUTrack_Actor
 from lib.train.actors import SUTrack_active_Actor
+from lib.train.actors.sutrack_SGLA import SUTrack_SGLA_Actor
 from lib.utils.focal_loss import FocalLoss
 # for import modules
 import importlib
@@ -101,6 +106,14 @@ def run(settings):
         net = build_sutrack_sparsevit(cfg)
     elif settings.script_name == "sutrack_Mamba":
         net = build_sutrack_mamba(cfg)
+    elif settings.script_name == "sutrack_SCSA":
+        net = build_sutrack_scsa(cfg)
+    elif settings.script_name == "sutrack_SMFA":
+        net = build_sutrack_smfa(cfg)
+    elif settings.script_name == "sutrack_OR":
+        net = build_sutrack_or(cfg)
+    elif settings.script_name == "sutrack_SGLA":
+        net = build_sutrack_sgla(cfg)
 
     else:
         raise ValueError("illegal script name")
@@ -189,6 +202,59 @@ def run(settings):
                 print(f"✓ 增强策略: {position_desc.get(mlka_position, '自定义位置')}")
             else:
                 print("⚠️  警告: MLKA未启用，将使用标准的特征流")
+            print("="*60 + "\n")
+        elif settings.script_name == "sutrack_SMFA":
+            print("\n" + "="*60)
+            print("🔍 SMFA模块配置确认")
+            print("="*60)
+            use_smfa = cfg.MODEL.ENCODER.get('USE_SMFA', False)
+            smfa_num_heads = cfg.MODEL.ENCODER.get('SMFA_NUM_HEADS', 6)
+            smfa_mlp_ratio = cfg.MODEL.ENCODER.get('SMFA_MLP_RATIO', 4.0)
+            print(f"✓ SMFA启用状态: {'🟢 已启用' if use_smfa else '🔴 未启用'}")
+            if use_smfa:
+                print(f"✓ EASA注意力头数: {smfa_num_heads}")
+                print(f"✓ PCFN MLP扩展比例: {smfa_mlp_ratio}")
+                print("✓ 核心机制: EASA(高效自注意力) + LDE(局部细节估计)")
+                print("✓ 特点: 自调制特征聚合，兼顾全局和局部信息")
+                print("✓ 增强范围: Search Region特征增强")
+                print("✓ 优势: 轻量级设计，低计算复杂度，高效图像重建")
+            else:
+                print("⚠️  警告: SMFA未启用，将使用标准的特征流")
+            print("="*60 + "\n")
+        elif settings.script_name == "sutrack_OR":
+            print("\n" + "="*60)
+            print("🔍 ORR模块配置确认")
+            print("="*60)
+            use_orr = cfg.MODEL.ENCODER.get('USE_ORR', False)
+            orr_mask_ratio = cfg.MODEL.ENCODER.get('ORR_MASK_RATIO', 0.3)
+            orr_mask_strategy = cfg.MODEL.ENCODER.get('ORR_MASK_STRATEGY', 'cox')
+            orr_loss_weight = cfg.MODEL.ENCODER.get('ORR_LOSS_WEIGHT', 0.5)
+            print(f"✓ ORR启用状态: {'🟢 已启用' if use_orr else '🔴 未启用'}")
+            if use_orr:
+                print(f"✓ 遮挡比例: {orr_mask_ratio * 100:.0f}%")
+                print(f"✓ 遮挡策略: {orr_mask_strategy}")
+                print(f"✓ 损失权重: {orr_loss_weight}")
+                print("✓ 核心机制: 空间Cox过程遮挡 + 特征不变性约束")
+                print("✓ 特点: 增强对UAV跟踪中遮挡场景的鲁棒性")
+                print("✓ 增强范围: Search Region特征增强")
+                print("✓ 优势: 实时UAV跟踪，处理建筑物/树木遮挡")
+            else:
+                print("⚠️  警告: ORR未启用，将使用标准的特征流")
+            print("="*60 + "\n")
+        elif settings.script_name == "sutrack_SGLA":
+            print("\n" + "="*60)
+            print("🔍 SGLA模块配置确认")
+            print("="*60)
+            use_sgla = cfg.MODEL.ENCODER.get('USE_SGLA', False)
+            sgla_loss_weight = cfg.MODEL.ENCODER.get('SGLA_LOSS_WEIGHT', 0.1)
+            print(f"✓ SGLA启用状态: {'🟢 已启用' if use_sgla else '🔴 未启用'}")
+            if use_sgla:
+                print(f"✓ 相似度损失权重: {sgla_loss_weight}")
+                print("✓ 核心机制: 相似度引导的层自适应 (SGLA)")
+                print("✓ 特点: 动态禁用冗余层，平衡精度与速度")
+                print("✓ 优势: 实时UAV跟踪，减少计算开销")
+            else:
+                print("⚠️  警告: SGLA未启用，将使用标准的Transformer结构")
             print("="*60 + "\n")
 
     # wrap networks to distributed one
@@ -374,6 +440,92 @@ def run(settings):
                 print("⚠️  Mamba模块未初始化（可能配置中USE_MAMBA=False）")
                 print(f"   - model.use_mamba: {getattr(model, 'use_mamba', 'N/A')}")
             print()
+        elif settings.script_name == "sutrack_SCSA":
+            print("\n🔍 验证SCSA模块实际初始化状态...")
+            # 获取encoder
+            encoder = net.module.encoder.body if hasattr(net, 'module') else net.encoder.body
+            if hasattr(encoder, 'blocks') and len(encoder.blocks) > 0:
+                # 检查最后的main blocks中是否使用了SCSA
+                last_block = encoder.blocks[-1]
+                if hasattr(last_block, 'scsa') and last_block.scsa is not None:
+                    print("✅ SCSA模块已成功初始化！")
+                    print(f"   - Block类型: {type(last_block).__name__}")
+                    print(f"   - SCSA模块: {type(last_block.scsa).__name__}")
+                    # 统计SCSA参数量
+                    scsa_params = sum(p.numel() for p in last_block.scsa.parameters())
+                    print(f"   - SCSA参数量: {scsa_params / 1e6:.3f}M")
+                    print("   - 核心机制: SMSA(空间注意力) + PCSA(通道注意力)")
+                    print("   - 协同效果: 空间引导通道，通道缓解多语义差异")
+                elif hasattr(last_block, 'use_scsa'):
+                    if last_block.use_scsa:
+                        print("⚠️  SCSA启用但模块未正确初始化")
+                    else:
+                        print("⚠️  SCSA未启用（use_scsa=False）")
+                else:
+                    print("⚠️  使用的是标准Block，没有SCSA模块")
+            else:
+                print("⚠️  无法检测encoder blocks")
+            print()
+        elif settings.script_name == "sutrack_SMFA":
+            print("\n🔍 验证SMFA模块实际初始化状态...")
+            encoder = net.module.encoder if hasattr(net, 'module') else net.encoder
+            if hasattr(encoder, 'smfa_block') and encoder.smfa_block is not None:
+                print("✅ SMFA模块已成功初始化！")
+                print(f"   - SMFABlock: {type(encoder.smfa_block).__name__}")
+                print(f"   - 增强状态: ✅ 启用 (use_smfa={encoder.use_smfa})")
+                # 统计SMFA参数量
+                smfa_params = sum(p.numel() for p in encoder.smfa_block.parameters())
+                print(f"   - SMFA参数量: {smfa_params / 1e6:.2f}M")
+                print(f"   - EASA注意力头数: {encoder.smfa_block.smfa.easa.num_heads}")
+                print("   - 核心机制: EASA(高效自注意力) + LDE(局部细节) + Self-Modulation")
+                print("   - 特点: 自调制特征聚合，兼顾全局和局部信息")
+            else:
+                print("⚠️  SMFA模块未初始化（可能配置中USE_SMFA=False）")
+                print(f"   - encoder.use_smfa: {getattr(encoder, 'use_smfa', 'N/A')}")
+            print()
+        elif settings.script_name == "sutrack_OR":
+            print("\n🔍 验证ORR模块实际初始化状态...")
+            encoder = net.module.encoder if hasattr(net, 'module') else net.encoder
+            if hasattr(encoder, 'orr_module') and encoder.orr_module is not None:
+                print("✅ ORR模块已成功初始化！")
+                print(f"   - OcclusionRobustEncoder: {type(encoder.orr_module).__name__}")
+                print(f"   - 启用状态: ✅ 已启用 (use_orr={encoder.use_orr})")
+                # 统计ORR模块相关信息
+                print(f"   - 遮挡比例: {encoder.orr_module.masking.mask_ratio * 100:.0f}%")
+                print(f"   - 遮挡策略: {encoder.orr_module.masking.mask_strategy}")
+                print(f"   - 损失权重: {encoder.orr_module.invariance_loss_weight}")
+                print("   - 核心机制: Spatial Cox Process Masking + Feature Invariance")
+                print("   - 特点: 遮挡鲁棒特征表示，UAV跟踪专用")
+                print("   - 策略说明:")
+                if encoder.orr_module.masking.mask_strategy == 'cox':
+                    print("     * cox: 空间Cox过程非均匀遮挡，模拟真实遮挡分布")
+                elif encoder.orr_module.masking.mask_strategy == 'block':
+                    print("     * block: 块状遮挡，模拟建筑物/树木遮挡")
+                elif encoder.orr_module.masking.mask_strategy == 'random':
+                    print("     * random: 随机遮挡，增强特征鲁棒性")
+            else:
+                print("⚠️  ORR模块未初始化（可能配置中USE_ORR=False）")
+                print(f"   - encoder.use_orr: {getattr(encoder, 'use_orr', 'N/A')}")
+            print()
+        elif settings.script_name == "sutrack_SGLA":
+            print("\n🔍 验证SGLA模块实际初始化状态...")
+            encoder = net.module.encoder if hasattr(net, 'module') else net.encoder
+            body = encoder.body
+            if hasattr(body, 'use_sgla') and body.use_sgla:
+                print("✅ SGLA模块已成功初始化！")
+                print(f"   - SelectionModule: {type(body.sgla_selector).__name__}")
+                print(f"   - 启用状态: ✅ 已启用 (use_sgla=True)")
+                print(f"   - 相似度损失权重: {cfg.MODEL.ENCODER.SGLA_LOSS_WEIGHT}")
+                
+                # 检查Block是否被包装
+                wrapped_count = sum(1 for blk in body.blocks[-body.num_main_blocks:] if hasattr(blk, 'block'))
+                print(f"   - 已包装Block数: {wrapped_count} / {body.num_main_blocks}")
+                if wrapped_count > 0:
+                    print("   - 核心机制: 相似度引导的层自适应 (SGLA)")
+                    print("   - 策略说明: 训练时随机采样，推理时动态跳过冗余层")
+            else:
+                print("⚠️  SGLA模块未初始化（可能配置中USE_SGLA=False）")
+            print()
     # Loss functions and Actors
     if settings.script_name == "sutrack":
         focal_loss = FocalLoss()
@@ -480,6 +632,34 @@ def run(settings):
         loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
                        'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
         actor = SUTrack_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
+    elif settings.script_name == "sutrack_SCSA":
+        focal_loss = FocalLoss()
+        objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
+                     'task_cls': CrossEntropyLoss()}
+        loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
+                       'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
+        actor = SUTrack_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
+    elif settings.script_name == "sutrack_SMFA":
+        focal_loss = FocalLoss()
+        objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
+                     'task_cls': CrossEntropyLoss()}
+        loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
+                       'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
+        actor = SUTrack_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
+    elif settings.script_name == "sutrack_OR":
+        focal_loss = FocalLoss()
+        objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
+                     'task_cls': CrossEntropyLoss()}
+        loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
+                       'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
+        actor = SUTrack_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
+    elif settings.script_name == "sutrack_SGLA":
+        focal_loss = FocalLoss()
+        objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
+                     'task_cls': CrossEntropyLoss()}
+        loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
+                       'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
+        actor = SUTrack_SGLA_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
     elif settings.script_name == "sutrack_active":
         focal_loss = FocalLoss()
         objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),

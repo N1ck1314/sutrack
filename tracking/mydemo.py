@@ -165,6 +165,14 @@ class SUTrackOnlineTracker:
             if not hasattr(params, 'debug'):
                 params.debug = 0  # 0 = 不调试, 1 = 显示调试信息
             
+            # 🔧 禁用文本模态和CLIP
+            print(f"[INFO] Disabling text modality and CLIP...")
+            self._disable_text_modality(params)
+            
+            # 🔍 检查模型输入通道数
+            print(f"[INFO] Checking model input configuration...")
+            self._check_model_channels(params)
+            
             # 🎯 优化：启用模板更新以提高跟踪精度
             print("[INFO] Applying tracking optimizations...")
             # 覆盖配置文件中的参数，启用模板更新
@@ -191,6 +199,161 @@ class SUTrackOnlineTracker:
             import traceback
             traceback.print_exc()
             raise
+    
+    def _disable_text_modality(self, params):
+        """禁用文本模态和CLIP相关功能"""
+        cfg = params.cfg
+        
+        print("[INFO] 🔧 Configuring vision-only mode...")
+        
+        # 禁用文本编码器
+        if hasattr(cfg.MODEL, 'TEXT_ENCODER'):
+            print("[INFO]    - Disabling text encoder...")
+            cfg.MODEL.TEXT_ENCODER = None  # 完全禁用文本编码器
+        
+        # 禁用多模态语言功能
+        if hasattr(cfg.DATA, 'MULTI_MODAL_LANGUAGE'):
+            print("[INFO]    - Disabling multi-modal language in DATA...")
+            cfg.DATA.MULTI_MODAL_LANGUAGE = False
+        
+        # 禁用所有数据集的NLP功能
+        if hasattr(cfg.DATA, 'USE_NLP'):
+            print("[INFO]    - Disabling NLP for all datasets...")
+            for dataset_key in cfg.DATA.USE_NLP:
+                cfg.DATA.USE_NLP[dataset_key] = False
+        
+        # 训练时也禁用语言模态（即使这是推理）
+        if hasattr(cfg.TRAIN, 'TYPE') and 'text' in cfg.TRAIN.TYPE:
+            print("[INFO]    - Adjusting training type to vision-only...")
+            cfg.TRAIN.TYPE = 'vision_only'
+        
+        # 测试时禁用语言模态
+        if hasattr(cfg.TEST, 'MULTI_MODAL_LANGUAGE'):
+            print("[INFO]    - Disabling language modality in TEST...")
+            if isinstance(cfg.TEST.MULTI_MODAL_LANGUAGE, dict):
+                for key in cfg.TEST.MULTI_MODAL_LANGUAGE:
+                    cfg.TEST.MULTI_MODAL_LANGUAGE[key] = False
+            else:
+                cfg.TEST.MULTI_MODAL_LANGUAGE = False
+        
+        # 测试时禁用NLP
+        if hasattr(cfg.TEST, 'USE_NLP'):
+            print("[INFO]    - Disabling NLP in TEST...")
+            if isinstance(cfg.TEST.USE_NLP, dict):
+                for key in cfg.TEST.USE_NLP:
+                    cfg.TEST.USE_NLP[key] = False
+            else:
+                cfg.TEST.USE_NLP = False
+        
+        # 确保只使用视觉模态
+        if hasattr(cfg.TEST, 'MULTI_MODAL_VISION'):
+            print("[INFO]    - Ensuring vision modality is enabled...")
+            if isinstance(cfg.TEST.MULTI_MODAL_VISION, dict):
+                for key in cfg.TEST.MULTI_MODAL_VISION:
+                    cfg.TEST.MULTI_MODAL_VISION[key] = True
+            else:
+                cfg.TEST.MULTI_MODAL_VISION = True
+        
+        # 如果有数据预处理相关的设置
+        if hasattr(cfg.DATA, 'MULTI_MODAL_VISION'):
+            print("[INFO]    - Enabling vision processing...")
+            cfg.DATA.MULTI_MODAL_VISION = True
+        
+        # 🔧 强制启用RGBD支持
+        print("[INFO]    - Configuring RGBD support...")
+        self._force_rgbd_support(cfg)
+        
+        print("[SUCCESS] ✅ Vision-only mode configured - Text/CLIP bypassed")
+    
+    def _force_rgbd_support(self, cfg):
+        """强制配置RGBD支持"""
+        
+        # 1. 设置编码器输入通道为6
+        if hasattr(cfg.MODEL, 'ENCODER'):
+            print("[INFO]       - Setting encoder input channels to 6...")
+            cfg.MODEL.ENCODER.IN_CHANS = 6  # 强制设置为6通道
+            if hasattr(cfg.MODEL.ENCODER, 'in_chans'):
+                cfg.MODEL.ENCODER.in_chans = 6
+        
+        # 2. 扩展数据归一化参数到6通道
+        if hasattr(cfg.DATA, 'MEAN') and len(cfg.DATA.MEAN) == 3:
+            print("[INFO]       - Extending normalization parameters to 6 channels...")
+            # RGB通道的归一化参数
+            rgb_mean = list(cfg.DATA.MEAN)  # [0.485, 0.456, 0.406]
+            rgb_std = list(cfg.DATA.STD)    # [0.229, 0.224, 0.225]
+            
+            # 为深度通道添加归一化参数（使用适合深度的参数）
+            # 深度通道使用不同的归一化参数，因为深度值分布与RGB不同
+            depth_mean = [0.5, 0.5, 0.5]   # 深度归一化到[0,1]，所以均值用0.5
+            depth_std = [0.5, 0.5, 0.5]    # 深度标准差用0.5
+            
+            # 扩展到6通道：RGB + Depth
+            cfg.DATA.MEAN = rgb_mean + depth_mean
+            cfg.DATA.STD = rgb_std + depth_std
+            
+            print(f"[INFO]       - New MEAN (RGB+Depth): {cfg.DATA.MEAN}")
+            print(f"[INFO]       - New STD (RGB+Depth): {cfg.DATA.STD}")
+        
+        # 3. 确保多模态视觉开启
+        if hasattr(cfg.DATA, 'MULTI_MODAL_VISION'):
+            cfg.DATA.MULTI_MODAL_VISION = True
+        
+        print("[INFO]       - RGBD support configured successfully")
+
+    def _check_model_channels(self, params):
+        """检查模型输入通道配置"""
+        cfg = params.cfg
+        
+        print("\n" + "="*60)
+        print("[🔍 MODEL CHANNEL ANALYSIS]")
+        print("="*60)
+        
+        # 检查编码器输入通道数
+        if hasattr(cfg.MODEL, 'ENCODER'):
+            encoder_cfg = cfg.MODEL.ENCODER
+            print(f"[INFO] Encoder type: {getattr(encoder_cfg, 'TYPE', 'Unknown')}")
+            
+            # 检查是否有输入通道配置
+            input_channels = None
+            for attr in ['IN_CHANS', 'INPUT_CHANNELS', 'in_chans']:
+                if hasattr(encoder_cfg, attr):
+                    input_channels = getattr(encoder_cfg, attr)
+                    print(f"[INFO] Found input channels config: {attr} = {input_channels}")
+                    break
+            
+            if input_channels is None:
+                print("[WARNING] No explicit input channel configuration found")
+                print("[INFO] Will check default model behavior...")
+            elif input_channels == 6:
+                print("[SUCCESS] ✅ Model configured for RGBD input (6 channels)")
+                print("[INFO]    - Channels 0-2: RGB")
+                print("[INFO]    - Channels 3-5: Depth (replicated)")
+            elif input_channels == 3:
+                print("[WARNING] ⚠️  Model configured for RGB-only input (3 channels)")
+                print("[INFO] This may not utilize depth information properly")
+            else:
+                print(f"[WARNING] ⚠️  Unexpected channel count: {input_channels}")
+        
+        # 检查数据配置
+        if hasattr(cfg, 'DATA'):
+            data_cfg = cfg.DATA
+            multi_modal = getattr(data_cfg, 'MULTI_MODAL_VISION', 'Unknown')
+            print(f"[INFO] Multi-modal vision enabled: {multi_modal}")
+            
+            # 检查数据预处理配置
+            if hasattr(data_cfg, 'MEAN') and hasattr(data_cfg, 'STD'):
+                mean = data_cfg.MEAN
+                std = data_cfg.STD
+                print(f"[INFO] Data normalization - MEAN: {mean}")
+                print(f"[INFO] Data normalization - STD: {std}")
+                
+                if len(mean) == 6 and len(std) == 6:
+                    print("[SUCCESS] ✅ Normalization configured for 6 channels (RGBD)")
+                elif len(mean) == 3 and len(std) == 3:
+                    print("[INFO] Normalization configured for 3 channels (RGB)")
+                    print("[WARNING] ⚠️  This suggests RGB-only processing")
+        
+        print("="*60 + "\n")
 
     def initialize(self, color_rgb_uint8, depth_3ch_uint8, color_rgb_float, depth_3ch_float, init_bbox):
         """
@@ -213,6 +376,9 @@ class SUTrackOnlineTracker:
         try:
             # 合并 RGB(3通道) 和 Depth(3通道) = 总共6通道 uint8
             rgbd_image = np.concatenate([color_rgb_uint8, depth_3ch_uint8], axis=2)  # (H,W,6) uint8
+            
+            # 🔍 详细分析输入数据
+            self._analyze_input_data(color_rgb_uint8, depth_3ch_uint8, rgbd_image)
             
             print(f"[DEBUG] RGBD image shape: {rgbd_image.shape}, dtype: {rgbd_image.dtype}")
             print(f"[DEBUG] Value range: [{rgbd_image.min()}, {rgbd_image.max()}]")
@@ -248,6 +414,61 @@ class SUTrackOnlineTracker:
             print("="*60 + "\n")
             self.initialized = False
 
+    def _analyze_input_data(self, color_rgb, depth_3ch, rgbd_combined):
+        """分析输入数据特征"""
+        print("\n" + "="*60)
+        print("[🔍 INPUT DATA ANALYSIS]")
+        print("="*60)
+        
+        # RGB分析
+        print(f"[RGB] Shape: {color_rgb.shape}, dtype: {color_rgb.dtype}")
+        print(f"[RGB] Value range: [{color_rgb.min():.1f}, {color_rgb.max():.1f}]")
+        rgb_mean = color_rgb.mean(axis=(0,1))
+        print(f"[RGB] Channel means: R={rgb_mean[0]:.1f}, G={rgb_mean[1]:.1f}, B={rgb_mean[2]:.1f}")
+        
+        # 深度分析
+        print(f"[DEPTH] Shape: {depth_3ch.shape}, dtype: {depth_3ch.dtype}")
+        print(f"[DEPTH] Value range: [{depth_3ch.min():.1f}, {depth_3ch.max():.1f}]")
+        depth_mean = depth_3ch.mean(axis=(0,1))
+        print(f"[DEPTH] Channel means: D1={depth_mean[0]:.1f}, D2={depth_mean[1]:.1f}, D3={depth_mean[2]:.1f}")
+        
+        # 检查深度是否有效（非全零）
+        depth_nonzero_ratio = np.count_nonzero(depth_3ch) / depth_3ch.size
+        print(f"[DEPTH] Non-zero ratio: {depth_nonzero_ratio:.3f}")
+        
+        if depth_nonzero_ratio < 0.1:
+            print("[WARNING] ⚠️  Very low depth data! Possible issues:")
+            print("          - Depth sensor not working properly")
+            print("          - Target too far (>5m)")
+            print("          - Depth alignment issues")
+        elif depth_nonzero_ratio > 0.5:
+            print("[SUCCESS] ✅ Good depth coverage")
+        else:
+            print("[INFO] Moderate depth coverage")
+        
+        # RGBD组合分析
+        print(f"[RGBD] Combined shape: {rgbd_combined.shape}")
+        print(f"[RGBD] Total channels: {rgbd_combined.shape[2]}")
+        
+        if rgbd_combined.shape[2] == 6:
+            print("[SUCCESS] ✅ 6-channel RGBD input prepared correctly")
+            print("[INFO]    - Channels 0-2: RGB color information")
+            print("[INFO]    - Channels 3-5: Depth information (replicated)")
+            
+            # 检查RGB和深度的区别
+            rgb_part = rgbd_combined[:,:,:3]
+            depth_part = rgbd_combined[:,:,3:]
+            
+            # 计算RGB和深度部分的差异
+            if not np.array_equal(rgb_part, depth_part):
+                print("[SUCCESS] ✅ RGB and depth channels contain different information")
+            else:
+                print("[ERROR] ❌ RGB and depth channels are identical! Check preprocessing.")
+        else:
+            print(f"[ERROR] ❌ Unexpected channel count: {rgbd_combined.shape[2]}")
+        
+        print("="*60 + "\n")
+
     def track(self, color_rgb_uint8, depth_3ch_uint8, color_rgb_float, depth_3ch_float, frame_id):
         """
         进行单帧跟踪，返回 bbox = [x, y, w, h]。
@@ -261,6 +482,10 @@ class SUTrackOnlineTracker:
         try:
             # 合并为6通道uint8输入
             rgbd_image = np.concatenate([color_rgb_uint8, depth_3ch_uint8], axis=2)  # (H,W,6) uint8
+            
+            # 🔍 定期检查输入数据质量
+            if frame_id % 100 == 0:  # 每100帧检查一次
+                self._monitor_input_quality(rgbd_image, frame_id)
             
             # 调用跟踪方法（使用 tracker_impl）
             out = self.tracker.track(rgbd_image)
@@ -348,6 +573,26 @@ class SUTrackOnlineTracker:
             # 兜底方案：返回上一帧的 bbox
             return self.last_bbox if self.last_bbox is not None else [0, 0, 50, 50]
 
+    def _monitor_input_quality(self, rgbd_image, frame_id):
+        """监控输入数据质量"""
+        rgb_part = rgbd_image[:,:,:3]
+        depth_part = rgbd_image[:,:,3:]
+        
+        # 检查深度数据质量
+        depth_nonzero = np.count_nonzero(depth_part) / depth_part.size
+        rgb_var = np.var(rgb_part)
+        depth_var = np.var(depth_part)
+        
+        print(f"\n[📊 QUALITY CHECK - Frame {frame_id}]")
+        print(f"   Depth coverage: {depth_nonzero:.3f}")
+        print(f"   RGB variance: {rgb_var:.1f}")
+        print(f"   Depth variance: {depth_var:.1f}")
+        
+        if depth_nonzero < 0.2:
+            print("   ⚠️  Warning: Low depth coverage")
+        if depth_var < 100:
+            print("   ⚠️  Warning: Low depth variation")
+
     def _extract_bbox_from_output(self, output):
         """从跟踪器输出中提取bbox和置信度"""
         bbox = None
@@ -430,32 +675,57 @@ def main():
             pass
     
     print("[INFO] Initializing SUTrack tracker...")
-    # 尝试创建跟踪器
+    
+    # 🔧 修复：尝试多个配置，优先使用有checkpoint的
     tracker = None
     
-    # 使用 checkpoints_backup 下的权重（Tiny 模型）
-    checkpoint_path = "/home/nick/code/code.sutrack/SUTrack/checkpoints_backup/train/sutrack/sutrack_t224/SUTRACK_ep0180.pth.tar"
+    # 尝试的配置列表（按优先级排序）
+    config_attempts = [
+        ("sutrack", "sutrack_b224", "/home/nick/code/code.sutrack/SUTrack/checkpoints_backup/train/sutrack/sutrack_b224/SUTRACK_ep0180.pth.tar"),
+        ("sutrack", "sutrack_t224", "/home/nick/code/code.sutrack/SUTrack/checkpoints_backup/train/sutrack/sutrack_t224/SUTRACK_ep0180.pth.tar"), 
+        ("sutrack", "sutrack_b224", None),  # 不指定checkpoint路径
+        ("sutrack", "sutrack_t224", None),  # 不指定checkpoint路径
+    ]
     
-    if os.path.exists(checkpoint_path):
+    for tracker_name, tracker_param, checkpoint_path in config_attempts:
+        if checkpoint_path and not os.path.exists(checkpoint_path):
+            print(f"[INFO] Checkpoint not found: {os.path.basename(checkpoint_path)}, skipping...")
+            continue
+            
         try:
-            print(f"[INFO] Found checkpoint: {checkpoint_path}")
+            print(f"\n[INFO] Attempting to create tracker: {tracker_name} + {tracker_param}")
+            if checkpoint_path:
+                print(f"[INFO] Using checkpoint: {os.path.basename(checkpoint_path)}")
+            else:
+                print(f"[INFO] Using default checkpoint path")
+            
             tracker = SUTrackOnlineTracker(
-                tracker_name="sutrack", 
-                tracker_param="sutrack_t224",  # 使用 t224 配置（Tiny 模型）
+                tracker_name=tracker_name,
+                tracker_param=tracker_param,
                 dataset_name='demo',
                 checkpoint_path=checkpoint_path
             )
+            
+            print(f"[SUCCESS] ✅ Tracker created successfully with {tracker_param}!")
+            break
+            
+        except FileNotFoundError as e:
+            if "pretrained" in str(e):
+                print(f"[WARNING] ⚠️  Missing pretrained encoder file: {e}")
+                print(f"[INFO] 🔧 This config requires pretrained encoder, trying next config...")
+            else:
+                print(f"[WARNING] ⚠️  File not found: {e}")
+            continue
         except Exception as e:
-            print(f"[WARNING] Failed to create tracker with checkpoint: {e}")
-            import traceback
-            traceback.print_exc()
-            tracker = None
-    else:
-        print(f"[WARNING] Checkpoint not found: {checkpoint_path}")
+            print(f"[WARNING] ⚠️  Failed with {tracker_param}: {e}")
+            continue
     
-    # 如果所有方法都失败，使用简化版本
+    # 如果所有标准方法都失败，使用简化版本
     if tracker is None:
-        print("[WARNING] All tracker creation methods failed, using simplified tracker")
+        print("\n" + "="*60)
+        print("[WARNING] ⚠️  All standard tracker creation methods failed!")
+        print("[INFO] 🔧 Falling back to simplified tracker...")
+        print("="*60)
         tracker = SimpleSUTracker()
     
     frame_id = 0

@@ -357,17 +357,17 @@ class Block(nn.Module):
             prob_active = self.active_score_module(x[:, 0, :]).sigmoid()  # (B, 1)
             prob_active = prob_active.squeeze(-1)  # (B,) 确保形状正确
             
-            # 🔒 安全的索引方式：使用 boolean mask 而不是 in-place 修改
+            # 🔒 使用 where 操作避免 boolean indexing 引发的 segfault
             mask_active = prob_active > 0.5  # (B,) boolean tensor
             
             if mask_active.any():
-                # 🔒 创建新的张量而不是 in-place 修改，避免 coredump
-                x_active = x[mask_active]  # 取出需要处理的样本
-                x_processed = self._forward_block(x_active, rel_pos_bias, attn_mask)
+                # 🔒 对所有样本都执行 forward，然后用 mask 选择结果
+                x_processed = self._forward_block(x, rel_pos_bias, attn_mask)
                 
-                # 🔒 使用安全的复制方式更新结果
-                x_out = x.clone()  # 先克隆整个张量
-                x_out[mask_active] = x_processed  # 更新激活的部分
+                # 🔒 使用 torch.where 安全地选择结果：激活的用处理后的，未激活的用原始的
+                # mask_active shape: (B,) -> (B, 1, 1) for broadcasting
+                mask_expanded = mask_active.view(-1, 1, 1).expand_as(x)
+                x_out = torch.where(mask_expanded, x_processed, x)
                 return x_out, prob_active.unsqueeze(-1)
             else:
                 return x, prob_active.unsqueeze(-1)
