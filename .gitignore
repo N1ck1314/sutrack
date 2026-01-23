@@ -7,6 +7,9 @@ tensorboard/*
 test/*
 vot-workspace-rgbd2019/*
 experiments/*
+arms_cache/*
+
+sutrack_tiny_rgbd.onnx
 
 # 忽略包含本地路径的配置文件
 lib/train/admin/local.py
@@ -19,3 +22,5 @@ __pycache__/
 *.pyd
 .Python
 
+*.onnx
+*.pth.tar
