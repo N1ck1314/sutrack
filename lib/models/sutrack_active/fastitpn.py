@@ -17,7 +17,7 @@ import torch.nn as nn
 from timm.models.registry import register_model
 import torch.nn.functional as F
 import torch.utils.checkpoint as checkpoint
-from timm.models.layers import to_2tuple, drop_path, trunc_normal_
+from timm.models.layers import to_2tuple, trunc_normal_
 
 from torch import Tensor, Size
 from typing import Union, List
@@ -35,14 +35,6 @@ def _cfg(url='', **kwargs):
 
 _shape_t = Union[int, List[int], Size]
 
-
-class DropPath(nn.Module):
-    """Drop paths (Stochastic Depth) per sample  (when applied in main path of residual blocks).
-    """
-
-    def __init__(self, drop_prob=None):
-        super(DropPath, self).__init__()
-        self.drop_prob = drop_prob
 
 class DropPath(nn.Module):
     """Drop paths (Stochastic Depth) per sample  (when applied in main path of residual blocks).
@@ -352,28 +344,28 @@ class Block(nn.Module):
 
     def forward(self, x, rel_pos_bias=None, attn_mask=None, dynamic_activation=False):
         if dynamic_activation:
-            # 计算激活概率（修复：应该取第0个token的所有特征，而不是所有token的第0个特征）
-            # x shape: (B, N, D)，取第0个token: x[:, 0, :] shape: (B, D)
             prob_active = self.active_score_module(x[:, 0, :]).sigmoid()  # (B, 1)
             prob_active = prob_active.squeeze(-1)  # (B,) 确保形状正确
-            
-            # 🔒 使用 where 操作避免 boolean indexing 引发的 segfault
             mask_active = prob_active > 0.5  # (B,) boolean tensor
-            
-            if mask_active.any():
-                # 🔒 对所有样本都执行 forward，然后用 mask 选择结果
-                x_processed = self._forward_block(x, rel_pos_bias, attn_mask)
-                
-                # 🔒 使用 torch.where 安全地选择结果：激活的用处理后的，未激活的用原始的
-                # mask_active shape: (B,) -> (B, 1, 1) for broadcasting
-                mask_expanded = mask_active.view(-1, 1, 1).expand_as(x)
-                x_out = torch.where(mask_expanded, x_processed, x)
-                return x_out, prob_active.unsqueeze(-1)
-            else:
+
+            num_active = int(mask_active.sum().item())
+            if num_active == 0:
                 return x, prob_active.unsqueeze(-1)
-        else:
-            x = self._forward_block(x, rel_pos_bias, attn_mask)
-            return x, None
+
+            if num_active == x.size(0):
+                x_out = self._forward_block(x, rel_pos_bias, attn_mask)
+                return x_out, prob_active.unsqueeze(-1)
+
+            active_indices = torch.nonzero(mask_active, as_tuple=False).squeeze(1)
+            x_active = torch.index_select(x, dim=0, index=active_indices)
+            x_active = self._forward_block(x_active, rel_pos_bias, attn_mask)
+
+            x_out = x.clone()
+            x_out.index_copy_(0, active_indices, x_active)
+            return x_out, prob_active.unsqueeze(-1)
+
+        x = self._forward_block(x, rel_pos_bias, attn_mask)
+        return x, None
 
     def _forward_block(self, x, rel_pos_bias=None, attn_mask=None):
         if self.gamma_2 is None:
@@ -1099,7 +1091,7 @@ class Fast_iTPN(nn.Module):
             use_dynamic = (i >= 2)  
             xz, prob_active = blk(xz, rel_pos_bias, dynamic_activation=use_dynamic)  # ✅ 传入参数
             if prob_active is not None:  # 记录激活概率用于损失计算
-                probs_active.append(prob_active.detach())  # detach() 避免重复梯度
+                probs_active.append(prob_active)
 
         xz = self.norm(xz)
 

@@ -1,0 +1,1705 @@
+Evaluating    1 trackers on   123 sequences
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_bike1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_bike2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_bike3
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_bird1_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_bird1_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_bird1_3
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_boat1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_boat2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_boat3
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_boat4
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_boat5
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_boat6
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_boat7
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_boat8
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_boat9
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_building1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_building2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_building3
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_building4
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_building5
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car1_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car1_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car1_3
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car10
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car11
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car12
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car13
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car14
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car15
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car16_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car16_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car17
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car18
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car1_s
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car2_s
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car3
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car3_s
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car4
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car4_s
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car5
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car6_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car6_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car6_3
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car6_4
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car6_5
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car7
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car8_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car8_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_car9
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_group1_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_group1_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_group1_3
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_group1_4
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_group2_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_group2_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_group2_3
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_group3_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_group3_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_group3_3
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_group3_4
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person10
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person11
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person12_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person12_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person13
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person14_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person14_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person14_3
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person15
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person16
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person17_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person17_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person18
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person19_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person19_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person19_3
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person1_s
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person2_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person2_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person20
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person21
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person22
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person23
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person2_s
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 277, in get_parameters
+    params = param_module.parameters(self.parameter_name)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/parameter/sutrack_RMT.py", line 13, in parameters
+    update_config_from_file(yaml_file)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/config/sutrack_RMT/config.py", line 144, in update_config_from_file
+    with open(yaml_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Traceback (most recent call last):
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/running.py", line 136, in run_sequence
+    output = tracker.run_sequence(seq, debug=debug)
+  File "/home/nick/code/code.sutrack/SUTrack/lib/test/evaluation/tracker.py", line 75, in run_sequence
+    params = self.get_parameters()
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person3
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person3_s
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person4_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person4_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person5_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person5_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person6
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person7_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person7_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person8_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person8_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_person9
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_truck1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_truck2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_truck3
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_truck4_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_truck4_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_uav1_1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_uav1_2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_uav1_3
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_uav2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_uav3
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_uav4
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_uav5
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_uav6
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_uav7
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_uav8
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_wakeboard1
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_wakeboard10
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_wakeboard2
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_wakeboard3
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_wakeboard4
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_wakeboard5
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_wakeboard6
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_wakeboard7
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_wakeboard8
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Tracker: sutrack_RMT sutrack_rmt_t224 None ,  Sequence: uav_wakeboard9
+[Errno 2] No such file or directory: '/home/nick/code/code.sutrack/SUTrack/experiments/sutrack_RMT/sutrack_rmt_t224.yaml'
+Done

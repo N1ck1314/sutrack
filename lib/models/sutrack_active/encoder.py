@@ -2,6 +2,7 @@
 Encoder modules: we use ITPN for the encoder.
 """
 
+import inspect
 from torch import nn
 from lib.utils.misc import is_main_process
 from lib.models.sutrack_active import fastitpn as fastitpn_module
@@ -29,9 +30,19 @@ class EncoderBase(nn.Module):
 
         self.body = encoder
         self.num_channels = num_channels
+        forward_params = inspect.signature(self.body.forward).parameters
+        self._supports_text_task = ("text_src" in forward_params) and ("task_index" in forward_params)
 
     def forward(self, template_list, search_list, template_anno_list, text_src, task_index):
-        xs, probs_active = self.body(template_list, search_list, template_anno_list, text_src, task_index)
+        if self._supports_text_task:
+            out = self.body(template_list, search_list, template_anno_list, text_src, task_index)
+        else:
+            out = self.body(template_list, search_list, template_anno_list)
+
+        if isinstance(out, tuple):
+            xs, probs_active = out
+        else:
+            xs, probs_active = out, None
         return xs, probs_active
 
 

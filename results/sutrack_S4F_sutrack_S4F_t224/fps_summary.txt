@@ -1,0 +1,5 @@
+Average FPS: 183.53
+Max FPS: 236.19
+Min FPS: 14.17
+Total Frames: 1910
+Total Time: 10.41s

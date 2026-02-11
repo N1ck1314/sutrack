@@ -1,0 +1,2 @@
+[train: 1, 50 / 1875] FPS: 134.2 (173.6)  ,  Loss/total: 10.90657  ,  Loss/giou: 1.13037  ,  Loss/l1: 0.28287  ,  Loss/location: 6.58455  ,  Loss/task_class: 0.64693  ,  IoU: 0.09012
+[train: 1, 100 / 1875] FPS: 150.1 (175.3)  ,  Loss/total: 8.27140  ,  Loss/giou: 1.05693  ,  Loss/l1: 0.24781  ,  Loss/location: 4.56959  ,  Loss/task_class: 0.34890  ,  IoU: 0.12908

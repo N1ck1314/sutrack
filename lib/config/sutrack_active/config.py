@@ -70,6 +70,8 @@ cfg.TRAIN.CE_WEIGHT = 1.0 # weight for cross-entropy loss
 cfg.TRAIN.GIOU_WEIGHT = 2.0
 cfg.TRAIN.L1_WEIGHT = 5.0
 cfg.TRAIN.TASK_CE_WEIGHT = 1.0
+cfg.TRAIN.ACTIVENESS_LOSS_WEIGHT = 0.01
+cfg.TRAIN.TARGET_ACTIVE_RATIO = 0.5
 cfg.TRAIN.PRINT_INTERVAL = 50 # interval to print the training log
 cfg.TRAIN.GRAD_CLIP_NORM = 0.1
 cfg.TRAIN.FIX_BN = False
@@ -189,5 +191,4 @@ def update_config_from_file(filename):
     with open(filename) as f:
         exp_config = edict(yaml.safe_load(f))
         _update_config(cfg, exp_config)
-
 

@@ -1,0 +1,16 @@
+{
+    "start_time": "20260210_120423",
+    "total": 1,
+    "success": 0,
+    "failed": 1,
+    "skipped": 0,
+    "details": [
+        {
+            "model": "sutrack_mlka_t224",
+            "dataset": "vot2022",
+            "status": "error",
+            "error": "[Errno 2] No such file or directory: 'vot'",
+            "log": "vot_test_logs/sutrack_mlka_t224_vot2022.log"
+        }
+    ]
+}

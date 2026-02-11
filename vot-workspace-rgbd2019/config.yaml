@@ -1,5 +1,11 @@
 registry:
 - ./sutrack_t224.ini
-- ./sutrack_S4F_t224.ini
+- ./sutrack_mlka_t224.ini
+- ./sutrack_or_t224.ini
+- ./sutrack_sgla_t224.ini
+- ./sutrack_smfa_t224.ini
 - ./sutrack_rmt_t224.ini
+- ./sutrack_mfe_t224.ini
+- ./sutrack_sparsevit_t224.ini
+- ./sutrack_S4F_t224.ini
 stack: votrgbd2019

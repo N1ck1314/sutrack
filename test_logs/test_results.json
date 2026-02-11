@@ -1,0 +1,56 @@
+{
+    "total": 6,
+    "success": 6,
+    "failed": 0,
+    "skipped": 0,
+    "details": [
+        {
+            "tracker": "sutrack_SparseViT",
+            "config": "sutrack_sparsevit_t224",
+            "dataset": "uav",
+            "status": "success",
+            "time": 989.2560076713562,
+            "log": "test_logs/sutrack_SparseViT_sutrack_sparsevit_t224_uav.log"
+        },
+        {
+            "tracker": "sutrack_SparseViT",
+            "config": "sutrack_sparsevit_t224",
+            "dataset": "uavdt",
+            "status": "success",
+            "time": 344.4427511692047,
+            "log": "test_logs/sutrack_SparseViT_sutrack_sparsevit_t224_uavdt.log"
+        },
+        {
+            "tracker": "sutrack_SparseViT",
+            "config": "sutrack_sparsevit_t224",
+            "dataset": "visdrone2018",
+            "status": "success",
+            "time": 344.62586879730225,
+            "log": "test_logs/sutrack_SparseViT_sutrack_sparsevit_t224_visdrone2018.log"
+        },
+        {
+            "tracker": "sutrack_S4F",
+            "config": "sutrack_S4F_t224",
+            "dataset": "uav",
+            "status": "success",
+            "time": 942.9114439487457,
+            "log": "test_logs/sutrack_S4F_sutrack_S4F_t224_uav.log"
+        },
+        {
+            "tracker": "sutrack_S4F",
+            "config": "sutrack_S4F_t224",
+            "dataset": "uavdt",
+            "status": "success",
+            "time": 332.3587398529053,
+            "log": "test_logs/sutrack_S4F_sutrack_S4F_t224_uavdt.log"
+        },
+        {
+            "tracker": "sutrack_S4F",
+            "config": "sutrack_S4F_t224",
+            "dataset": "visdrone2018",
+            "status": "success",
+            "time": 333.67709708213806,
+            "log": "test_logs/sutrack_S4F_sutrack_S4F_t224_visdrone2018.log"
+        }
+    ]
+}

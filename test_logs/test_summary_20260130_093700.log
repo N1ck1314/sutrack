@@ -1,0 +1,117 @@
+[2026-01-30 09:37:00] [INFO] ================================================================================
+[2026-01-30 09:37:00] [INFO] 开始自动测试
+[2026-01-30 09:37:00] [INFO] ================================================================================
+[2026-01-30 09:37:00] [INFO] 总任务数: 21
+[2026-01-30 09:37:00] [INFO] 测试数据集: uav, uavdt, visdrone2018
+[2026-01-30 09:37:00] [INFO] 线程数: 1
+[2026-01-30 09:37:00] [INFO] GPU数: 1
+[2026-01-30 09:37:00] [INFO] ================================================================================
+[2026-01-30 09:37:00] [INFO] 
+开始测试模型: sutrack
+[2026-01-30 09:37:00] [INFO] 
+进度: [1/21]
+[2026-01-30 09:37:00] [SKIP] 跳过测试 sutrack_sutrack_t224_uav (结果已存在)
+[2026-01-30 09:37:00] [INFO] 
+进度: [2/21]
+[2026-01-30 09:37:00] [SKIP] 跳过测试 sutrack_sutrack_t224_uavdt (结果已存在)
+[2026-01-30 09:37:00] [INFO] 
+进度: [3/21]
+[2026-01-30 09:37:00] [INFO] 开始测试: sutrack_sutrack_t224_visdrone2018
+[2026-01-30 09:37:00] [INFO] 命令: python tracking/test.py sutrack sutrack_t224 --dataset_name visdrone2018 --threads 1 --num_gpus 1
+[2026-01-30 09:44:39] [SUCCESS] 测试成功: sutrack_sutrack_t224_visdrone2018 (耗时: 459.01s)
+[2026-01-30 09:44:39] [INFO] 
+开始测试模型: sutrack_MLKA
+[2026-01-30 09:44:39] [INFO] 
+进度: [4/21]
+[2026-01-30 09:44:39] [SKIP] 跳过测试 sutrack_MLKA_sutrack_mlka_t224_uav (结果已存在)
+[2026-01-30 09:44:39] [INFO] 
+进度: [5/21]
+[2026-01-30 09:44:39] [SKIP] 跳过测试 sutrack_MLKA_sutrack_mlka_t224_uavdt (结果已存在)
+[2026-01-30 09:44:39] [INFO] 
+进度: [6/21]
+[2026-01-30 09:44:39] [INFO] 开始测试: sutrack_MLKA_sutrack_mlka_t224_visdrone2018
+[2026-01-30 09:44:39] [INFO] 命令: python tracking/test.py sutrack_MLKA sutrack_mlka_t224 --dataset_name visdrone2018 --threads 1 --num_gpus 1
+[2026-01-30 09:50:44] [SUCCESS] 测试成功: sutrack_MLKA_sutrack_mlka_t224_visdrone2018 (耗时: 365.55s)
+[2026-01-30 09:50:44] [INFO] 
+开始测试模型: sutrack_OR
+[2026-01-30 09:50:44] [INFO] 
+进度: [7/21]
+[2026-01-30 09:50:44] [SKIP] 跳过测试 sutrack_OR_sutrack_or_t224_uav (结果已存在)
+[2026-01-30 09:50:44] [INFO] 
+进度: [8/21]
+[2026-01-30 09:50:44] [SKIP] 跳过测试 sutrack_OR_sutrack_or_t224_uavdt (结果已存在)
+[2026-01-30 09:50:44] [INFO] 
+进度: [9/21]
+[2026-01-30 09:50:44] [INFO] 开始测试: sutrack_OR_sutrack_or_t224_visdrone2018
+[2026-01-30 09:50:44] [INFO] 命令: python tracking/test.py sutrack_OR sutrack_or_t224 --dataset_name visdrone2018 --threads 1 --num_gpus 1
+[2026-01-30 09:56:23] [SUCCESS] 测试成功: sutrack_OR_sutrack_or_t224_visdrone2018 (耗时: 339.11s)
+[2026-01-30 09:56:23] [INFO] 
+开始测试模型: sutrack_SGLA
+[2026-01-30 09:56:23] [INFO] 
+进度: [10/21]
+[2026-01-30 09:56:23] [SKIP] 跳过测试 sutrack_SGLA_sutrack_sgla_t224_uav (结果已存在)
+[2026-01-30 09:56:23] [INFO] 
+进度: [11/21]
+[2026-01-30 09:56:23] [SKIP] 跳过测试 sutrack_SGLA_sutrack_sgla_t224_uavdt (结果已存在)
+[2026-01-30 09:56:23] [INFO] 
+进度: [12/21]
+[2026-01-30 09:56:23] [INFO] 开始测试: sutrack_SGLA_sutrack_sgla_t224_visdrone2018
+[2026-01-30 09:56:23] [INFO] 命令: python tracking/test.py sutrack_SGLA sutrack_sgla_t224 --dataset_name visdrone2018 --threads 1 --num_gpus 1
+[2026-01-30 10:01:37] [SUCCESS] 测试成功: sutrack_SGLA_sutrack_sgla_t224_visdrone2018 (耗时: 313.63s)
+[2026-01-30 10:01:37] [INFO] 
+开始测试模型: sutrack_SMFA
+[2026-01-30 10:01:37] [INFO] 
+进度: [13/21]
+[2026-01-30 10:01:37] [SKIP] 跳过测试 sutrack_SMFA_sutrack_smfa_t224_uav (结果已存在)
+[2026-01-30 10:01:37] [INFO] 
+进度: [14/21]
+[2026-01-30 10:01:37] [SKIP] 跳过测试 sutrack_SMFA_sutrack_smfa_t224_uavdt (结果已存在)
+[2026-01-30 10:01:37] [INFO] 
+进度: [15/21]
+[2026-01-30 10:01:37] [INFO] 开始测试: sutrack_SMFA_sutrack_smfa_t224_visdrone2018
+[2026-01-30 10:01:37] [INFO] 命令: python tracking/test.py sutrack_SMFA sutrack_smfa_t224 --dataset_name visdrone2018 --threads 1 --num_gpus 1
+[2026-01-30 10:07:19] [SUCCESS] 测试成功: sutrack_SMFA_sutrack_smfa_t224_visdrone2018 (耗时: 342.29s)
+[2026-01-30 10:07:19] [INFO] 
+开始测试模型: sutrack_RMT
+[2026-01-30 10:07:19] [INFO] 
+进度: [16/21]
+[2026-01-30 10:07:19] [INFO] 开始测试: sutrack_RMT_sutrack_rmt_t224_uav
+[2026-01-30 10:07:19] [INFO] 命令: python tracking/test.py sutrack_RMT sutrack_rmt_t224 --dataset_name uav --threads 1 --num_gpus 1
+[2026-01-30 10:07:21] [SUCCESS] 测试成功: sutrack_RMT_sutrack_rmt_t224_uav (耗时: 1.58s)
+[2026-01-30 10:07:21] [INFO] 
+进度: [17/21]
+[2026-01-30 10:07:21] [INFO] 开始测试: sutrack_RMT_sutrack_rmt_t224_uavdt
+[2026-01-30 10:07:21] [INFO] 命令: python tracking/test.py sutrack_RMT sutrack_rmt_t224 --dataset_name uavdt --threads 1 --num_gpus 1
+[2026-01-30 10:07:22] [SUCCESS] 测试成功: sutrack_RMT_sutrack_rmt_t224_uavdt (耗时: 1.44s)
+[2026-01-30 10:07:22] [INFO] 
+进度: [18/21]
+[2026-01-30 10:07:22] [INFO] 开始测试: sutrack_RMT_sutrack_rmt_t224_visdrone2018
+[2026-01-30 10:07:22] [INFO] 命令: python tracking/test.py sutrack_RMT sutrack_rmt_t224 --dataset_name visdrone2018 --threads 1 --num_gpus 1
+[2026-01-30 10:07:24] [SUCCESS] 测试成功: sutrack_RMT_sutrack_rmt_t224_visdrone2018 (耗时: 1.43s)
+[2026-01-30 10:07:24] [INFO] 
+开始测试模型: sutrack_MFE
+[2026-01-30 10:07:24] [INFO] 
+进度: [19/21]
+[2026-01-30 10:07:24] [SKIP] 跳过测试 sutrack_MFE_sutrack_mfe_t224_uav (结果已存在)
+[2026-01-30 10:07:24] [INFO] 
+进度: [20/21]
+[2026-01-30 10:07:24] [SKIP] 跳过测试 sutrack_MFE_sutrack_mfe_t224_uavdt (结果已存在)
+[2026-01-30 10:07:24] [INFO] 
+进度: [21/21]
+[2026-01-30 10:07:24] [INFO] 开始测试: sutrack_MFE_sutrack_mfe_t224_visdrone2018
+[2026-01-30 10:07:24] [INFO] 命令: python tracking/test.py sutrack_MFE sutrack_mfe_t224 --dataset_name visdrone2018 --threads 1 --num_gpus 1
+[2026-01-30 10:15:15] [SUCCESS] 测试成功: sutrack_MFE_sutrack_mfe_t224_visdrone2018 (耗时: 471.30s)
+[2026-01-30 10:15:15] [INFO] 
+================================================================================
+[2026-01-30 10:15:15] [INFO] 所有测试完成！
+[2026-01-30 10:15:15] [INFO] ================================================================================
+[2026-01-30 10:15:15] [INFO] 测试结果已保存到: test_logs/test_results.json
+[2026-01-30 10:15:15] [INFO] 
+================================================================================
+[2026-01-30 10:15:15] [INFO] 测试摘要
+[2026-01-30 10:15:15] [INFO] ================================================================================
+[2026-01-30 10:15:15] [INFO] 总任务数: 21
+[2026-01-30 10:15:15] [INFO] 成功: 9
+[2026-01-30 10:15:15] [INFO] 失败: 0
+[2026-01-30 10:15:15] [INFO] 跳过: 12
+[2026-01-30 10:15:15] [INFO] ================================================================================

@@ -1,0 +1,48 @@
+[2026-01-29 23:16:52] [INFO] ================================================================================
+[2026-01-29 23:16:52] [INFO] 开始自动测试
+[2026-01-29 23:16:52] [INFO] ================================================================================
+[2026-01-29 23:16:52] [INFO] 总任务数: 21
+[2026-01-29 23:16:52] [INFO] 测试数据集: uav, uavdt, visdrone2018
+[2026-01-29 23:16:52] [INFO] 线程数: 1
+[2026-01-29 23:16:52] [INFO] GPU数: 1
+[2026-01-29 23:16:52] [INFO] ================================================================================
+[2026-01-29 23:16:52] [INFO] 
+开始测试模型: sutrack
+[2026-01-29 23:16:52] [INFO] 
+进度: [1/21]
+[2026-01-29 23:16:52] [INFO] 开始测试: sutrack_sutrack_t224_uav
+[2026-01-29 23:16:52] [INFO] 命令: python tracking/test.py sutrack sutrack_t224 --dataset_name uav --threads 1 --num_gpus 1
+[2026-01-29 23:16:53] [ERROR] 测试失败: sutrack_sutrack_t224_uav (返回码: 1)
+[2026-01-29 23:16:53] [INFO] 
+进度: [2/21]
+[2026-01-29 23:16:53] [INFO] 开始测试: sutrack_sutrack_t224_uavdt
+[2026-01-29 23:16:53] [INFO] 命令: python tracking/test.py sutrack sutrack_t224 --dataset_name uavdt --threads 1 --num_gpus 1
+[2026-01-29 23:16:53] [ERROR] 测试失败: sutrack_sutrack_t224_uavdt (返回码: 1)
+[2026-01-29 23:16:53] [INFO] 
+进度: [3/21]
+[2026-01-29 23:16:53] [INFO] 开始测试: sutrack_sutrack_t224_visdrone2018
+[2026-01-29 23:16:53] [INFO] 命令: python tracking/test.py sutrack sutrack_t224 --dataset_name visdrone2018 --threads 1 --num_gpus 1
+[2026-01-29 23:16:54] [ERROR] 测试失败: sutrack_sutrack_t224_visdrone2018 (返回码: 1)
+[2026-01-29 23:16:54] [INFO] 
+开始测试模型: sutrack_MLKA
+[2026-01-29 23:16:54] [INFO] 
+进度: [4/21]
+[2026-01-29 23:16:54] [INFO] 开始测试: sutrack_MLKA_sutrack_mlka_t224_uav
+[2026-01-29 23:16:54] [INFO] 命令: python tracking/test.py sutrack_MLKA sutrack_mlka_t224 --dataset_name uav --threads 1 --num_gpus 1
+[2026-01-29 23:16:54] [ERROR] 测试失败: sutrack_MLKA_sutrack_mlka_t224_uav (返回码: 1)
+[2026-01-29 23:16:54] [INFO] 
+进度: [5/21]
+[2026-01-29 23:16:54] [INFO] 开始测试: sutrack_MLKA_sutrack_mlka_t224_uavdt
+[2026-01-29 23:16:54] [INFO] 命令: python tracking/test.py sutrack_MLKA sutrack_mlka_t224 --dataset_name uavdt --threads 1 --num_gpus 1
+[2026-01-29 23:16:55] [ERROR] 测试失败: sutrack_MLKA_sutrack_mlka_t224_uavdt (返回码: 1)
+[2026-01-29 23:16:55] [INFO] 
+进度: [6/21]
+[2026-01-29 23:16:55] [INFO] 开始测试: sutrack_MLKA_sutrack_mlka_t224_visdrone2018
+[2026-01-29 23:16:55] [INFO] 命令: python tracking/test.py sutrack_MLKA sutrack_mlka_t224 --dataset_name visdrone2018 --threads 1 --num_gpus 1
+[2026-01-29 23:16:55] [ERROR] 测试失败: sutrack_MLKA_sutrack_mlka_t224_visdrone2018 (返回码: 1)
+[2026-01-29 23:16:55] [INFO] 
+开始测试模型: sutrack_OR
+[2026-01-29 23:16:55] [INFO] 
+进度: [7/21]
+[2026-01-29 23:16:55] [INFO] 开始测试: sutrack_OR_sutrack_or_t224_uav
+[2026-01-29 23:16:55] [INFO] 命令: python tracking/test.py sutrack_OR sutrack_or_t224 --dataset_name uav --threads 1 --num_gpus 1

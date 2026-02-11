@@ -1,0 +1,776 @@
+Evaluating    1 trackers on    43 sequences
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000072_04680_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 170.80354232959803
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000003_00000_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 205.59146066078736
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000014_00667_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 184.79741927802544
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000016_00000_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 185.53244010342954
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000043_00377_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 193.34573499072405
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000049_00435_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 186.28877047719035
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000068_01488_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 162.7966161375971
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000068_02928_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 162.65827422410214
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000068_03768_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 162.19911080138402
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000070_01344_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 161.06590962767442
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000070_02088_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 163.23896138461964
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000070_04877_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 162.33508848400518
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000071_00816_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 159.26236500895592
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000071_01536_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 158.22618045136016
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000071_02520_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 166.99325903169648
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000072_02544_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 168.1336999185351
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000072_03792_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 170.6133144537724
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000072_06672_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 170.74510030851218
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000072_08448_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 168.81841503785947
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000076_00241_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 155.53259797467433
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000080_01680_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 163.54738117199628
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000084_00000_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 155.804178667654
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000084_00812_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 172.25672631825586
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000085_00000_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 177.9022493335721
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000089_00920_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 171.2859859558909
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000090_00276_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 170.6144403509766
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000090_01104_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 193.48993965023237
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000091_00460_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 155.34227628159465
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000091_01035_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 177.7032061995419
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000091_01288_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 170.0338402617788
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000091_02530_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 187.00267297160366
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000099_02520_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 186.02529028862853
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000107_01763_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 174.08812275604785
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000126_07915_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 184.3154486838146
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000144_01980_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 140.35690490043442
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000144_03200_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 154.5156747316855
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000147_00000_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 148.92994323217982
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000148_00840_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 139.85916780736676
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000149_00317_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 158.32366601940495
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000159_00000_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 176.93934368408213
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000160_00000_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 173.8873142724011
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000169_00000_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 179.4646650783315
+Tracker: sutrack_SparseViT sutrack_sparsevit_t224 None ,  Sequence: uav0000170_00000_s
+test config:  {'MODEL': {'TYPE': 'sutrack', 'TASK_INDEX': {'VASTTRACK': 0, 'LASOT': 0, 'TRACKINGNET': 0, 'GOT10K': 0, 'COCO': 0, 'TNL2K': 1, 'DEPTHTRACK': 2, 'LASHER': 3, 'VISEVENT': 4}, 'USE_SPARSEVIT': True, 'SPARSEVIT_NUM_BLOCKS': 2, 'SPARSEVIT_NUM_HEADS': 8, 'SPARSEVIT_SPARSE_SIZES': [7, 7], 'TEXT_ENCODER': {'TYPE': 'ViT-L/14'}, 'ENCODER': {'TYPE': 'fastitpnt', 'STRIDE': 16, 'CLASS_TOKEN': True, 'POS_TYPE': 'index', 'TOKEN_TYPE_INDICATE': True, 'PRETRAIN_TYPE': 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt', 'PATCHEMBED_INIT': 'halfcopy', 'DROP_PATH': 0.1}, 'DECODER': {'TYPE': 'CENTER', 'NUM_CHANNELS': 256, 'STRIDE': 16, 'CONV_TYPE': 'normal', 'XAVIER_INIT': True}, 'TASK_DECODER': {'FEATURE_TYPE': 'average', 'HIDDEN_DIM': 256, 'NUM_CHANNELS': 256}, 'TASK_NUM': 5}, 'TRAIN': {'TYPE': 'text_frozen', 'LR': 0.0001, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 180, 'LR_DROP_EPOCH': 144, 'BATCH_SIZE': 16, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'ENCODER_MULTIPLIER': 0.1, 'FREEZE_ENCODER': False, 'ENCODER_OPEN': [], 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 5.0, 'CE_WEIGHT': 1.0, 'TASK_CE_WEIGHT': 1.0, 'PRINT_INTERVAL': 50, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}, 'DATA': {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 400, 'LOADER': 'tracking', 'MULTI_MODAL_VISION': True, 'MULTI_MODAL_LANGUAGE': False, 'USE_NLP': {'LASOT': False, 'GOT10K': False, 'COCO': False, 'TRACKINGNET': False, 'VASTTRACK': False, 'REFCOCOG': False, 'TNL2K': False, 'OTB99': False, 'DEPTHTRACK': False, 'LASHER': False, 'VISEVENT': False}, 'TRAIN': {'DATASETS_NAME': ['GOT10K_vottrain', 'DepthTrack_train'], 'DATASETS_RATIO': [1, 1], 'SAMPLE_PER_EPOCH': 80000}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.5, 'SCALE_JITTER': 0.5, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 1, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}, 'TEST': {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 180, 'WINDOW': True, 'NUM_TEMPLATES': 1, 'UPDATE_INTERVALS': {'DEFAULT': 999999}, 'UPDATE_THRESHOLD': {'DEFAULT': 1.0}, 'MULTI_MODAL_VISION': {'DEFAULT': True}, 'MULTI_MODAL_LANGUAGE': {'DEFAULT': False}, 'USE_NLP': {'DEFAULT': False, 'TNL2K': False}}}
+[SparseViT] 初始化完成:
+  - 特征维度: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+[SparseViT Encoder] SparseViT模块初始化完成:
+  - 通道数: 384
+  - 块数量: 2
+  - 注意力头数: 8
+  - 稀疏大小: [7, 7]
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 180.35677855092163
+Done

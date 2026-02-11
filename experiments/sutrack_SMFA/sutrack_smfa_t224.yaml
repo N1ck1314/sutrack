@@ -1,6 +1,6 @@
 DATA:
   MAX_SAMPLE_INTERVAL: 400
-  MULTI_MODAL_LANGUAGE: True
+  MULTI_MODAL_LANGUAGE: False
   MULTI_MODAL_VISION: True
   MEAN:
   - 0.485
@@ -35,7 +35,7 @@ DATA:
     - 1
     SAMPLE_PER_EPOCH: 60000
   USE_NLP:
-    TNL2K: True
+    TNL2K: False
 MODEL:
   ENCODER:
     TYPE: fastitpnt
@@ -98,7 +98,7 @@ TEST:
   MULTI_MODAL_VISION:
     DEFAULT: True
   MULTI_MODAL_LANGUAGE:
-    DEFAULT: True
+    DEFAULT: False
   USE_NLP:
     DEFAULT: False
-    TNL2K: True
+    TNL2K: False

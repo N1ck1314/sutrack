@@ -1,0 +1,135 @@
+[2026-02-09 22:28:41] [INFO] ================================================================================
+[2026-02-09 22:28:41] [INFO] 开始VOT自动评测
+[2026-02-09 22:28:41] [INFO] ================================================================================
+[2026-02-09 22:28:41] [INFO] ✓ 工作区就绪: vot2019
+[2026-02-09 22:28:41] [INFO] ✓ 工作区就绪: vot2022
+[2026-02-09 22:28:41] [INFO] 总任务数: 18
+[2026-02-09 22:28:41] [INFO] 模型列表: sutrack_t224, sutrack_mlka_t224, sutrack_or_t224, sutrack_sgla_t224, sutrack_smfa_t224, sutrack_rmt_t224, sutrack_mfe_t224, sutrack_sparsevit_t224, sutrack_S4F_t224
+[2026-02-09 22:28:41] [INFO] 数据集列表: vot2019, vot2022
+[2026-02-09 22:28:41] [INFO] ================================================================================
+[2026-02-09 22:28:41] [INFO] 
+================================================================================
+[2026-02-09 22:28:41] [INFO] 开始在 VOT2019 数据集上测试
+[2026-02-09 22:28:41] [INFO] ================================================================================
+[2026-02-09 22:28:41] [INFO] 
+进度: [1/18]
+[2026-02-09 22:28:41] [INFO] 开始测试: sutrack_t224_vot2019
+[2026-02-09 22:28:41] [INFO] 命令: vot evaluate sutrack_t224
+[2026-02-09 22:28:41] [INFO] 工作目录: /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2019
+[2026-02-09 22:59:35] [SUCCESS] 测试成功: sutrack_t224_vot2019 (耗时: 1853.68s)
+[2026-02-09 22:59:35] [INFO] 
+进度: [2/18]
+[2026-02-09 22:59:35] [INFO] 开始测试: sutrack_mlka_t224_vot2019
+[2026-02-09 22:59:35] [INFO] 命令: vot evaluate sutrack_mlka_t224
+[2026-02-09 22:59:35] [INFO] 工作目录: /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2019
+[2026-02-09 23:25:10] [SUCCESS] 测试成功: sutrack_mlka_t224_vot2019 (耗时: 1535.15s)
+[2026-02-09 23:25:10] [INFO] 
+进度: [3/18]
+[2026-02-09 23:25:10] [INFO] 开始测试: sutrack_or_t224_vot2019
+[2026-02-09 23:25:10] [INFO] 命令: vot evaluate sutrack_or_t224
+[2026-02-09 23:25:10] [INFO] 工作目录: /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2019
+[2026-02-09 23:50:10] [SUCCESS] 测试成功: sutrack_or_t224_vot2019 (耗时: 1500.44s)
+[2026-02-09 23:50:10] [INFO] 
+进度: [4/18]
+[2026-02-09 23:50:10] [INFO] 开始测试: sutrack_sgla_t224_vot2019
+[2026-02-09 23:50:10] [INFO] 命令: vot evaluate sutrack_sgla_t224
+[2026-02-09 23:50:10] [INFO] 工作目录: /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2019
+[2026-02-10 00:13:29] [SUCCESS] 测试成功: sutrack_sgla_t224_vot2019 (耗时: 1398.82s)
+[2026-02-10 00:13:29] [INFO] 
+进度: [5/18]
+[2026-02-10 00:13:29] [INFO] 开始测试: sutrack_smfa_t224_vot2019
+[2026-02-10 00:13:29] [INFO] 命令: vot evaluate sutrack_smfa_t224
+[2026-02-10 00:13:29] [INFO] 工作目录: /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2019
+[2026-02-10 00:39:26] [SUCCESS] 测试成功: sutrack_smfa_t224_vot2019 (耗时: 1557.02s)
+[2026-02-10 00:39:26] [INFO] 
+进度: [6/18]
+[2026-02-10 00:39:26] [INFO] 开始测试: sutrack_rmt_t224_vot2019
+[2026-02-10 00:39:26] [INFO] 命令: vot evaluate sutrack_rmt_t224
+[2026-02-10 00:39:26] [INFO] 工作目录: /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2019
+[2026-02-10 01:04:42] [SUCCESS] 测试成功: sutrack_rmt_t224_vot2019 (耗时: 1515.81s)
+[2026-02-10 01:04:42] [INFO] 
+进度: [7/18]
+[2026-02-10 01:04:42] [INFO] 开始测试: sutrack_mfe_t224_vot2019
+[2026-02-10 01:04:42] [INFO] 命令: vot evaluate sutrack_mfe_t224
+[2026-02-10 01:04:42] [INFO] 工作目录: /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2019
+[2026-02-10 01:35:49] [SUCCESS] 测试成功: sutrack_mfe_t224_vot2019 (耗时: 1866.75s)
+[2026-02-10 01:35:49] [INFO] 
+进度: [8/18]
+[2026-02-10 01:35:49] [INFO] 开始测试: sutrack_sparsevit_t224_vot2019
+[2026-02-10 01:35:49] [INFO] 命令: vot evaluate sutrack_sparsevit_t224
+[2026-02-10 01:35:49] [INFO] 工作目录: /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2019
+[2026-02-10 01:35:55] [SUCCESS] 测试成功: sutrack_sparsevit_t224_vot2019 (耗时: 5.74s)
+[2026-02-10 01:35:55] [INFO] 
+进度: [9/18]
+[2026-02-10 01:35:55] [INFO] 开始测试: sutrack_S4F_t224_vot2019
+[2026-02-10 01:35:55] [INFO] 命令: vot evaluate sutrack_S4F_t224
+[2026-02-10 01:35:55] [INFO] 工作目录: /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2019
+[2026-02-10 01:35:58] [SUCCESS] 测试成功: sutrack_S4F_t224_vot2019 (耗时: 3.74s)
+[2026-02-10 01:35:58] [INFO] 
+================================================================================
+[2026-02-10 01:35:58] [INFO] 开始在 VOT2022 数据集上测试
+[2026-02-10 01:35:58] [INFO] ================================================================================
+[2026-02-10 01:35:58] [INFO] 
+进度: [10/18]
+[2026-02-10 01:35:58] [INFO] 开始测试: sutrack_t224_vot2022
+[2026-02-10 01:35:58] [INFO] 命令: vot evaluate sutrack_t224
+[2026-02-10 01:35:58] [INFO] 工作目录: /home/nick/code/code.sutrack/SUTrack/VOT22RGBD_workspace
+[2026-02-10 01:52:05] [ERROR] 测试失败: sutrack_t224_vot2022 (返回码: 1)
+[2026-02-10 01:52:05] [INFO] 
+进度: [11/18]
+[2026-02-10 01:52:05] [INFO] 开始测试: sutrack_mlka_t224_vot2022
+[2026-02-10 01:52:05] [WARNING] 模型配置文件不存在: /home/nick/code/code.sutrack/SUTrack/VOT22RGBD_workspace/sutrack_mlka_t224.ini
+[2026-02-10 01:52:05] [SKIP] 跳过测试 sutrack_mlka_t224_vot2022 (配置文件不存在)
+[2026-02-10 01:52:05] [INFO] 
+进度: [12/18]
+[2026-02-10 01:52:05] [INFO] 开始测试: sutrack_or_t224_vot2022
+[2026-02-10 01:52:05] [WARNING] 模型配置文件不存在: /home/nick/code/code.sutrack/SUTrack/VOT22RGBD_workspace/sutrack_or_t224.ini
+[2026-02-10 01:52:05] [SKIP] 跳过测试 sutrack_or_t224_vot2022 (配置文件不存在)
+[2026-02-10 01:52:05] [INFO] 
+进度: [13/18]
+[2026-02-10 01:52:05] [INFO] 开始测试: sutrack_sgla_t224_vot2022
+[2026-02-10 01:52:05] [WARNING] 模型配置文件不存在: /home/nick/code/code.sutrack/SUTrack/VOT22RGBD_workspace/sutrack_sgla_t224.ini
+[2026-02-10 01:52:05] [SKIP] 跳过测试 sutrack_sgla_t224_vot2022 (配置文件不存在)
+[2026-02-10 01:52:05] [INFO] 
+进度: [14/18]
+[2026-02-10 01:52:05] [INFO] 开始测试: sutrack_smfa_t224_vot2022
+[2026-02-10 01:52:05] [WARNING] 模型配置文件不存在: /home/nick/code/code.sutrack/SUTrack/VOT22RGBD_workspace/sutrack_smfa_t224.ini
+[2026-02-10 01:52:05] [SKIP] 跳过测试 sutrack_smfa_t224_vot2022 (配置文件不存在)
+[2026-02-10 01:52:05] [INFO] 
+进度: [15/18]
+[2026-02-10 01:52:05] [INFO] 开始测试: sutrack_rmt_t224_vot2022
+[2026-02-10 01:52:05] [WARNING] 模型配置文件不存在: /home/nick/code/code.sutrack/SUTrack/VOT22RGBD_workspace/sutrack_rmt_t224.ini
+[2026-02-10 01:52:05] [SKIP] 跳过测试 sutrack_rmt_t224_vot2022 (配置文件不存在)
+[2026-02-10 01:52:05] [INFO] 
+进度: [16/18]
+[2026-02-10 01:52:05] [INFO] 开始测试: sutrack_mfe_t224_vot2022
+[2026-02-10 01:52:05] [WARNING] 模型配置文件不存在: /home/nick/code/code.sutrack/SUTrack/VOT22RGBD_workspace/sutrack_mfe_t224.ini
+[2026-02-10 01:52:05] [SKIP] 跳过测试 sutrack_mfe_t224_vot2022 (配置文件不存在)
+[2026-02-10 01:52:05] [INFO] 
+进度: [17/18]
+[2026-02-10 01:52:05] [INFO] 开始测试: sutrack_sparsevit_t224_vot2022
+[2026-02-10 01:52:05] [WARNING] 模型配置文件不存在: /home/nick/code/code.sutrack/SUTrack/VOT22RGBD_workspace/sutrack_sparsevit_t224.ini
+[2026-02-10 01:52:05] [SKIP] 跳过测试 sutrack_sparsevit_t224_vot2022 (配置文件不存在)
+[2026-02-10 01:52:05] [INFO] 
+进度: [18/18]
+[2026-02-10 01:52:05] [INFO] 开始测试: sutrack_S4F_t224_vot2022
+[2026-02-10 01:52:05] [WARNING] 模型配置文件不存在: /home/nick/code/code.sutrack/SUTrack/VOT22RGBD_workspace/sutrack_S4F_t224.ini
+[2026-02-10 01:52:05] [SKIP] 跳过测试 sutrack_S4F_t224_vot2022 (配置文件不存在)
+[2026-02-10 01:52:05] [INFO] 
+================================================================================
+[2026-02-10 01:52:05] [INFO] 所有测试完成！
+[2026-02-10 01:52:05] [INFO] ================================================================================
+[2026-02-10 01:52:05] [INFO] 测试结果已保存到: vot_test_logs/vot_test_results.json
+[2026-02-10 01:52:05] [INFO] 
+================================================================================
+[2026-02-10 01:52:05] [INFO] 测试摘要
+[2026-02-10 01:52:05] [INFO] ================================================================================
+[2026-02-10 01:52:05] [INFO] 总任务数: 18
+[2026-02-10 01:52:05] [INFO] 成功: 9
+[2026-02-10 01:52:05] [INFO] 失败: 1
+[2026-02-10 01:52:05] [INFO] 跳过: 8
+[2026-02-10 01:52:05] [INFO] ================================================================================
+[2026-02-10 01:52:05] [INFO] 
+失败的测试:
+[2026-02-10 01:52:05] [INFO]   - sutrack_t224 on vot2022
+[2026-02-10 01:52:05] [INFO]     日志: vot_test_logs/sutrack_t224_vot2022.log

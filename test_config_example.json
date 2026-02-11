@@ -1,0 +1,19 @@
+{
+    "models": [
+        {
+            "tracker": "sutrack_SparseViT",
+            "configs": ["sutrack_sparsevit_t224"]
+        },
+        {
+            "tracker": "sutrack_S4F",
+            "configs": ["sutrack_S4F_t224"]
+        }
+        
+    ],
+    "datasets": ["uav", "uavdt", "visdrone2018"],
+    "threads": 1,
+    "num_gpus": 1,
+    "log_dir": "./test_logs",
+    "skip_existing": true,
+    "continue_on_error": true
+}
