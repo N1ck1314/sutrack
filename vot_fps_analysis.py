@@ -70,6 +70,7 @@ def print_fps_table(fps_results, workspace_name):
     if not fps_results:
         print(f"\n{workspace_name}: 未找到FPS数据")
         return
+        
     
     print(f"\n{'='*80}")
     print(f"{workspace_name} - FPS 统计")

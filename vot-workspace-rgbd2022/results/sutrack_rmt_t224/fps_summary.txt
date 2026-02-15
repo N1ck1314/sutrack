@@ -1,0 +1,7 @@
+Average FPS: 104.60
+Max FPS: 445.68
+Min FPS: 2.42
+Total Frames: 1327004
+Valid Frames: 1325238
+Filtered Outliers: 1766
+Total Time: 13245.72s

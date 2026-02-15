@@ -41,7 +41,7 @@ AVAILABLE_MODELS = {
     'sutrack_SMFA': ['sutrack_smfa_t224', 'sutrack_smfa_b224'],
     'sutrack_STAtten': ['sutrack_statten_t224'],
     'sutrack_SparseViT': ['sutrack_sparsevit_t224'],
-    'sutrack_active': ['sutrack_t224'],
+    'sutrack_active': ['sutrack_active_fix_t224'],
     'sutrack_patch': ['sutrack_t224', 'sutrack_b224'],
     'sutrack_rewight': ['sutrack_t224', 'sutrack_b224'],
     'sutrack_scale': ['sutrack_t224', 'sutrack_b224'],

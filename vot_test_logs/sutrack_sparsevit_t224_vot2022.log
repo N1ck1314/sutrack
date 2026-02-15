@@ -1,0 +1,149 @@
+[32mChecking for new version[0m
+1 %
+2 %
+3 %
+4 %
+5 %
+6 %
+7 %
+8 %
+9 %
+10 %
+11 %
+12 %
+13 %
+14 %
+15 %
+16 %
+17 %
+18 %
+19 %
+20 %
+21 %
+22 %
+23 %
+24 %
+25 %
+26 %
+27 %
+28 %
+29 %
+30 %
+31 %
+32 %
+33 %
+34 %
+35 %
+36 %
+37 %
+38 %
+39 %
+40 %
+41 %
+42 %
+43 %
+44 %
+45 %
+46 %
+47 %
+48 %
+49 %
+50 %
+51 %
+52 %
+53 %
+54 %
+55 %
+56 %
+57 %
+58 %
+59 %
+60 %
+61 %
+62 %
+63 %
+64 %
+65 %
+66 %
+67 %
+68 %
+69 %
+70 %
+71 %
+72 %
+73 %
+74 %
+75 %
+76 %
+77 %
+78 %
+79 %
+80 %
+81 %
+82 %
+83 %
+84 %
+85 %
+86 %
+87 %
+88 %
+89 %
+90 %
+91 %
+92 %
+93 %
+94 %
+95 %
+96 %
+97 %
+98 %
+99 %
+100 %
+Loaded workspace in '/home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2022'[0m
+[32mScanning registry /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2022/sutrack_t224.ini[0m
+[32mScanning registry /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2022/sutrack_mlka_t224.ini[0m
+[32mScanning registry /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2022/sutrack_or_t224.ini[0m
+[32mScanning registry /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2022/sutrack_sgla_t224.ini[0m
+[32mScanning registry /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2022/sutrack_smfa_t224.ini[0m
+[32mScanning registry /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2022/sutrack_rmt_t224.ini[0m
+[32mScanning registry /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2022/sutrack_mfe_t224.ini[0m
+[32mScanning registry /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2022/sutrack_sparsevit_t224.ini[0m
+[32mScanning registry /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2022/sutrack_S4F_t224.ini[0m
+[32mFound 9 trackers[0m
+Found data for 9 trackers[0m
+Evaluating tracker sutrack_sparsevit_t224[0m
+[32mRunning process: /home/nick/anaconda3/envs/sutrack/bin/python -c "import sys;sys.path.insert(0, '/home/nick/code/code.sutrack/SUTrack/lib/test/vot'); import os,sys; os.chdir('/home/nick/code/code.sutrack/SUTrack'); sys.path.insert(0,'/home/nick/code/code.sutrack/SUTrack'); import sutrack_sparsevit_t224"[0m
+[31mTracker sutrack_sparsevit_t224 encountered an error: Unable to connect to tracker[0m
+[32mUnable to connect to tracker[0m
+Traceback (most recent call last):
+  File "/home/nick/anaconda3/envs/sutrack/lib/python3.8/site-packages/vot/tracker/trax.py", line 422, in initialize
+    self._connect()
+  File "/home/nick/anaconda3/envs/sutrack/lib/python3.8/site-packages/vot/tracker/trax.py", line 376, in _connect
+    self._process = TrackerProcess(self._command, self._envvars, log=log, socket=self._socket, timeout=self._timeout)
+  File "/home/nick/anaconda3/envs/sutrack/lib/python3.8/site-packages/vot/tracker/trax.py", line 194, in __init__
+    raise e
+  File "/home/nick/anaconda3/envs/sutrack/lib/python3.8/site-packages/vot/tracker/trax.py", line 188, in __init__
+    self._client = Client(
+  File "/home/nick/anaconda3/envs/sutrack/lib/python3.8/site-packages/trax/client.py", line 81, in __init__
+    raise TraxException("Unable to connect to tracker")
+trax.TraxException: Unable to connect to tracker
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/nick/anaconda3/envs/sutrack/lib/python3.8/site-packages/vot/experiment/__init__.py", line 160, in run_experiment
+    experiment.execute(tracker, sequence, force=force, callback=progress)
+  File "/home/nick/anaconda3/envs/sutrack/lib/python3.8/site-packages/vot/experiment/multistart.py", line 78, in execute
+    _, properties, elapsed = runtime.initialize(proxy.frame(0), self._get_initialization(proxy, 0))
+  File "/home/nick/anaconda3/envs/sutrack/lib/python3.8/site-packages/vot/tracker/trax.py", line 431, in initialize
+    self._error(e)
+  File "/home/nick/anaconda3/envs/sutrack/lib/python3.8/site-packages/vot/tracker/trax.py", line 408, in _error
+    raise TrackerException(exception, tracker=self._tracker, \
+vot.tracker.TrackerException: Unable to connect to tracker
+[31mTracker output written to file: /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2022/logs/sutrack_sparsevit_t224_2026-02-13T03-47-11.323116.log[0m
+[31mEvaluation interrupted by tracker error: ('Experiment interrupted', TrackerException(TraxException('Unable to connect to tracker')))[0m
+VOT Evaluation: sutrack_sparsevit_t224_vot2022
+Command: vot evaluate sutrack_sparsevit_t224
+Working Directory: /home/nick/code/code.sutrack/SUTrack/vot-workspace-rgbd2022
+================================================================================
+

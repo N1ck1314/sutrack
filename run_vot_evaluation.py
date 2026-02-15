@@ -24,6 +24,8 @@ AVAILABLE_MODELS = [
     'sutrack_mfe_t224',       # MFE
     'sutrack_sparsevit_t224', # SparseViT
     'sutrack_S4F_t224',       # S4F
+    'sutrack_active_t224',    # Active (动态激活)
+    'sutrack_activev1_t224',  # Active V1 (特征增强+RGBD动态深度融合)
 ]
 
 # VOT工作区配置

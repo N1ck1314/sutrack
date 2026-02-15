@@ -30,10 +30,12 @@ from lib.models.sutrack_SCSA import build_sutrack as build_sutrack_scsa
 from lib.models.sutrack_SMFA import build_sutrack as build_sutrack_smfa
 from lib.models.sutrack_OR import build_sutrack as build_sutrack_or
 from lib.models.sutrack_SGLA import build_sutrack as build_sutrack_sgla
+from lib.models.sutrack_activev1 import build_sutrack_activev1
 
 
 from lib.train.actors import SUTrack_Actor
 from lib.train.actors import SUTrack_active_Actor
+from lib.train.actors.sutrack_activev1 import SUTrack_activev1_Actor
 from lib.train.actors.sutrack_SGLA import SUTrack_SGLA_Actor
 from lib.utils.focal_loss import FocalLoss
 # for import modules
@@ -78,6 +80,8 @@ def run(settings):
         net = build_sutrack(cfg)
     elif settings.script_name == "sutrack_active":
         net = build_sutrack_active(cfg)
+    elif settings.script_name == "sutrack_activev1":
+        net = build_sutrack_activev1(cfg)
     elif settings.script_name == "sutrack_rewight":
         net = build_sutrack_rewight(cfg)
     elif settings.script_name == "sutrack_patch":
@@ -667,6 +671,13 @@ def run(settings):
         loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
                        'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
         actor = SUTrack_active_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
+    elif settings.script_name == "sutrack_activev1":
+        focal_loss = FocalLoss()
+        objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
+                     'task_cls': CrossEntropyLoss()}
+        loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
+                       'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
+        actor = SUTrack_activev1_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
     else:
         raise ValueError("illegal script name")
 

@@ -1,16 +1,65 @@
 {
-    "start_time": "20260210_120423",
-    "total": 1,
-    "success": 0,
-    "failed": 1,
+    "start_time": "20260212_195701",
+    "total": 8,
+    "success": 8,
+    "failed": 0,
     "skipped": 0,
     "details": [
         {
             "model": "sutrack_mlka_t224",
             "dataset": "vot2022",
-            "status": "error",
-            "error": "[Errno 2] No such file or directory: 'vot'",
+            "status": "success",
+            "time": 6.623513460159302,
             "log": "vot_test_logs/sutrack_mlka_t224_vot2022.log"
+        },
+        {
+            "model": "sutrack_or_t224",
+            "dataset": "vot2022",
+            "status": "success",
+            "time": 6.105612516403198,
+            "log": "vot_test_logs/sutrack_or_t224_vot2022.log"
+        },
+        {
+            "model": "sutrack_sgla_t224",
+            "dataset": "vot2022",
+            "status": "success",
+            "time": 9.306906700134277,
+            "log": "vot_test_logs/sutrack_sgla_t224_vot2022.log"
+        },
+        {
+            "model": "sutrack_smfa_t224",
+            "dataset": "vot2022",
+            "status": "success",
+            "time": 7.907390594482422,
+            "log": "vot_test_logs/sutrack_smfa_t224_vot2022.log"
+        },
+        {
+            "model": "sutrack_rmt_t224",
+            "dataset": "vot2022",
+            "status": "success",
+            "time": 7.920729160308838,
+            "log": "vot_test_logs/sutrack_rmt_t224_vot2022.log"
+        },
+        {
+            "model": "sutrack_mfe_t224",
+            "dataset": "vot2022",
+            "status": "success",
+            "time": 28166.47909975052,
+            "log": "vot_test_logs/sutrack_mfe_t224_vot2022.log"
+        },
+        {
+            "model": "sutrack_sparsevit_t224",
+            "dataset": "vot2022",
+            "status": "success",
+            "time": 5.999180316925049,
+            "log": "vot_test_logs/sutrack_sparsevit_t224_vot2022.log"
+        },
+        {
+            "model": "sutrack_S4F_t224",
+            "dataset": "vot2022",
+            "status": "success",
+            "time": 20336.30308032036,
+            "log": "vot_test_logs/sutrack_S4F_t224_vot2022.log"
         }
     ]
 }

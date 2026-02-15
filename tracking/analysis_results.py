@@ -66,8 +66,8 @@ trackers = []
 dataset_name = 'visdrone2018'
 # dataset_name = 'uavdt'
 
-trackers.extend(trackerlist(name='sutrack_S4F', parameter_name='sutrack_S4F_t224', dataset_name=dataset_name,
-                            run_ids=None, display_name='sutrack_S4F_t224'))
+trackers.extend(trackerlist(name='sutrack_active', parameter_name='sutrack_active_fix_t224', dataset_name=dataset_name,
+                            run_ids=None, display_name='sutrack_active_fix_t224'))
 
 dataset = get_dataset(dataset_name)
 
