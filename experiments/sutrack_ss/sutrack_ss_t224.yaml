@@ -1,21 +1,24 @@
+# SUTrack-SS with Tiny backbone (224x224)
+# Based on SSTrack: Decoupled Spatio-Temporal Consistency Learning for Self-Supervised Tracking
+
 DATA:
   MAX_SAMPLE_INTERVAL: 400
-  MULTI_MODAL_LANGUAGE: FALSE 
+  MULTI_MODAL_LANGUAGE: FALSE
   MULTI_MODAL_VISION: True
   MEAN:
   - 0.485
   - 0.456
   - 0.406
+  STD:
+  - 0.229
+  - 0.224
+  - 0.225
   SEARCH:
     CENTER_JITTER: 3.5
     FACTOR: 4.0
     SCALE_JITTER: 0.5
     SIZE: 224
     NUMBER: 1
-  STD:
-  - 0.229
-  - 0.224
-  - 0.225
   TEMPLATE:
     CENTER_JITTER: 0
     FACTOR: 2.0
@@ -45,25 +48,46 @@ DATA:
     # - 2
     SAMPLE_PER_EPOCH: 60000
   USE_NLP:
-    TNL2K: False  
+    TNL2K: False
+
 MODEL:
   ENCODER:
     TYPE: fastitpnt
     STRIDE: 16
-    PRETRAIN_TYPE: 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt' # This parameter is not activated for now.
+    PRETRAIN_TYPE: 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt'
     PATCHEMBED_INIT: halfcopy
     DROP_PATH: 0.1
     TOKEN_TYPE_INDICATE: True
+    CLASS_TOKEN: True
   TEXT_ENCODER:
     TYPE: ViT-L/14
+  
+  # DSCL模块配置
+  USE_DSCL: True
+  DSCL:
+    NUM_FRAMES: 2
+    SPATIAL_HEADS: 8
+    TEMPORAL_HEADS: 4
+    DROP_PATH: 0.1
+  
+  # 自监督损失配置
+  USE_SS_LOSS: True
+  SS_LOSS:
+    TEMPERATURE: 0.5
+    CONTRASTIVE_WEIGHT: 1.0
+    TEMPORAL_WEIGHT: 0.5
+    USE_COSINE: True
+  
   DECODER:
     TYPE: CENTER
     NUM_CHANNELS: 256
     CONV_TYPE: normal
     XAVIER_INIT: True
+  
   TASK_DECODER:
     NUM_CHANNELS: 256
     FEATURE_TYPE: average
+  
   TASK_NUM: 5
   TASK_INDEX:
     VASTTRACK: 0
@@ -75,6 +99,7 @@ MODEL:
     DEPTHTRACK: 2
     LASHER: 3
     VISEVENT: 4
+
 TRAIN:
   TYPE: text_frozen
   ENCODER_MULTIPLIER: 0.1
@@ -90,8 +115,11 @@ TRAIN:
     TYPE: step
     DECAY_RATE: 0.1
   WEIGHT_DECAY: 0.0001
-  ACTIVENESS_LOSS_WEIGHT: 0.05
-  TARGET_ACTIVE_RATIO: 0.5
+  CE_WEIGHT: 1.0
+  GIOU_WEIGHT: 2.0
+  L1_WEIGHT: 5.0
+  TASK_CE_WEIGHT: 1.0
+
 TEST:
   EPOCH: 180
   SEARCH_FACTOR: 4.0
@@ -99,6 +127,7 @@ TEST:
   TEMPLATE_FACTOR: 2.0
   TEMPLATE_SIZE: 112
   WINDOW: True
+  NUM_TEMPLATES: 1
   MULTI_MODAL_VISION:
     DEFAULT: True
   MULTI_MODAL_LANGUAGE:

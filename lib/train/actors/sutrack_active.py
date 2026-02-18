@@ -106,20 +106,29 @@ class SUTrack_active_Actor(BaseActor):
         else:
             location_loss = torch.tensor(0.0, device=l1_loss.device)
         
-        # === 新增：动态激活效率损失 ===
-        # 目标：鼓励模型在保证精度的前提下，合理地跳过一些层
+        # === 优化：动态激活效率损失（软门控版本） ===
         activeness_loss = torch.zeros((), device=l1_loss.device)
         actual_activation_rate = 0.0
+        gate_decisiveness = 0.0
         probs_active = pred_dict.get('probs_active')
         if probs_active is not None and len(probs_active) > 0:
-            # 拼接所有层的激活概率：list of (B,1) -> (B, num_layers)
-            prob_active_m = torch.cat(probs_active, dim=1).mean(dim=1)  # (B,) 每个样本的平均激活率
-            # 计算期望激活率（目标由配置控制）
-            expected_active_ratio = torch.full_like(prob_active_m, self.target_active_ratio)
-            # L1 损失：鼓励激活率接近目标值
-            activeness_loss = F.l1_loss(prob_active_m, expected_active_ratio)
-            # 记录实际激活率统计（用于调试FPS波动）
-            actual_activation_rate = prob_active_m.detach().mean().item()
+            # 拼接所有层的门控分数：list of (B,1) -> (B, num_layers)
+            prob_all = torch.cat(probs_active, dim=1)  # (B, num_layers)
+
+            # 1. 预算损失：平均激活率接近目标值
+            prob_mean = prob_all.mean(dim=1)  # (B,) 每样本平均激活率
+            budget_loss = F.l1_loss(prob_mean, torch.full_like(prob_mean, self.target_active_ratio))
+
+            # 2. 二值正则化：鼓励门控值趋向 0 或 1（而非停留在 0.5 附近）
+            #    使用 p*(1-p) 正则项：p=0 或 p=1 时为 0，p=0.5 时最大(0.25)
+            #    减小训练（软门控）与推理（硬阈值）之间的 gap
+            binary_reg = (prob_all * (1.0 - prob_all)).mean()
+
+            activeness_loss = budget_loss + 0.5 * binary_reg
+
+            # 记录统计信息
+            actual_activation_rate = prob_mean.detach().mean().item()
+            gate_decisiveness = 1.0 - 4.0 * binary_reg.detach().item()  # 1.0=完全果断，0.0=全在0.5
         # =======================================
         
         # weighted sum
@@ -138,8 +147,8 @@ class SUTrack_active_Actor(BaseActor):
                       "Loss/location": location_loss.item(),
                       "Loss/task_class": task_cls_loss.item(),
                       "Loss/activeness": activeness_loss.item(),
-                      "ActRate": actual_activation_rate,  # 新增：实际激活率
-                      "TargetActRate": self.target_active_ratio,
+                      "ActRate": actual_activation_rate,  # 实际激活率
+                      "GateDecisive": gate_decisiveness,  # 门控果断度(越接近1越好)
                       "IoU": mean_iou.item()}
             return loss, status
         else:

@@ -1,6 +1,6 @@
 DATA:
   MAX_SAMPLE_INTERVAL: 400
-  MULTI_MODAL_LANGUAGE: FALSE 
+  MULTI_MODAL_LANGUAGE: False  # DINOv3 简化版暂时关闭文本模态
   MULTI_MODAL_VISION: True
   MEAN:
   - 0.485
@@ -24,36 +24,23 @@ DATA:
     NUMBER: 1
   TRAIN:
     DATASETS_NAME:
-    # - LASOT
     - GOT10K_vottrain
-    # - COCO17
-    # - TRACKINGNET
-    # - VASTTRACK
-    # - TNL2K_train
     - DepthTrack_train
-    # - VisEvent
-    # - LasHeR_train
     DATASETS_RATIO:
     - 1
     - 1
-    # - 1
-    # - 1
-    # - 4
-    # - 4
-    # - 2
-    # - 2
-    # - 2
     SAMPLE_PER_EPOCH: 60000
   USE_NLP:
-    TNL2K: False  
+    TNL2K: False  # 简化版关闭 NLP
 MODEL:
   ENCODER:
-    TYPE: fastitpnt
-    STRIDE: 16
-    PRETRAIN_TYPE: 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt' # This parameter is not activated for now.
-    PATCHEMBED_INIT: halfcopy
+    TYPE: dinov3_convnext_tiny  # 使用 DINOv3 ConvNeXt-Tiny
+    STRIDE: 32  # DINOv3 ConvNeXt 的输出 stride
+    PRETRAIN_TYPE: ''  # 从 HuggingFace 自动加载，留空
+    PATCHEMBED_INIT: copy  # 保留以兼容接口
     DROP_PATH: 0.1
-    TOKEN_TYPE_INDICATE: True
+    TOKEN_TYPE_INDICATE: False  # 简化版暂时关闭
+    CLASS_TOKEN: False  # 简化版暂时关闭
   TEXT_ENCODER:
     TYPE: ViT-L/14
   DECODER:
@@ -76,8 +63,9 @@ MODEL:
     LASHER: 3
     VISEVENT: 4
 TRAIN:
-  TYPE: text_frozen
-  ENCODER_MULTIPLIER: 0.1
+  TYPE: normal
+  ENCODER_MULTIPLIER: 0.1  # encoder 学习率倍数
+  FREEZE_ENCODER: False  # 是否冻结 encoder（建议先 True 测试，再 False 微调）
   BATCH_SIZE: 32
   EPOCH: 180
   GRAD_CLIP_NORM: 0.1
@@ -90,8 +78,6 @@ TRAIN:
     TYPE: step
     DECAY_RATE: 0.1
   WEIGHT_DECAY: 0.0001
-  ACTIVENESS_LOSS_WEIGHT: 0.05
-  TARGET_ACTIVE_RATIO: 0.5
 TEST:
   EPOCH: 180
   SEARCH_FACTOR: 4.0
@@ -102,7 +88,7 @@ TEST:
   MULTI_MODAL_VISION:
     DEFAULT: True
   MULTI_MODAL_LANGUAGE:
-    DEFAULT: False
+    DEFAULT: False  # 简化版关闭语言模态
   USE_NLP:
     DEFAULT: False
     TNL2K: False

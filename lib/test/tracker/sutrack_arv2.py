@@ -4,17 +4,17 @@ from lib.test.tracker.utils import sample_target, transform_image_to_crop
 import cv2
 from lib.utils.box_ops import box_xywh_to_xyxy, box_xyxy_to_cxcywh
 from lib.test.utils.hann import hann2d
-from lib.models.sutrack_active import build_sutrack_active
+from lib.models.sutrack_arv2 import build_sutrack_arv2
 from lib.test.tracker.utils import Preprocessor
 from lib.utils.box_ops import clip_box
 import clip
 import numpy as np
 
 
-class sutrack_active(BaseTracker):
+class SUTRACK_ARV2(BaseTracker):
     def __init__(self, params, dataset_name):
-        super(sutrack_active, self).__init__(params)
-        network = build_sutrack_active(params.cfg)
+        super(SUTRACK_ARV2, self).__init__(params)
+        network = build_sutrack_arv2(params.cfg)
         network.load_state_dict(torch.load(self.params.checkpoint, map_location='cpu')['net'], strict=True)
         self.cfg = params.cfg
         self.network = network.cuda()
@@ -96,6 +96,9 @@ class sutrack_active(BaseTracker):
                                                 normalize=True)
         self.template_anno_list = [prev_box_crop.to(template.device).unsqueeze(0)]
         self.frame_id = 0
+        
+        # Reset ARTrackV2 state for new sequence
+        self.network.reset_arv2_state()
 
         # language information
         if self.multi_modal_language:
@@ -123,35 +126,39 @@ class sutrack_active(BaseTracker):
 
         # run the encoder
         with torch.no_grad():
-            enc_opt = self.network.forward_encoder(self.template_list,
+            enc_opt, _ = self.network.forward_encoder(self.template_list,
                                                    search_list,
                                                    self.template_anno_list,
                                                    self.text_src,
                                                    self.task_index_batch)
-            # 推理时丢弃激活概率，只保留特征
-            if isinstance(enc_opt, tuple):
-                enc_opt, _ = enc_opt
 
-        # run the decoder
+        # run the decoder (ARTrackV2 integrated)
         with torch.no_grad():
-            out_dict = self.network.forward_decoder(feature=enc_opt)
+            out_dict = self.network.forward_decoder(feature=(enc_opt, {}))
 
-        # add hann windows
-        pred_score_map = out_dict['score_map']
-        if self.cfg.TEST.WINDOW == True: # for window penalty
-            response = self.output_window * pred_score_map
+        # Check if ARTrackV2 was used
+        if 'confidence' in out_dict:
+            # ARTrackV2 prediction
+            pred_boxes = out_dict['pred_boxes'].squeeze(1)  # [B, 4]
+            conf_score = out_dict['confidence'].squeeze(-1).item()
+            pred_box = (pred_boxes[0] * self.params.search_size / resize_factor).tolist()
         else:
-            response = pred_score_map
-        if 'size_map' in out_dict.keys():
-            pred_boxes, conf_score = self.network.decoder.cal_bbox(response, out_dict['size_map'],
-                                                                   out_dict['offset_map'], return_score=True)
-        else:
-            pred_boxes, conf_score = self.network.decoder.cal_bbox(response,
-                                                                   out_dict['offset_map'],
-                                                                   return_score=True)
-        pred_boxes = pred_boxes.view(-1, 4)
-        # Baseline: Take the mean of all pred boxes as the final result
-        pred_box = (pred_boxes.mean(dim=0) * self.params.search_size / resize_factor).tolist()  # (cx, cy, w, h) [0,1]
+            # Standard decoder prediction
+            pred_score_map = out_dict['score_map']
+            if self.cfg.TEST.WINDOW == True:
+                response = self.output_window * pred_score_map
+            else:
+                response = pred_score_map
+            if 'size_map' in out_dict.keys():
+                pred_boxes, conf_score = self.network.decoder.cal_bbox(response, out_dict['size_map'],
+                                                                       out_dict['offset_map'], return_score=True)
+            else:
+                pred_boxes, conf_score = self.network.decoder.cal_bbox(response,
+                                                                       out_dict['offset_map'],
+                                                                       return_score=True)
+            pred_boxes = pred_boxes.view(-1, 4)
+            pred_box = (pred_boxes.mean(dim=0) * self.params.search_size / resize_factor).tolist()
+        
         # get the final box result
         self.state = clip_box(self.map_box_back(pred_box, resize_factor), H, W, margin=10)
 
@@ -218,4 +225,4 @@ class sutrack_active(BaseTracker):
         return nlp_ids, nlp_masks
 
 def get_tracker_class():
-    return sutrack_active
+    return SUTRACK_ARV2

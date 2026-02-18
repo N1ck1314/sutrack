@@ -24,3 +24,4 @@ __pycache__/
 
 *.onnx
 *.pth.tar
+*.pyc

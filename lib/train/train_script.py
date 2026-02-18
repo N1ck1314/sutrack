@@ -31,6 +31,9 @@ from lib.models.sutrack_SMFA import build_sutrack as build_sutrack_smfa
 from lib.models.sutrack_OR import build_sutrack as build_sutrack_or
 from lib.models.sutrack_SGLA import build_sutrack as build_sutrack_sgla
 from lib.models.sutrack_activev1 import build_sutrack_activev1
+from lib.models.sutrack_dinov3 import build_sutrack as build_sutrack_dinov3
+from lib.models.sutrack_ss import build_sutrack_ss
+from lib.models.sutrack_arv2 import build_sutrack_arv2
 
 
 from lib.train.actors import SUTrack_Actor
@@ -118,6 +121,12 @@ def run(settings):
         net = build_sutrack_or(cfg)
     elif settings.script_name == "sutrack_SGLA":
         net = build_sutrack_sgla(cfg)
+    elif settings.script_name == "sutrack_dinov3":
+        net = build_sutrack_dinov3(cfg)
+    elif settings.script_name == "sutrack_ss":
+        net = build_sutrack_ss(cfg)
+    elif settings.script_name == "sutrack_arv2":
+        net = build_sutrack_arv2(cfg)
 
     else:
         raise ValueError("illegal script name")
@@ -249,6 +258,29 @@ def run(settings):
             print("\n" + "="*60)
             print("🔍 SGLA模块配置确认")
             print("="*60)
+        elif settings.script_name == "sutrack_arv2":
+            print("\n" + "="*60)
+            print("🔍 ARTrackV2模块配置确认")
+            print("="*60)
+            use_artrackv2 = cfg.MODEL.ARTRACKV2.ENABLE if hasattr(cfg.MODEL, 'ARTRACKV2') else False
+            num_appearance_tokens = cfg.MODEL.ARTRACKV2.NUM_APPEARANCE_TOKENS if hasattr(cfg.MODEL, 'ARTRACKV2') else 4
+            print(f"✓ ARTrackV2启用状态: {'🟢 已启用' if use_artrackv2 else '🔴 未启用'}")
+            if use_artrackv2:
+                print(f"✓ 外观Token数量: {num_appearance_tokens}")
+                print("✓ 核心机制:")
+                print("  - Pure Encoder架构: 取消帧内自回归，并行处理所有token")
+                print("  - Appearance Prompts: 外观演化建模（可学习动态模板）")
+                print("  - Oriented Masking: 限制外观token注意力路径，防信息泄漏")
+                print("  - Confidence Token: IoU预测和置信度估计")
+                print("  - Appearance Reconstruction: MAE式外观重建（训练时）")
+                print("✓ 特点:")
+                print("  - 提速策略: 取消帧内自回归，FPS提升3.6x")
+                print("  - 精度保持: 跨帧自回归 + 外观演化，精度不掉")
+                print("  - 记忆载体: Trajectory + Appearance + Confidence")
+                print("✓ 训练增强: 支持Reverse Augmentation（反向序列增强）")
+            else:
+                print("⚠️  警告: ARTrackV2未启用，将使用标准的decoder流程")
+            print("="*60 + "\n")
             use_sgla = cfg.MODEL.ENCODER.get('USE_SGLA', False)
             sgla_loss_weight = cfg.MODEL.ENCODER.get('SGLA_LOSS_WEIGHT', 0.1)
             print(f"✓ SGLA启用状态: {'🟢 已启用' if use_sgla else '🔴 未启用'}")
@@ -259,6 +291,26 @@ def run(settings):
                 print("✓ 优势: 实时UAV跟踪，减少计算开销")
             else:
                 print("⚠️  警告: SGLA未启用，将使用标准的Transformer结构")
+            print("="*60 + "\n")
+        elif settings.script_name == "sutrack_ss":
+            print("\n" + "="*60)
+            print("🔍 SUTrack-SS (SSTrack) 配置确认")
+            print("="*60)
+            use_dscl = cfg.MODEL.get('USE_DSCL', False)
+            use_ss_loss = cfg.MODEL.get('USE_SS_LOSS', False)
+            print(f"✓ DSCL模块启用状态: {'🟢 已启用' if use_dscl else '🔴 未启用'}")
+            if use_dscl:
+                print(f"✓ 空间注意力头数: {cfg.MODEL.DSCL.SPATIAL_HEADS}")
+                print(f"✓ 时间注意力头数: {cfg.MODEL.DSCL.TEMPORAL_HEADS}")
+                print("✓ 核心机制: 解耦时空一致性学习")
+                print("✓ 特点: 空间全局定位 + 时间局部关联")
+            print(f"✓ 自监督损失启用状态: {'🟢 已启用' if use_ss_loss else '🔴 未启用'}")
+            if use_ss_loss:
+                print(f"✓ 对比损失权重: {cfg.MODEL.SS_LOSS.CONTRASTIVE_WEIGHT}")
+                print(f"✓ 时间损失权重: {cfg.MODEL.SS_LOSS.TEMPORAL_WEIGHT}")
+                print(f"✓ 温度系数: {cfg.MODEL.SS_LOSS.TEMPERATURE}")
+                print("✓ 核心机制: 实例对比学习 + 时间一致性约束")
+            print("✓ 论文: Decoupled Spatio-Temporal Consistency Learning for Self-Supervised Tracking (AAAI 2025)")
             print("="*60 + "\n")
 
     # wrap networks to distributed one
@@ -530,6 +582,39 @@ def run(settings):
             else:
                 print("⚠️  SGLA模块未初始化（可能配置中USE_SGLA=False）")
             print()
+        elif settings.script_name == "sutrack_ss":
+            print("\n🔍 验证SUTrack-SS模块实际初始化状态...")
+            model = net.module if hasattr(net, 'module') else net
+            encoder = model.encoder
+            
+            # 验证DSCL模块
+            if hasattr(encoder, 'use_dscl') and encoder.use_dscl:
+                print("✅ DSCL模块已成功初始化！")
+                print(f"   - use_dscl: {encoder.use_dscl}")
+                if hasattr(encoder, 'dscl') and encoder.dscl is not None:
+                    dscl = encoder.dscl
+                    print(f"   - 空间注意力头数: {dscl.spatial_module.num_heads}")
+                    print(f"   - 时间注意力头数: {dscl.temporal_module.num_heads}")
+                    print(f"   - 特征维度: {dscl.dim}")
+                    print("   - 核心机制: 解耦时空一致性 (DSCL)")
+                    print("     * 空间分支: 全局空间定位")
+                    print("     * 时间分支: 局部时间关联")
+            else:
+                print("⚠️  DSCL模块未初始化（可能配置中USE_DSCL=False）")
+            
+            # 验证自监督损失
+            if hasattr(model, 'use_ss_loss') and model.use_ss_loss:
+                print("\n✅ SSTrack自监督损失已成功初始化！")
+                print(f"   - use_ss_loss: {model.use_ss_loss}")
+                if hasattr(model, 'ss_loss') and model.ss_loss is not None:
+                    ss_loss = model.ss_loss
+                    print(f"   - 温度系数: {ss_loss.contrastive_loss.temperature}")
+                    print(f"   - 对比损失权重: {ss_loss.contrastive_weight}")
+                    print(f"   - 时间损失权重: {ss_loss.temporal_weight}")
+                    print("   - 核心机制: 实例对比学习 + 时间一致性")
+            else:
+                print("⚠️  SSTrack自监督损失未初始化（可能配置中USE_SS_LOSS=False）")
+            print()
     # Loss functions and Actors
     if settings.script_name == "sutrack":
         focal_loss = FocalLoss()
@@ -678,6 +763,27 @@ def run(settings):
         loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
                        'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
         actor = SUTrack_activev1_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
+    elif settings.script_name == "sutrack_dinov3":
+        focal_loss = FocalLoss()
+        objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
+                     'task_cls': CrossEntropyLoss()}
+        loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
+                       'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
+        actor = SUTrack_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
+    elif settings.script_name == "sutrack_ss":
+        focal_loss = FocalLoss()
+        objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
+                     'task_cls': CrossEntropyLoss()}
+        loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
+                       'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
+        actor = SUTrack_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
+    elif settings.script_name == "sutrack_arv2":
+        focal_loss = FocalLoss()
+        objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
+                     'task_cls': CrossEntropyLoss()}
+        loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
+                       'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
+        actor = SUTrack_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
     else:
         raise ValueError("illegal script name")
 

@@ -47,13 +47,24 @@ DATA:
   USE_NLP:
     TNL2K: False  
 MODEL:
+  # ARTrackV2 Configuration - Core Speedup Modules
+  ARTRACKV2:
+    ENABLE: True  # Enable ARTrackV2 modules
+    NUM_APPEARANCE_TOKENS: 4  # Number of appearance prompts
+    NUM_TRAJECTORY_TOKENS: 4  # x1, y1, x2, y2
+    ORIENTED_MASKING: True  # Enable oriented attention masking
+    APPEARANCE_RECON: True  # Enable appearance reconstruction (training only)
+    MASK_RATIO: 0.5  # Masking ratio for appearance reconstruction
+    CONFIDENCE_LOSS_WEIGHT: 0.5  # Weight for IoU prediction loss
+    APPEARANCE_RECON_LOSS_WEIGHT: 0.3  # Weight for appearance reconstruction loss
   ENCODER:
     TYPE: fastitpnt
     STRIDE: 16
-    PRETRAIN_TYPE: 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt' # This parameter is not activated for now.
+    PRETRAIN_TYPE: 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt'
     PATCHEMBED_INIT: halfcopy
     DROP_PATH: 0.1
     TOKEN_TYPE_INDICATE: True
+    CLASS_TOKEN: True
   TEXT_ENCODER:
     TYPE: ViT-L/14
   DECODER:
@@ -90,8 +101,12 @@ TRAIN:
     TYPE: step
     DECAY_RATE: 0.1
   WEIGHT_DECAY: 0.0001
-  ACTIVENESS_LOSS_WEIGHT: 0.05
-  TARGET_ACTIVE_RATIO: 0.5
+  # ARTrackV2 Training Configuration
+  ARTRACKV2:
+    USE_REVERSE_AUGMENTATION: True  # Use reverse sequence augmentation
+    REVERSE_PROB: 0.5  # Probability of reversing the sequence
+    IOU_LOSS_WEIGHT: 0.5  # Weight for IoU regression loss
+    APPEARANCE_RECON_LOSS_WEIGHT: 0.3  # Weight for appearance reconstruction loss
 TEST:
   EPOCH: 180
   SEARCH_FACTOR: 4.0

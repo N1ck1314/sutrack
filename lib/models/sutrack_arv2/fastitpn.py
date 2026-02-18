@@ -17,7 +17,7 @@ import torch.nn as nn
 from timm.models.registry import register_model
 import torch.nn.functional as F
 import torch.utils.checkpoint as checkpoint
-from timm.models.layers import to_2tuple, trunc_normal_
+from timm.models.layers import to_2tuple, drop_path, trunc_normal_
 
 from torch import Tensor, Size
 from typing import Union, List
@@ -45,14 +45,7 @@ class DropPath(nn.Module):
         self.drop_prob = drop_prob
 
     def forward(self, x):
-        if self.drop_prob == 0. or not self.training:
-            return x
-        keep_prob = 1 - self.drop_prob
-        shape = (x.shape[0],) + (1,) * (x.ndim - 1)  # work with diff dim tensors, not just 2D ConvNets
-        random_tensor = torch.bernoulli(torch.full(shape, keep_prob, device=x.device, dtype=x.dtype))
-        if keep_prob > 0.0:
-            random_tensor.div_(keep_prob)
-        return x * random_tensor
+        return drop_path(x, self.drop_prob, self.training)
 
     def extra_repr(self) -> str:
         return 'p={}'.format(self.drop_prob)
@@ -285,11 +278,19 @@ class Attention(nn.Module):
 
         return x
 
+
 class Block(nn.Module):
+
     def __init__(self, dim, num_heads, mlp_ratio=4., qkv_bias=False, qk_scale=None, drop=0., attn_drop=0.,
                  drop_path=0., init_values=None, norm_layer=nn.LayerNorm, window_size=None, attn_head_dim=None,
-                 use_decoupled_rel_pos_bias=False, depth=None, postnorm=False, deepnorm=False, subln=False,
-                 swiglu=False, naiveswiglu=False):
+                 use_decoupled_rel_pos_bias=False,
+                 depth=None,
+                 postnorm=False,
+                 deepnorm=False,
+                 subln=False,
+                 swiglu=False,
+                 naiveswiglu=False,
+                 ):
         super().__init__()
 
         with_attn = num_heads > 0
@@ -299,7 +300,8 @@ class Block(nn.Module):
             dim, num_heads=num_heads, qkv_bias=qkv_bias, qk_scale=qk_scale,
             attn_drop=attn_drop, proj_drop=drop, window_size=window_size,
             use_decoupled_rel_pos_bias=use_decoupled_rel_pos_bias, attn_head_dim=attn_head_dim,
-            deepnorm=deepnorm, subln=subln
+            deepnorm=deepnorm,
+            subln=subln
         ) if with_attn else None
 
         self.drop_path = DropPath(drop_path) if drop_path > 0. else nn.Identity()
@@ -307,10 +309,10 @@ class Block(nn.Module):
 
         mlp_hidden_dim = int(dim * mlp_ratio)
         if swiglu:
-            self.mlp = SwiGLU(
+            self.mlp = xops.SwiGLU(
                 in_features=dim,
                 hidden_features=mlp_hidden_dim
-            )
+            )  # hidden_features: 2/3
         elif naiveswiglu:
             self.mlp = SwiGLU(
                 in_features=dim,
@@ -339,83 +341,18 @@ class Block(nn.Module):
 
         self.postnorm = postnorm
 
-        # === 动态激活门控：轻量 MLP + STE 激活 ===
-        # 1. 轻量 MLP 替代单 Linear，提升跳过/执行决策质量
-        # 2. STE (Straight-Through Estimator)：
-        #    训练前向用硬二值(0/1)，反向用 sigmoid 梯度
-        #    彻底消除 train-test gap
-        self.gate_mlp = nn.Sequential(
-            nn.Linear(dim, 16),
-            nn.ReLU(inplace=True),
-            nn.Linear(16, 1),
-        )
-        # 输出偏置初始化为正值 → logits≈2.0 → gate=1(执行)
-        # 初始所有层都执行，训练中逐渐学会哪些可跳过
-        nn.init.constant_(self.gate_mlp[-1].bias, 2.0)
-
-    @staticmethod
-    def _ste_gate(logits):
-        """Straight-Through Estimator 门控激活
-        Forward: 硬二值 (0 或 1)，与推理行为完全一致
-        Backward: sigmoid 梯度，保证可学习
-        """
-        soft = logits.sigmoid()
-        hard = (logits > 0.0).float()
-        # STE 核心: detach切断soft的前向，但保留其反向梯度路径
-        return hard - soft.detach() + soft, soft
-
-    def forward(self, x, rel_pos_bias=None, attn_mask=None, dynamic_activation=False):
-        if dynamic_activation:
-            logits = self.gate_mlp(x[:, 0, :])  # (B, 1) 原始 logits
-
-            if self.training:
-                # === 训练模式：STE 门控 ===
-                # gate: 前向是0/1，反向有sigmoid梯度 → 零 train-test gap
-                # soft_prob: 纯sigmoid值，用于loss计算（budget + binary_reg）
-                gate, soft_prob = self._ste_gate(logits)
-                x_transformed = self._forward_block(x, rel_pos_bias, attn_mask)
-                g = gate.unsqueeze(-1)  # (B, 1, 1) 广播到所有 token
-                x = g * x_transformed + (1.0 - g) * x
-                return x, soft_prob  # 返回 soft_prob 给 loss
-            else:
-                # === 推理模式：硬跳过，直接比较 logits 与 0 ===
-                B = x.size(0)
-                if B == 1:
-                    # 单样本快速路径（tracking 推理典型场景）
-                    if logits.item() > 0.0:
-                        x = self._forward_block(x, rel_pos_bias, attn_mask)
-                    return x, logits.sigmoid()
-                else:
-                    # 批量推理路径
-                    mask = logits.squeeze(-1) > 0.0  # (B,)
-                    if mask.all():
-                        x = self._forward_block(x, rel_pos_bias, attn_mask)
-                    elif mask.any():
-                        idx = torch.where(mask)[0]
-                        x_active = self._forward_block(x[idx], rel_pos_bias, attn_mask)
-                        x = x.clone()
-                        x[idx] = x_active
-                    return x, logits.sigmoid()
-
-        x = self._forward_block(x, rel_pos_bias, attn_mask)
-        return x, None
-
-    def _forward_block(self, x, rel_pos_bias=None, attn_mask=None):
+    def forward(self, x, rel_pos_bias=None, attn_mask=None):
         if self.gamma_2 is None:
             if self.postnorm:
                 if self.attn is not None:
-                    attn_output = self.attn(self.norm1(x), rel_pos_bias=rel_pos_bias, attn_mask=attn_mask)
-                    if isinstance(attn_output, tuple):  # 如果返回多个值，取第一个值
-                        attn_output = attn_output[0]
-                    x = x + self.drop_path(attn_output)
+                    x = x + self.drop_path(
+                        self.norm1(self.attn(x, rel_pos_bias=rel_pos_bias, attn_mask=attn_mask)))
                 x = x + self.drop_path(self.norm2(self.mlp(x)))
             elif self.deepnorm:
                 if self.attn is not None:
                     residual = x
-                    attn_output = self.attn(x, rel_pos_bias=rel_pos_bias, attn_mask=attn_mask)
-                    if isinstance(attn_output, tuple):  # 如果返回多个值，取第一个值
-                        attn_output = attn_output[0]
-                    x = self.drop_path(attn_output)
+                    x = self.attn(x, rel_pos_bias=rel_pos_bias, attn_mask=attn_mask)
+                    x = self.drop_path(x)
                     x = residual * self.alpha + x
                     x = self.norm1(x)
 
@@ -426,25 +363,19 @@ class Block(nn.Module):
                 x = self.norm2(x)
             else:
                 if self.attn is not None:
-                    attn_output = self.attn(self.norm1(x), rel_pos_bias=rel_pos_bias, attn_mask=attn_mask)
-                    if isinstance(attn_output, tuple):  # 如果返回多个值，取第一个值
-                        attn_output = attn_output[0]
-                    x = x + self.drop_path(attn_output)
+                    x = x + self.drop_path(
+                        self.attn(self.norm1(x), rel_pos_bias=rel_pos_bias, attn_mask=attn_mask))
                 x = x + self.drop_path(self.mlp(self.norm2(x)))
         else:
             if self.postnorm:
                 if self.attn is not None:
-                    attn_output = self.attn(self.norm1(x), rel_pos_bias=rel_pos_bias, attn_mask=attn_mask)
-                    if isinstance(attn_output, tuple):  # 如果返回多个值，取第一个值
-                        attn_output = attn_output[0]
-                    x = x + self.drop_path(self.gamma_1 * attn_output)
+                    x = x + self.drop_path(
+                        self.gamma_1 * self.norm1(self.attn(x, rel_pos_bias=rel_pos_bias, attn_mask=attn_mask)))
                 x = x + self.drop_path(self.gamma_2 * self.norm2(self.mlp(x)))
             else:
                 if self.attn is not None:
-                    attn_output = self.attn(self.norm1(x), rel_pos_bias=rel_pos_bias, attn_mask=attn_mask)
-                    if isinstance(attn_output, tuple):  # 如果返回多个值，取第一个值
-                        attn_output = attn_output[0]
-                    x = x + self.drop_path(self.gamma_1 * attn_output)
+                    x = x + self.drop_path(
+                        self.gamma_1 * self.attn(self.norm1(x), rel_pos_bias=rel_pos_bias, attn_mask=attn_mask))
                 x = x + self.drop_path(self.gamma_2 * self.mlp(self.norm2(x)))
         return x
 
@@ -1044,8 +975,9 @@ class Fast_iTPN(nn.Module):
         if self.token_type_indicate:
             # generate a foreground mask
             z_indicate_mask = self.create_mask(z, z_anno)
-            z_indicate_mask = z_indicate_mask.unfold(1, self.patch_size, self.patch_size).unfold(2, self.patch_size, self.patch_size) # to match the patch embedding
-            z_indicate_mask = z_indicate_mask.mean(dim=(3,4)).flatten(1) # elements are in [0,1], float, near to 1 indicates near to foreground, near to 0 indicates near to background
+            z_indicate_mask = z_indicate_mask.unsqueeze(1)
+            z_unfold = F.unfold(z_indicate_mask, kernel_size=self.patch_size, stride=self.patch_size) # to match the patch embedding
+            z_indicate_mask = z_unfold.mean(dim=1) # elements are in [0,1], float, near to 1 indicates near to foreground, near to 0 indicates near to background
 
         if self.token_type_indicate:
             # generate the indicate_embeddings for z
@@ -1097,50 +1029,26 @@ class Fast_iTPN(nn.Module):
 
         return xz
 
-    # def forward_features(self, template_list, search_list,template_anno_list, text_src, task_index):
-    #     xz = self.prepare_tokens_with_masks(template_list, search_list, template_anno_list, text_src, task_index)
-    #     xz = self.pos_drop(xz)
-
-    #     rel_pos_bias = self.rel_pos_bias() if self.rel_pos_bias is not None else None
-    #     for blk in self.blocks[-self.num_main_blocks:]:
-    #         xz = checkpoint.checkpoint(blk, xz, rel_pos_bias) if self.grad_ckpt else blk(xz, rel_pos_bias)
-
-    #     xz = self.norm(xz)
-
-    #     if self.fc_norm is not None:
-    #         return self.fc_norm(xz)
-    #     else:
-    #         return xz
-
-    def forward_features(self, template_list, search_list, template_anno_list, text_src, task_index):
+    def forward_features(self, template_list, search_list,template_anno_list, text_src, task_index):
         xz = self.prepare_tokens_with_masks(template_list, search_list, template_anno_list, text_src, task_index)
         xz = self.pos_drop(xz)
-        
-        rel_pos_bias = self.rel_pos_bias() if self.rel_pos_bias is not None else None
-        probs_active = [] if self.training else None  # 推理时不收集，减少开销
 
-        for i, blk in enumerate(self.blocks[-self.num_main_blocks:]):
-            # 启用动态激活：从第2层开始（前2层总是执行以保证基础特征）
-            use_dynamic = (i >= 2)
-            xz, prob_active = blk(xz, rel_pos_bias, dynamic_activation=use_dynamic)
-            if self.training and prob_active is not None:
-                probs_active.append(prob_active)
+        rel_pos_bias = self.rel_pos_bias() if self.rel_pos_bias is not None else None
+        for blk in self.blocks[-self.num_main_blocks:]:
+            xz = checkpoint.checkpoint(blk, xz, rel_pos_bias) if self.grad_ckpt else blk(xz, rel_pos_bias)
 
         xz = self.norm(xz)
 
         if self.fc_norm is not None:
-            feature = self.fc_norm(xz)
+            return self.fc_norm(xz)
         else:
-            feature = xz
-        
-        # 返回特征和激活概率（用于损失计算）
-        return feature, probs_active if len(probs_active) > 0 else None
+            return xz
 
     def forward(self, template_list, search_list, template_anno_list, text_src, task_index):
-        xz, probs_active = self.forward_features(template_list, search_list, template_anno_list, text_src, task_index)
-        # 返回特征和激活概率
+        xz = self.forward_features(template_list, search_list, template_anno_list, text_src, task_index)
+        # x = self.head(x)
         out = [xz]
-        return out, probs_active
+        return out
 
 def load_pretrained(model, checkpoint, pos_type, patchembed_init):
     if "module" in checkpoint.keys():
