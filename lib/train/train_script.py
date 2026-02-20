@@ -34,12 +34,14 @@ from lib.models.sutrack_activev1 import build_sutrack_activev1
 from lib.models.sutrack_dinov3 import build_sutrack as build_sutrack_dinov3
 from lib.models.sutrack_ss import build_sutrack_ss
 from lib.models.sutrack_arv2 import build_sutrack_arv2
+from lib.models.sutrack_ascn import build_sutrack_ascn
 
 
 from lib.train.actors import SUTrack_Actor
 from lib.train.actors import SUTrack_active_Actor
 from lib.train.actors.sutrack_activev1 import SUTrack_activev1_Actor
 from lib.train.actors.sutrack_SGLA import SUTrack_SGLA_Actor
+from lib.train.actors.sutrack_arv2 import SUTrack_ARV2_Actor
 from lib.utils.focal_loss import FocalLoss
 # for import modules
 import importlib
@@ -127,6 +129,8 @@ def run(settings):
         net = build_sutrack_ss(cfg)
     elif settings.script_name == "sutrack_arv2":
         net = build_sutrack_arv2(cfg)
+    elif settings.script_name == "sutrack_ascn":
+        net = build_sutrack_ascn(cfg)
 
     else:
         raise ValueError("illegal script name")
@@ -311,6 +315,30 @@ def run(settings):
                 print(f"✓ 温度系数: {cfg.MODEL.SS_LOSS.TEMPERATURE}")
                 print("✓ 核心机制: 实例对比学习 + 时间一致性约束")
             print("✓ 论文: Decoupled Spatio-Temporal Consistency Learning for Self-Supervised Tracking (AAAI 2025)")
+            print("="*60 + "\n")
+        elif settings.script_name == "sutrack_ascn":
+            print("\n" + "="*60)
+            print("🔍 SUTrack-ASCN (ASCNet) 配置确认")
+            print("="*60)
+            use_rhdwt = getattr(cfg.TRAIN.ASCNET, 'USE_RHDWT', True)
+            use_cncm = getattr(cfg.TRAIN.ASCNET, 'USE_CNCM', True)
+            cncm_blocks = getattr(cfg.TRAIN.ASCNET, 'CNCM_NUM_BLOCKS', 3)
+            print(f"✓ RHDWT下采样启用状态: {'🟢 已启用' if use_rhdwt else '🔴 未启用'}")
+            if use_rhdwt:
+                print("✓ 核心机制: 残差哈尔小波变换")
+                print("  - 模型驱动分支: 固定Haar小波捕获方向先验")
+                print("  - 残差分支: 步进卷积捕获数据驱动语义")
+                print("  - 特点: 融合先验知识与深度语义")
+            print(f"✓ CNCM模块启用状态: {'🟢 已启用' if use_cncm else '🔴 未启用'}")
+            if use_cncm:
+                print(f"✓ RCSSC块数量: {cncm_blocks}")
+                print("✓ 核心机制: 列非均匀性校正")
+                print("  - CAB: 列注意力分支（双池化+双重校正）")
+                print("  - SAB: 空间注意力分支（关键区域增强）")
+                print("  - SCB: 自校准分支（长程依赖建模）")
+                print("  - 特点: 全局上下文 + 列特征精细校正")
+            print("✓ 应用场景: 条纹噪声抑制、传感器非均匀性校正")
+            print("✓ 论文: ASCNet - Asymmetric Sampling Correction Network")
             print("="*60 + "\n")
 
     # wrap networks to distributed one
@@ -778,6 +806,13 @@ def run(settings):
                        'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
         actor = SUTrack_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
     elif settings.script_name == "sutrack_arv2":
+        focal_loss = FocalLoss()
+        objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
+                     'task_cls': CrossEntropyLoss()}
+        loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
+                       'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
+        actor = SUTrack_ARV2_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
+    elif settings.script_name == "sutrack_ascn":
         focal_loss = FocalLoss()
         objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
                      'task_cls': CrossEntropyLoss()}
