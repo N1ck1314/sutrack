@@ -138,10 +138,11 @@ class SUTRACK_ARV2(BaseTracker):
 
         # Check if ARTrackV2 was used
         if 'confidence' in out_dict:
-            # ARTrackV2 prediction
+            # ARTrackV2 prediction (pred_boxes is normalized [0,1])
             pred_boxes = out_dict['pred_boxes'].squeeze(1)  # [B, 4]
             conf_score = out_dict['confidence'].squeeze(-1).item()
-            pred_box = (pred_boxes[0] * self.params.search_size / resize_factor).tolist()
+            # Convert normalized [0,1] to original image scale: norm * search_size / resize_factor
+            pred_box = (pred_boxes[0] * self.params.search_size / resize_factor).cpu().tolist()
         else:
             # Standard decoder prediction
             pred_score_map = out_dict['score_map']

@@ -1,3 +1,4 @@
+
 import os
 # loss function related
 from lib.utils.box_ops import giou_loss
@@ -30,17 +31,20 @@ from lib.models.sutrack_SCSA import build_sutrack as build_sutrack_scsa
 from lib.models.sutrack_SMFA import build_sutrack as build_sutrack_smfa
 from lib.models.sutrack_OR import build_sutrack as build_sutrack_or
 from lib.models.sutrack_SGLA import build_sutrack as build_sutrack_sgla
+from lib.models.sutrack_SGLA_RGBD import build_sutrack as build_sutrack_sgla_rgbd
 from lib.models.sutrack_activev1 import build_sutrack_activev1
 from lib.models.sutrack_dinov3 import build_sutrack as build_sutrack_dinov3
 from lib.models.sutrack_ss import build_sutrack_ss
 from lib.models.sutrack_arv2 import build_sutrack_arv2
 from lib.models.sutrack_ascn import build_sutrack_ascn
+from lib.models.sutrack_select import build_sutrack_select
 
 
 from lib.train.actors import SUTrack_Actor
 from lib.train.actors import SUTrack_active_Actor
 from lib.train.actors.sutrack_activev1 import SUTrack_activev1_Actor
 from lib.train.actors.sutrack_SGLA import SUTrack_SGLA_Actor
+from lib.train.actors.sutrack_SGLA_RGBD import SUTrack_SGLA_RGBD_Actor
 from lib.train.actors.sutrack_arv2 import SUTrack_ARV2_Actor
 from lib.utils.focal_loss import FocalLoss
 # for import modules
@@ -123,6 +127,8 @@ def run(settings):
         net = build_sutrack_or(cfg)
     elif settings.script_name == "sutrack_SGLA":
         net = build_sutrack_sgla(cfg)
+    elif settings.script_name == "sutrack_SGLA_RGBD":
+        net = build_sutrack_sgla_rgbd(cfg)
     elif settings.script_name == "sutrack_dinov3":
         net = build_sutrack_dinov3(cfg)
     elif settings.script_name == "sutrack_ss":
@@ -131,6 +137,8 @@ def run(settings):
         net = build_sutrack_arv2(cfg)
     elif settings.script_name == "sutrack_ascn":
         net = build_sutrack_ascn(cfg)
+    elif settings.script_name == "sutrack_select":
+        net = build_sutrack_select(cfg)
 
     else:
         raise ValueError("illegal script name")
@@ -339,6 +347,31 @@ def run(settings):
                 print("  - 特点: 全局上下文 + 列特征精细校正")
             print("✓ 应用场景: 条纹噪声抑制、传感器非均匀性校正")
             print("✓ 论文: ASCNet - Asymmetric Sampling Correction Network")
+            print("="*60 + "\n")
+        elif settings.script_name == "sutrack_select":
+            print("\n" + "="*60)
+            print("🔍 SUTrack-Select (选择性深度集成) 配置确认")
+            print("="*60)
+            use_selective_depth = cfg.MODEL.ENCODER.get('USE_SELECTIVE_DEPTH', False)
+            threshold = cfg.MODEL.ENCODER.get('SELECTIVE_DEPTH_THRESHOLD', 0.5)
+            selection_loss_weight = cfg.MODEL.ENCODER.get('SELECTION_LOSS_WEIGHT', 0.01)
+            print(f"✓ 选择性深度集成启用状态: {'🟢 已启用' if use_selective_depth else '🔴 未启用'}")
+            if use_selective_depth:
+                print(f"✓ 推理阈值: {threshold}")
+                print(f"✓ 选择损失权重: {selection_loss_weight}")
+                print("✓ 核心机制:")
+                print("  - 深度需求预测: 基于RGB特征预测每层是否需要深度信息")
+                print("  - 选择性融合: 只在需要时使用深度特征")
+                print("  - 训练: 软跳过（可微分加权融合）")
+                print("  - 推理: 硬跳过（确定性决策，提升速度）")
+                print("✓ 特点:")
+                print("  - 借鉴SGLA层跳过思想")
+                print("  - 智能深度特征选择")
+                print("  - 计算效率优化")
+                print("  - 支持统计分析（深度使用率）")
+                print("✓ 优势: 减少不必要的深度处理，提升推理速度")
+            else:
+                print("⚠️  警告: 选择性深度集成未启用，将使用标准流程")
             print("="*60 + "\n")
 
     # wrap networks to distributed one
@@ -777,6 +810,31 @@ def run(settings):
         loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
                        'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
         actor = SUTrack_SGLA_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
+    elif settings.script_name == "sutrack_SGLA_RGBD":
+        focal_loss = FocalLoss()
+        objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
+                     'task_cls': CrossEntropyLoss()}
+        loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
+                       'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
+        
+        # 打印SGLA-RGBD配置信息
+        if settings.local_rank in [-1, 0]:
+            print("\n" + "="*60)
+            print("🔍 SGLA-RGBD模块配置确认")
+            print("="*60)
+            use_sgla_rgbd = cfg.MODEL.ENCODER.get('USE_SGLA_RGBD', False)
+            print(f"✓ SGLA-RGBD启用状态: {'🟢 已启用' if use_sgla_rgbd else '🔴 未启用'}")
+            if use_sgla_rgbd and hasattr(cfg.MODEL.ENCODER, 'SGLA_RGBD'):
+                sgla_cfg = cfg.MODEL.ENCODER.SGLA_RGBD
+                print(f"✓ 模态选择: {'🟢 启用' if sgla_cfg.get('USE_MODAL_SELECTION', True) else '🔴 禁用'}")
+                print(f"✓ 逐层融合: {'🟢 启用' if sgla_cfg.get('USE_LAYERWISE_FUSION', True) else '🔴 禁用'}")
+                print(f"✓ 选择性深度: {'🟢 启用' if sgla_cfg.get('USE_SELECTIVE_DEPTH', True) else '🔴 禁用'}")
+                print(f"✓ 互补性损失: {'🟢 启用' if sgla_cfg.get('USE_COMPLEMENTARITY_LOSS', True) else '🔴 禁用'}")
+                print(f"✓ 互补性损失权重: {sgla_cfg.get('COMPLEMENTARITY_LOSS_WEIGHT', 0.1)}")
+                print(f"✓ 模态平衡权重: {sgla_cfg.get('MODAL_BALANCE_WEIGHT', 0.05)}")
+            print("="*60 + "\n")
+        
+        actor = SUTrack_SGLA_RGBD_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
     elif settings.script_name == "sutrack_active":
         focal_loss = FocalLoss()
         objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
@@ -813,6 +871,13 @@ def run(settings):
                        'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
         actor = SUTrack_ARV2_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
     elif settings.script_name == "sutrack_ascn":
+        focal_loss = FocalLoss()
+        objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
+                     'task_cls': CrossEntropyLoss()}
+        loss_weight = {'giou': cfg.TRAIN.GIOU_WEIGHT, 'l1': cfg.TRAIN.L1_WEIGHT, 'focal': 1., 'cls': cfg.TRAIN.CE_WEIGHT,
+                       'task_cls': cfg.TRAIN.TASK_CE_WEIGHT}
+        actor = SUTrack_Actor(net=net, objective=objective, loss_weight=loss_weight, settings=settings, cfg=cfg)
+    elif settings.script_name == "sutrack_select":
         focal_loss = FocalLoss()
         objective = {'giou': giou_loss, 'l1': l1_loss, 'focal': focal_loss, 'cls': BCEWithLogitsLoss(),
                      'task_cls': CrossEntropyLoss()}

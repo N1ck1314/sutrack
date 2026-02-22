@@ -215,4 +215,4 @@ class sutrack_activev1(BaseTracker):
         return nlp_ids, nlp_masks
 
 def get_tracker_class():
-    return sutrack_active
+    return sutrack_activev1

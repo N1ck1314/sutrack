@@ -25,10 +25,10 @@ def parameters(yaml_name: str):
     params.search_size = cfg.TEST.SEARCH_SIZE
 
     # Network checkpoint path (arv2)
-    # checkpoints/train/sutrack_arv2/<yaml_name>/SUTRACK_epXXXX.pth.tar
+    # checkpoints/train/sutrack_arv2/<yaml_name>/SUTRACK_ARV2_epXXXX.pth.tar
     params.checkpoint = os.path.join(
         settings.save_dir,
-        f"checkpoints/train/sutrack_arv2/{yaml_name}/SUTRACK_ep{cfg.TEST.EPOCH:04d}.pth.tar"
+        f"checkpoints/train/sutrack_arv2/{yaml_name}/SUTRACK_ARV2_ep{cfg.TEST.EPOCH:04d}.pth.tar"
     )
 
     # Optional flags

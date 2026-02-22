@@ -1,0 +1,67 @@
+[2026-02-22 16:23:47] [INFO] ================================================================================
+[2026-02-22 16:23:47] [INFO] 开始自动测试
+[2026-02-22 16:23:47] [INFO] ================================================================================
+[2026-02-22 16:23:47] [INFO] 总任务数: 9
+[2026-02-22 16:23:47] [INFO] 测试数据集: uav, uavdt, visdrone2018
+[2026-02-22 16:23:47] [INFO] 线程数: 1
+[2026-02-22 16:23:47] [INFO] GPU数: 1
+[2026-02-22 16:23:47] [INFO] ================================================================================
+[2026-02-22 16:23:47] [INFO] 
+开始测试模型: sutrack_arv2
+[2026-02-22 16:23:47] [INFO] 
+进度: [1/9]
+[2026-02-22 16:23:47] [INFO] 开始测试: sutrack_arv2_sutrack_arv2_t224_uav
+[2026-02-22 16:23:47] [INFO] 命令: python tracking/test.py sutrack_arv2 sutrack_arv2_t224 --dataset_name uav --threads 1 --num_gpus 1
+[2026-02-22 16:41:49] [SUCCESS] 测试成功: sutrack_arv2_sutrack_arv2_t224_uav (耗时: 1081.61s)
+[2026-02-22 16:41:49] [INFO] 
+进度: [2/9]
+[2026-02-22 16:41:49] [INFO] 开始测试: sutrack_arv2_sutrack_arv2_t224_uavdt
+[2026-02-22 16:41:49] [INFO] 命令: python tracking/test.py sutrack_arv2 sutrack_arv2_t224 --dataset_name uavdt --threads 1 --num_gpus 1
+[2026-02-22 16:46:57] [SUCCESS] 测试成功: sutrack_arv2_sutrack_arv2_t224_uavdt (耗时: 307.88s)
+[2026-02-22 16:46:57] [INFO] 
+进度: [3/9]
+[2026-02-22 16:46:57] [INFO] 开始测试: sutrack_arv2_sutrack_arv2_t224_visdrone2018
+[2026-02-22 16:46:57] [INFO] 命令: python tracking/test.py sutrack_arv2 sutrack_arv2_t224 --dataset_name visdrone2018 --threads 1 --num_gpus 1
+[2026-02-22 16:54:27] [SUCCESS] 测试成功: sutrack_arv2_sutrack_arv2_t224_visdrone2018 (耗时: 449.69s)
+[2026-02-22 16:54:27] [INFO] 
+开始测试模型: sutrack_ss
+[2026-02-22 16:54:27] [INFO] 
+进度: [4/9]
+[2026-02-22 16:54:27] [INFO] 开始测试: sutrack_ss_sutrack_ss_t224_uav
+[2026-02-22 16:54:27] [INFO] 命令: python tracking/test.py sutrack_ss sutrack_ss_t224 --dataset_name uav --threads 1 --num_gpus 1
+[2026-02-22 16:55:12] [SUCCESS] 测试成功: sutrack_ss_sutrack_ss_t224_uav (耗时: 45.14s)
+[2026-02-22 16:55:12] [INFO] 
+进度: [5/9]
+[2026-02-22 16:55:12] [INFO] 开始测试: sutrack_ss_sutrack_ss_t224_uavdt
+[2026-02-22 16:55:12] [INFO] 命令: python tracking/test.py sutrack_ss sutrack_ss_t224 --dataset_name uavdt --threads 1 --num_gpus 1
+[2026-02-22 16:55:29] [SUCCESS] 测试成功: sutrack_ss_sutrack_ss_t224_uavdt (耗时: 17.25s)
+[2026-02-22 16:55:29] [INFO] 
+进度: [6/9]
+[2026-02-22 16:55:29] [INFO] 开始测试: sutrack_ss_sutrack_ss_t224_visdrone2018
+[2026-02-22 16:55:29] [INFO] 命令: python tracking/test.py sutrack_ss sutrack_ss_t224 --dataset_name visdrone2018 --threads 1 --num_gpus 1
+[2026-02-22 16:55:44] [SUCCESS] 测试成功: sutrack_ss_sutrack_ss_t224_visdrone2018 (耗时: 14.57s)
+[2026-02-22 16:55:44] [INFO] 
+开始测试模型: sutrack_activev1
+[2026-02-22 16:55:44] [INFO] 
+进度: [7/9]
+[2026-02-22 16:55:44] [SKIP] 跳过测试 sutrack_activev1_sutrack_activev1_t224_uav (结果已存在)
+[2026-02-22 16:55:44] [INFO] 
+进度: [8/9]
+[2026-02-22 16:55:44] [SKIP] 跳过测试 sutrack_activev1_sutrack_activev1_t224_uavdt (结果已存在)
+[2026-02-22 16:55:44] [INFO] 
+进度: [9/9]
+[2026-02-22 16:55:44] [SKIP] 跳过测试 sutrack_activev1_sutrack_activev1_t224_visdrone2018 (结果已存在)
+[2026-02-22 16:55:44] [INFO] 
+================================================================================
+[2026-02-22 16:55:44] [INFO] 所有测试完成！
+[2026-02-22 16:55:44] [INFO] ================================================================================
+[2026-02-22 16:55:44] [INFO] 测试结果已保存到: test_logs/test_results.json
+[2026-02-22 16:55:44] [INFO] 
+================================================================================
+[2026-02-22 16:55:44] [INFO] 测试摘要
+[2026-02-22 16:55:44] [INFO] ================================================================================
+[2026-02-22 16:55:44] [INFO] 总任务数: 9
+[2026-02-22 16:55:44] [INFO] 成功: 6
+[2026-02-22 16:55:44] [INFO] 失败: 0
+[2026-02-22 16:55:44] [INFO] 跳过: 3
+[2026-02-22 16:55:44] [INFO] ================================================================================

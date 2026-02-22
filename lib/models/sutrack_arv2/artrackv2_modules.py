@@ -307,12 +307,13 @@ class PureEncoderDecoder(nn.Module):
             batch_first=True
         )
         
-        # 坐标回归头（并行输出4个坐标）
+        # 坐标回归头（并行输出4个坐标，归一化到[0,1]）
         self.bbox_head = nn.Sequential(
             nn.LayerNorm(dim),
             nn.Linear(dim, dim // 2),
             nn.GELU(),
-            nn.Linear(dim // 2, 4)  # x1, y1, x2, y2
+            nn.Linear(dim // 2, 4),  # x1, y1, x2, y2
+            nn.Sigmoid()  # 归一化到[0,1]范围，与标准decoder一致
         )
         
     def forward(

@@ -1,0 +1,47 @@
+[2026-02-22 11:16:09] [INFO] ================================================================================
+[2026-02-22 11:16:09] [INFO] 开始自动测试
+[2026-02-22 11:16:09] [INFO] ================================================================================
+[2026-02-22 11:16:09] [INFO] 总任务数: 3
+[2026-02-22 11:16:09] [INFO] 测试数据集: uav, uavdt, visdrone2018
+[2026-02-22 11:16:09] [INFO] 线程数: 1
+[2026-02-22 11:16:09] [INFO] GPU数: 1
+[2026-02-22 11:16:09] [INFO] ================================================================================
+[2026-02-22 11:16:09] [INFO] 
+开始测试模型: sutrack_activev1
+[2026-02-22 11:16:09] [INFO] 
+进度: [1/3]
+[2026-02-22 11:16:09] [INFO] 开始测试: sutrack_activev1_sutrack_activev1_t224_uav
+[2026-02-22 11:16:09] [INFO] 命令: python tracking/test.py sutrack_activev1 sutrack_activev1_t224 --dataset_name uav --threads 1 --num_gpus 1
+[2026-02-22 11:16:12] [ERROR] 测试失败: sutrack_activev1_sutrack_activev1_t224_uav (返回码: 1)
+[2026-02-22 11:16:12] [INFO] 
+进度: [2/3]
+[2026-02-22 11:16:12] [INFO] 开始测试: sutrack_activev1_sutrack_activev1_t224_uavdt
+[2026-02-22 11:16:12] [INFO] 命令: python tracking/test.py sutrack_activev1 sutrack_activev1_t224 --dataset_name uavdt --threads 1 --num_gpus 1
+[2026-02-22 11:16:13] [ERROR] 测试失败: sutrack_activev1_sutrack_activev1_t224_uavdt (返回码: 1)
+[2026-02-22 11:16:13] [INFO] 
+进度: [3/3]
+[2026-02-22 11:16:13] [INFO] 开始测试: sutrack_activev1_sutrack_activev1_t224_visdrone2018
+[2026-02-22 11:16:13] [INFO] 命令: python tracking/test.py sutrack_activev1 sutrack_activev1_t224 --dataset_name visdrone2018 --threads 1 --num_gpus 1
+[2026-02-22 11:16:13] [ERROR] 测试失败: sutrack_activev1_sutrack_activev1_t224_visdrone2018 (返回码: 1)
+[2026-02-22 11:16:13] [INFO] 
+================================================================================
+[2026-02-22 11:16:13] [INFO] 所有测试完成！
+[2026-02-22 11:16:13] [INFO] ================================================================================
+[2026-02-22 11:16:13] [INFO] 测试结果已保存到: test_logs/test_results.json
+[2026-02-22 11:16:13] [INFO] 
+================================================================================
+[2026-02-22 11:16:13] [INFO] 测试摘要
+[2026-02-22 11:16:13] [INFO] ================================================================================
+[2026-02-22 11:16:13] [INFO] 总任务数: 3
+[2026-02-22 11:16:13] [INFO] 成功: 0
+[2026-02-22 11:16:13] [INFO] 失败: 3
+[2026-02-22 11:16:13] [INFO] 跳过: 0
+[2026-02-22 11:16:13] [INFO] ================================================================================
+[2026-02-22 11:16:13] [INFO] 
+失败的测试:
+[2026-02-22 11:16:13] [INFO]   - sutrack_activev1 sutrack_activev1_t224 on uav
+[2026-02-22 11:16:13] [INFO]     日志: test_logs/sutrack_activev1_sutrack_activev1_t224_uav.log
+[2026-02-22 11:16:13] [INFO]   - sutrack_activev1 sutrack_activev1_t224 on uavdt
+[2026-02-22 11:16:13] [INFO]     日志: test_logs/sutrack_activev1_sutrack_activev1_t224_uavdt.log
+[2026-02-22 11:16:13] [INFO]   - sutrack_activev1 sutrack_activev1_t224 on visdrone2018
+[2026-02-22 11:16:13] [INFO]     日志: test_logs/sutrack_activev1_sutrack_activev1_t224_visdrone2018.log

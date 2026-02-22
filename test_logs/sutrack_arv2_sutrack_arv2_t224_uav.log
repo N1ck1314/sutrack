@@ -1,0 +1,987 @@
+Evaluating    1 trackers on   123 sequences
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_bike1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 107.9152050557123
+create tracking result dir: /home/nick/code/code.sutrack/SUTrack/test/tracking_results/sutrack_arv2/sutrack_arv2_t224
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_bike2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 110.08316628682134
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_bike3
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.12528726852338
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_bird1_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 104.9337495510576
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_bird1_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 101.77035712970452
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_bird1_3
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.9663755989426
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_boat1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.48028028765768
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_boat2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.72184471056063
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_boat3
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.59497984550025
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_boat4
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 107.91757051223773
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_boat5
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 110.6348419048224
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_boat6
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 110.41636441610423
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_boat7
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 104.84041401063789
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_boat8
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 107.83294714219433
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_boat9
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.0589681212103
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_building1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 110.34228193566416
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_building2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.54112751276072
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_building3
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 107.64295228304589
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_building4
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 103.62371737321072
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_building5
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 106.59155203424015
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car1_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.28408476893497
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car1_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 103.71951485697572
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car1_3
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.92053410763322
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car10
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.95396428828582
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car11
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 111.11186254042256
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car12
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 106.73136101554418
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car13
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.25844783647754
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car14
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 107.18665205836204
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car15
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 103.44612286976442
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car16_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.11978897015959
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car16_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.38975109411123
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car17
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 106.89793984087483
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car18
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.11966776571096
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car1_s
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 105.2107622137863
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.68999653390199
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car2_s
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.38483193929443
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car3
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.56835181620377
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car3_s
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.11459033214582
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car4
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 104.60852088969348
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car4_s
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 106.15447839126432
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car5
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 103.96704896028508
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car6_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.6812669586186
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car6_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.44273702110122
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car6_3
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 102.59439186581996
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car6_4
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 106.49342325659218
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car6_5
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.36048270541966
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car7
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.48787417686661
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car8_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 110.26330739832324
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car8_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 104.76888164226806
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_car9
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 83.78712913954848
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_group1_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 106.14398870026464
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_group1_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 100.78427529718277
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_group1_3
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 102.34304374565642
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_group1_4
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 107.01850836093335
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_group2_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.4149768881393
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_group2_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.82836514775296
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_group2_3
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 106.20090771363569
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_group3_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 110.07681453857697
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_group3_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.88112816406336
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_group3_3
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 104.97248636554612
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_group3_4
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 110.4565259851952
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.55333854285986
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person10
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 110.4539278361085
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person11
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 110.79057350746359
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person12_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 110.20353497455694
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person12_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 103.42131746110752
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person13
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.30686707164799
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person14_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 110.54137450058685
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person14_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.33436283100723
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person14_3
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 106.29153596363616
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person15
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 102.33327166680365
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person16
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 107.3406551312687
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person17_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.2417985820809
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person17_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.69767647811892
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person18
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 104.3154870911433
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person19_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.89065629830785
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person19_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.80282994872768
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person19_3
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 106.78989048944455
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person1_s
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 104.56307848387296
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person2_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 106.99777599470588
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person2_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.11403984541363
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person20
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 106.95483097141614
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person21
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 100.00465344222438
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person22
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 110.87030854451608
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person23
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.07113183937761
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person2_s
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.51216259304334
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person3
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.38014582248599
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person3_s
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 110.77540299786365
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person4_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 107.8433963868537
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person4_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.28506046741253
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person5_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 100.59795894479481
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person5_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.43043597413264
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person6
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 111.18629686908073
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person7_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 110.50257633683391
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person7_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.44999170520377
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person8_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 103.22329674960667
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person8_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.8365158112416
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_person9
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.9044720584045
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_truck1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 105.35094619387452
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_truck2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 111.67720476799003
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_truck3
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 106.0171952748027
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_truck4_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 110.25364658237001
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_truck4_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.7755234170542
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_uav1_1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 192.91942403483242
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_uav1_2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 181.05846322982526
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_uav1_3
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 195.7049441211546
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_uav2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 164.46544011943917
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_uav3
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 196.22935601974632
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_uav4
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 160.1345770465556
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_uav5
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 163.22264008741666
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_uav6
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 190.6439807212276
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_uav7
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 175.68108704115718
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_uav8
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 173.5150588061312
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_wakeboard1
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 112.1260015955935
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_wakeboard10
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 111.02222127906848
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_wakeboard2
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 105.20223059503488
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_wakeboard3
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 107.88569788367069
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_wakeboard4
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.96553013532923
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_wakeboard5
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 100.53642011820222
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_wakeboard6
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 103.69161449668805
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_wakeboard7
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 96.03525384320393
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_wakeboard8
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 104.21482484345259
+Tracker: sutrack_arv2 sutrack_arv2_t224 None ,  Sequence: uav_wakeboard9
+[ARTrackV2] Initialized with 4 appearance tokens
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.61990556204483
+Done

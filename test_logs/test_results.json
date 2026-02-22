@@ -1,29 +1,32 @@
 {
     "total": 3,
-    "success": 0,
+    "success": 3,
     "failed": 0,
-    "skipped": 3,
+    "skipped": 0,
     "details": [
         {
-            "tracker": "sutrack_active",
-            "config": "sutrack_active_fix_t224",
+            "tracker": "sutrack_arv2",
+            "config": "sutrack_arv2_t224",
             "dataset": "uav",
-            "status": "skipped",
-            "message": "结果已存在"
+            "status": "success",
+            "time": 1361.6854050159454,
+            "log": "test_logs/sutrack_arv2_sutrack_arv2_t224_uav.log"
         },
         {
-            "tracker": "sutrack_active",
-            "config": "sutrack_active_fix_t224",
+            "tracker": "sutrack_arv2",
+            "config": "sutrack_arv2_t224",
             "dataset": "uavdt",
-            "status": "skipped",
-            "message": "结果已存在"
+            "status": "success",
+            "time": 321.20076298713684,
+            "log": "test_logs/sutrack_arv2_sutrack_arv2_t224_uavdt.log"
         },
         {
-            "tracker": "sutrack_active",
-            "config": "sutrack_active_fix_t224",
+            "tracker": "sutrack_arv2",
+            "config": "sutrack_arv2_t224",
             "dataset": "visdrone2018",
-            "status": "skipped",
-            "message": "结果已存在"
+            "status": "success",
+            "time": 460.16400480270386,
+            "log": "test_logs/sutrack_arv2_sutrack_arv2_t224_visdrone2018.log"
         }
     ]
 }

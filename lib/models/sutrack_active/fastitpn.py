@@ -1134,7 +1134,7 @@ class Fast_iTPN(nn.Module):
             feature = xz
         
         # 返回特征和激活概率（用于损失计算）
-        return feature, probs_active if len(probs_active) > 0 else None
+        return feature, probs_active if (probs_active is not None and len(probs_active) > 0) else None
 
     def forward(self, template_list, search_list, template_anno_list, text_src, task_index):
         xz, probs_active = self.forward_features(template_list, search_list, template_anno_list, text_src, task_index)

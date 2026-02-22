@@ -1,0 +1,864 @@
+Evaluating    1 trackers on   123 sequences
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_bike1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 76.9971561681579
+create tracking result dir: /home/nick/code/code.sutrack/SUTrack/test/tracking_results/sutrack_activev1/sutrack_activev1_t224
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_bike2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 82.61014318378469
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_bike3
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 75.03164263868358
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_bird1_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 89.10682417431084
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_bird1_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 104.12844169791124
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_bird1_3
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 102.7147593469613
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_boat1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 73.3596393930885
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_boat2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 87.6686107893288
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_boat3
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 77.45474356996785
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_boat4
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 78.1413879819363
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_boat5
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 69.87626749740899
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_boat6
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 98.61798496330553
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_boat7
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 86.48073814794816
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_boat8
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 92.21387611224571
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_boat9
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 98.29310318372274
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_building1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 82.91497766015233
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_building2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 75.21618069138208
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_building3
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 79.43354339535072
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_building4
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 72.14648626110466
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_building5
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 100.75394019347935
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car1_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 73.67328688542918
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car1_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 84.01208855334444
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car1_3
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 93.51117498582846
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car10
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 77.43594265211912
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car11
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 79.34978689501757
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car12
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 80.51268250407121
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car13
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 110.98093993279818
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car14
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 90.63759892823767
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car15
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 70.52583941595371
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car16_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 102.3734225624901
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car16_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 94.30020394529267
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car17
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 79.53183041619286
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car18
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 87.7628767442385
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car1_s
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 74.75708984467823
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 96.79813489593295
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car2_s
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 85.53676855966441
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car3
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 78.41372881039432
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car3_s
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 87.42000267490117
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car4
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 77.67066973580245
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car4_s
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 86.34399390316722
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car5
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 74.36356675174997
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car6_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 79.33286240161196
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car6_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 93.20684336080794
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car6_3
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 75.19302076896287
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car6_4
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 71.02926848269045
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car6_5
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 88.50061941561296
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car7
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 76.24357867067779
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car8_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 83.05542294584694
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car8_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 70.39661773934658
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_car9
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 80.93699021609048
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_group1_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 75.30989533298542
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_group1_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 90.87321636880684
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_group1_3
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 91.31917617496137
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_group1_4
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 74.62476735034802
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_group2_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 85.17389806994461
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_group2_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 82.46550724495373
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_group2_3
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 80.67916365863174
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_group3_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 75.67405429083348
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_group3_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 73.9976232696117
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_group3_3
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 69.04393192432303
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_group3_4
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 73.40343600435843
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 80.60666977267529
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person10
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 72.34545628704478
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person11
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 77.41335702764395
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person12_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 77.32277135250733
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person12_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 88.31182403413075
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person13
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 71.59244298191285
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person14_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 77.62470114305707
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person14_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 85.68888010756353
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person14_3
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 84.8986790003186
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person15
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 84.19505510213658
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person16
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 72.66862424739593
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person17_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 73.76673216093097
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person17_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 72.21208799585173
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person18
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 96.57766822241707
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person19_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 79.4464391322821
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person19_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 84.97129898128244
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person19_3
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 90.94013759251509
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person1_s
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 73.86390986464868
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person2_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 88.9204143315454
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person2_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 75.63114549070424
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person20
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 92.07836267747487
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person21
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 75.78463413974463
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person22
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 79.5855792426528
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person23
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 76.94148498282753
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person2_s
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 68.30533299937693
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person3
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 63.227909357162154
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person3_s
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 49.8637213097866
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person4_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 74.40467228676907
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person4_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 76.21826389067266
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person5_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 77.90380505944171
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person5_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 73.86987597721706
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person6
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 88.78306202791529
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person7_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 85.88475931298956
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person7_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 86.37773401855834
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person8_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 70.8841849682245
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person8_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 71.41245534152306
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_person9
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 72.87568234005062
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_truck1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 88.81134626497679
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_truck2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 81.21917967376669
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_truck3
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 75.0083647456989
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_truck4_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 78.01451053475346
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_truck4_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 72.14807664148903
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_uav1_1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.75394770269837
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_uav1_2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 111.14000842006789
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_uav1_3
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 109.9230515707033
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_uav2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 114.17302426411791
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_uav3
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 111.98552064792763
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_uav4
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 108.324590619682
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_uav5
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 112.72351151000963
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_uav6
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 111.03477524025239
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_uav7
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 110.81229787239167
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_uav8
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 113.83226224585472
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_wakeboard1
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 91.58867446990092
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_wakeboard10
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 97.36459996134379
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_wakeboard2
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 90.98717870670986
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_wakeboard3
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 92.78332188654042
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_wakeboard4
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 96.83001012011316
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_wakeboard5
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 92.95914692024776
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_wakeboard6
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 93.40559142771085
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_wakeboard7
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 89.88933228079509
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_wakeboard8
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 84.78465447279619
+Tracker: sutrack_activev1 sutrack_activev1_t224 None ,  Sequence: uav_wakeboard9
+Update interval is:  999999
+Update threshold is:  1.0
+MULTI_MODAL_VISION is:  True
+MULTI_MODAL_LANGUAGE is:  False
+USE_NLP is:  False
+FPS: 97.91050492058545
+Done

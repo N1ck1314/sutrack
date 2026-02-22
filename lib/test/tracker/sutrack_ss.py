@@ -86,18 +86,18 @@ class SUTRACK_SS(BaseTracker):
         # get the initial templates
         z_patch_arr, resize_factor = sample_target(image, info['init_bbox'], self.params.template_factor,
                                                     output_sz=self.params.template_size)
+        template = self.preprocessor.process(z_patch_arr)
+        if self.multi_modal_vision and (template.size(1) == 3):
+            template = torch.cat((template, template), axis=1)
+        self.template_list = [template] * self.num_template
 
-        template_list = []
-        template_list.append(z_patch_arr)
-        self.template_list = template_list
-
-        # get the initial templates for multi-modal vision
-        if self.multi_modal_vision:
-            z_patch_arr_event, resize_factor_event = sample_target(image, info['init_bbox'], self.params.template_factor,
-                                                    output_sz=self.params.template_size)
-            template_list_event = []
-            template_list_event.append(z_patch_arr_event)
-            self.template_list_event = template_list_event
+        self.state = info['init_bbox']
+        prev_box_crop = transform_image_to_crop(torch.tensor(info['init_bbox']),
+                                                torch.tensor(info['init_bbox']),
+                                                resize_factor,
+                                                torch.Tensor([self.params.template_size, self.params.template_size]),
+                                                normalize=True)
+        self.template_anno_list = [prev_box_crop.to(template.device).unsqueeze(0)]
 
         # get the text
         if self.use_nlp:
@@ -106,8 +106,6 @@ class SUTRACK_SS(BaseTracker):
             self.text_features = self.network.forward(text_data=self.text, mode="text")
         else:
             self.text_features = None
-
-        self.state = info['init_bbox']
 
         # get the task index
         if 'dataset_name' in info:
@@ -123,25 +121,20 @@ class SUTRACK_SS(BaseTracker):
         # get the search region
         x_patch_arr, resize_factor = sample_target(image, self.state, self.params.search_factor,
                                                     output_sz=self.params.search_size)
-        search_list = []
-        search_list.append(x_patch_arr)
-
-        # get the search region for multi-modal vision
-        if self.multi_modal_vision:
-            x_patch_arr_event, resize_factor_event = sample_target(image, self.state, self.params.search_factor,
-                                                    output_sz=self.params.search_size)
-            search_list_event = []
-            search_list_event.append(x_patch_arr_event)
+        search = self.preprocessor.process(x_patch_arr)
+        if self.multi_modal_vision and (search.size(1) == 3):
+            search = torch.cat((search, search), axis=1)
+        search_list = [search]
 
         # run the network
         with torch.no_grad():
             if self.multi_modal_vision:
                 xz = self.network.forward(template_list=self.template_list, search_list=search_list,
-                                          template_anno_list=None, text_src=self.text_features,
+                                          template_anno_list=self.template_anno_list, text_src=self.text_features,
                                           task_index=self.task_index, mode="encoder")
             else:
                 xz = self.network.forward(template_list=self.template_list, search_list=search_list,
-                                          template_anno_list=None, text_src=self.text_features,
+                                          template_anno_list=self.template_anno_list, text_src=self.text_features,
                                           task_index=self.task_index, mode="encoder")
 
             out_dict, task_decoded = self.network.forward(feature=xz, mode="decoder")
@@ -155,6 +148,7 @@ class SUTRACK_SS(BaseTracker):
 
         # baseline: take the mean of all pred boxes as the final result
         pred_box = pred_box.mean(dim=0)
+        pred_box = pred_box.cpu().tolist()  # convert to list
 
         # get the final box result
         self.state = clip_box(self.map_box_back(pred_box, resize_factor), H, W, margin=10)
@@ -171,9 +165,21 @@ class SUTRACK_SS(BaseTracker):
             if conf_score > self.update_threshold:
                 z_patch_arr, resize_factor = sample_target(image, self.state, self.params.template_factor,
                                                             output_sz=self.params.template_size)
-                self.template_list.append(z_patch_arr)
+                template = self.preprocessor.process(z_patch_arr)
+                if self.multi_modal_vision and (template.size(1) == 3):
+                    template = torch.cat((template, template), axis=1)
+                self.template_list.append(template)
                 if len(self.template_list) > self.num_template:
                     self.template_list.pop(0)
+
+                prev_box_crop = transform_image_to_crop(torch.tensor(self.state),
+                                                        torch.tensor(self.state),
+                                                        resize_factor,
+                                                        torch.Tensor([self.params.template_size, self.params.template_size]),
+                                                        normalize=True)
+                self.template_anno_list.append(prev_box_crop.to(template.device).unsqueeze(0))
+                if len(self.template_anno_list) > self.num_template:
+                    self.template_anno_list.pop(0)
 
         return {"target_bbox": self.state, "best_score": out_dict['score_map'].view(-1).sigmoid().max().item()}
 

@@ -1,0 +1,146 @@
+# SUTrack-Select Tiny 224 Configuration
+# Selective Depth Integration with FastiTPNt encoder
+# Reference: sutrack_S4F_t224.yaml
+
+TRAIN:
+  TYPE: text_frozen
+  BATCH_SIZE: 32
+  EPOCH: 180
+  LR: 0.0001
+  WEIGHT_DECAY: 0.0001
+  LR_DROP_EPOCH: 144
+  ENCODER_MULTIPLIER: 0.1
+  GIOU_WEIGHT: 2.0
+  L1_WEIGHT: 5.0
+  CE_WEIGHT: 1.0
+  TASK_CE_WEIGHT: 0.3
+  FREEZE_ENCODER: false
+  PRINT_INTERVAL: 50
+  GRAD_CLIP_NORM: 0.1
+  NUM_WORKER: 10
+  OPTIMIZER: ADAMW
+  AMP: false
+  
+  SCHEDULER:
+    TYPE: 'step'
+    DECAY_RATE: 0.1
+  
+  ENCODER_OPEN:
+    - 'patch_embed.proj.weight'
+    - 'patch_embed.proj.bias'
+    - 'blocks.5'
+    - 'blocks.6'
+    - 'blocks.7'
+    - 'blocks.8'
+    - 'blocks.9'
+    - 'blocks.10'
+    - 'blocks.11'
+
+MODEL:
+  TASK_NUM: 5
+  
+  TASK_INDEX:
+    VASTTRACK: 0
+    LASOT: 0
+    TRACKINGNET: 0
+    GOT10K: 0
+    COCO: 0
+    TNL2K: 1
+    DEPTHTRACK: 2
+    LASHER: 3
+    VISEVENT: 4
+  
+  ENCODER:
+    TYPE: 'fastitpnt'
+    DROP_PATH: 0.1
+    STRIDE: 16
+    PRETRAIN_TYPE: 'pretrained/itpn/fast_itpn_tiny_1600e_1k.pt'
+    PATCHEMBED_INIT: 'halfcopy'
+    USE_CHECKPOINT: false
+    POS_TYPE: 'index'
+    TOKEN_TYPE_INDICATE: true
+    CLASS_TOKEN: true
+    
+    # Selective Depth Integration
+    USE_SELECTIVE_DEPTH: true
+    SELECTIVE_DEPTH_THRESHOLD: 0.5
+    SELECTION_LOSS_WEIGHT: 0.01
+    SELECTIVE_DEPTH_REDUCTION: 4
+    SELECTIVE_DEPTH_DROPOUT: 0.1
+    USE_GUMBEL_SOFTMAX: false
+  
+  TEXT_ENCODER:
+    TYPE: 'ViT-L/14'
+  
+  DECODER:
+    TYPE: 'CENTER'
+    NUM_CHANNELS: 256
+    NUM_LAYERS: 3
+    KERNEL_SIZE: 5
+    CONV_TYPE: 'normal'
+    XAVIER_INIT: true
+  
+  TASK_DECODER:
+    TYPE: 'MLP'
+    NUM_CHANNELS: 256
+    NUM_LAYERS: 2
+    FEATURE_TYPE: 'average'
+
+DATA:
+  MEAN: [0.485, 0.456, 0.406]
+  STD: [0.229, 0.224, 0.225]
+  MAX_SAMPLE_INTERVAL: 400
+  MULTI_MODAL_LANGUAGE: false
+  MULTI_MODAL_VISION: true  # Enable depth/multi-modal support
+  
+  TRAIN:
+    DATASETS_NAME:
+      - 'GOT10K_vottrain'
+      - 'DepthTrack_train'  # Add DepthTrack dataset
+    DATASETS_RATIO:
+      - 1
+      - 1
+    SAMPLE_PER_EPOCH: 80000
+  
+  SEARCH:
+    SIZE: 224
+    FACTOR: 4.0
+    CENTER_JITTER: 3.5
+    SCALE_JITTER: 0.5
+    NUMBER: 1
+  
+  TEMPLATE:
+    SIZE: 112
+    FACTOR: 2.0
+    CENTER_JITTER: 0
+    SCALE_JITTER: 0
+    NUMBER: 1
+  
+  USE_NLP:
+    LASOT: false
+    GOT10K: false
+    TRACKINGNET: false
+    COCO: false
+    DEPTHTRACK: false
+    VASTTRACK: false
+    TNL2K: false
+    LASHER: false
+    VISEVENT: false
+
+TEST:
+  EPOCH: 180
+  TEMPLATE_FACTOR: 2.0
+  TEMPLATE_SIZE: 112
+  SEARCH_FACTOR: 4.0
+  SEARCH_SIZE: 224
+  WINDOW: true
+  
+  MULTI_MODAL_VISION:
+    DEFAULT: true
+  
+  MULTI_MODAL_LANGUAGE:
+    DEFAULT: false
+  
+  USE_NLP:
+    DEFAULT: false
+    TNL2K: false
